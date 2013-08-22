@@ -11,3 +11,28 @@ echo 'Creative Commons Attribution 3.0 Unported License.'
 echo
 
 
+########## Vim configuration ##################################################
+
+echo 'Setup Vim Configuration'
+echo
+
+## Remove existing configuration and recreate directories
+#\rm -fr ~/.vim{,rc} 2>/dev/null
+#\mkdir -pv ~/.vim/{bundle,colors}
+
+#\ln -sv dotfiles/vimrc ~/.vimrc
+
+## Install Vundle from github
+#\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+## Make vim use aspell dictionary
+#\mkdir -pv ~/.vim/bundle/vundle/spell
+#\ln -sv ../../../../.aspell.en.pws ~/.vim/bundle/vundle/spell/en.utf-8.add
+
+## Install wombat256 color theme
+#\wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+
+## Run vim command to install bundles
+#\vim +BundleInstall +qa
+
+########## Vim configuration ##################################################
