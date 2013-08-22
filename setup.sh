@@ -43,9 +43,22 @@ echo
 echo 'Setup Bash Configuration'
 echo
 
-# Remove existing configuration and recreate directories
+# Remove existing configuration
 \rm -fr ~/.bashrc 2>/dev/null
 
 \ln -sv dotfiles/bashrc ~/.bashrc
 
 ########## Bash configuration #################################################
+
+
+########## Git configuration #################################################
+
+echo 'Setup Git Configuration'
+echo
+
+# Remove existing configuration
+\rm -fr ~/.gitconfig 2>/dev/null
+
+\ln -sv dotfiles/gitconfig ~/.gitconfig
+
+########## Git configuration #################################################

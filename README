@@ -17,8 +17,9 @@ Targeted for:
 
 Included configuration for:
 ---------------------------
-* Vim 7.4
-* Bash 4.2
+* Vim 7.4.x
+* Bash 4.2.x
+* Git 1.8.x
 
   [url_contact]: http://sudaraka.org/contact/
   [url_cc]: http://creativecommons.org/licenses/by/3.0/
