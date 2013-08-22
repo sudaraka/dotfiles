@@ -36,3 +36,16 @@ echo
 #\vim +BundleInstall +qa
 
 ########## Vim configuration ##################################################
+
+
+########## Bash configuration #################################################
+
+echo 'Setup Bash Configuration'
+echo
+
+# Remove existing configuration and recreate directories
+\rm -fr ~/.bashrc 2>/dev/null
+
+\ln -sv dotfiles/bashrc ~/.bashrc
+
+########## Bash configuration #################################################
