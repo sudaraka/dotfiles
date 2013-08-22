@@ -16,24 +16,24 @@ echo
 echo 'Setup Vim Configuration'
 echo
 
-## Remove existing configuration and recreate directories
-#\rm -fr ~/.vim{,rc} 2>/dev/null
-#\mkdir -pv ~/.vim/{bundle,colors}
+# Remove existing configuration and recreate directories
+\rm -fr ~/.vim{,rc} 2>/dev/null
+\mkdir -pv ~/.vim/{bundle,colors}
 
-#\ln -sv dotfiles/vimrc ~/.vimrc
+\ln -sv dotfiles/vimrc ~/.vimrc
 
-## Install Vundle from github
-#\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# Install Vundle from github
+\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-## Make vim use aspell dictionary
-#\mkdir -pv ~/.vim/bundle/vundle/spell
-#\ln -sv ../../../../.aspell.en.pws ~/.vim/bundle/vundle/spell/en.utf-8.add
+# Make vim use aspell dictionary
+\mkdir -pv ~/.vim/bundle/vundle/spell
+\ln -sv ../../../../.aspell.en.pws ~/.vim/bundle/vundle/spell/en.utf-8.add
 
-## Install wombat256 color theme
-#\wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+# Install wombat256 color theme
+\wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
-## Run vim command to install bundles
-#\vim +BundleInstall +qa
+# Run vim command to install bundles
+\vim +BundleInstall +qa
 
 ########## Vim configuration ##################################################
 
@@ -48,10 +48,12 @@ echo
 
 \ln -sv dotfiles/bashrc ~/.bashrc
 
+echo
+
 ########## Bash configuration #################################################
 
 
-########## Git configuration #################################################
+########## Git configuration ##################################################
 
 echo 'Setup Git Configuration'
 echo
@@ -61,4 +63,21 @@ echo
 
 \ln -sv dotfiles/gitconfig ~/.gitconfig
 
-########## Git configuration #################################################
+echo
+
+########## Git configuration ##################################################
+
+
+########## GNU Screen configuration ###########################################
+
+echo 'Setup GNU Screen Configuration'
+echo
+
+# Remove existing configuration
+\rm -fr ~/.screenrc 2>/dev/null
+
+\ln -sv dotfiles/screenrc ~/.screenrc
+
+echo
+
+########## GNU Screen configuration ###########################################
