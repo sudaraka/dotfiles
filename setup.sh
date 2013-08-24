@@ -18,7 +18,8 @@ echo
 
 # Remove existing configuration and recreate directories
 \rm -fr ~/.vim{,rc} 2>/dev/null
-\mkdir -pv ~/.vim/{bundle,colors}
+\mkdir -pv ~/.vim/bundle
+\mkdir -pv ~/.vim/colors
 
 \ln -sv dotfiles/vimrc ~/.vimrc
 
