@@ -36,6 +36,10 @@ echo
 # Run vim command to install bundles
 \vim +BundleInstall +qa
 
+# Symlink patched font for powerline
+\sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
+\sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
+
 ########## Vim configuration ##################################################
 
 
