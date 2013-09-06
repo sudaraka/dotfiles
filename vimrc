@@ -104,6 +104,18 @@ let mapleader = ","
 " F2: show hide non-printable characters
 noremap <F2> :set list!<CR>
 
+" F4: split window horizontally
+noremap <silent> <F4> :sp<CR>
+
+" F5: split window vertically
+noremap <silent> <F5> :vsp<CR>
+
+" F6: close window/remove split (keeps the buffer intact)
+nnoremap <silent> <F6> <C-w>c
+vnoremap <silent> <F6> <C-w>c
+inoremap <silent> <F6> <esc><C-w>c
+
+
 " Ctrl+S: save all buffers
 nnoremap <silent> <C-s> :wa<CR>
 inoremap <silent> <C-s> <C-o>:wa<CR>
@@ -318,16 +330,33 @@ imap <C-@> <C-Space>
 " Plugin: Python-Mode {{{
 
 Bundle 'klen/python-mode'
+", {'master': '1b4b8f1'}
 map <Leader>g :call RopeGotoDefinition()<CR>
 let ropevim_enable_shortcuts = 1
-let g:pymode_rope_goto_def_newwin = "vnew"
+
+let g:pymode_rope = 1
 let g:pymode_rope_extended_complete = 1
+let g:pymode_rope_goto_def_newwin = "vnew"
+
 let g:pymode_breakpoint = 0
+
 let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
+let g:pymode_syntax_builtin_objs = 0
+
 let g:pymode_folding = 1
+
 let g:pymode_virtualenv = 1
+
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
+let g:pymode_lint_cwindow = 1
+let g:pymode_lint_maxheight = 6
+let g:pymode_lint_signs = 1
+let g:pymode_lint_write = 1
+
+let g:pymode_run = 1
+
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " }}}
