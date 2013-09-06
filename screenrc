@@ -1,5 +1,17 @@
 startup_message off
+default8 on
+shelltitle ''
 
 hardstatus alwayslastline
 hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %M %d %Y %{W}%c:%s %{g}]'
 caption always '%{= kd}%{g}[ %{y}%h %{g}]'
+
+# F4 Split horizontally
+bindkey -k k4 split
+# F5 Split vertically
+bindkey -k k5 split -v
+# F6 Remove single split
+bindkey -k k6 remove
+# F7 Remove all splits
+bindkey -k k7 only
+
