@@ -87,3 +87,18 @@ echo
 echo
 
 ########## GNU Screen configuration ###########################################
+
+
+########## X init configuration ###############################################
+
+echo 'Setup X init Configuration'
+echo
+
+# Remove existing configuration
+\rm -fr ~/.xinitrc 2>/dev/null
+
+\ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
+
+echo
+
+########## X init configuration ###############################################
