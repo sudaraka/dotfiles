@@ -50,8 +50,10 @@ echo 'Setup Bash Configuration'
 echo
 
 # Remove existing configuration
-\rm -fr ~/.bashrc 2>/dev/null
+\rm -f ~/.bash_profile 2>/dev/null
+\rm -f ~/.bashrc 2>/dev/null
 
+\ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
 \ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
 
 echo
@@ -65,7 +67,7 @@ echo 'Setup Git Configuration'
 echo
 
 # Remove existing configuration
-\rm -fr ~/.gitconfig 2>/dev/null
+\rm -f ~/.gitconfig 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 
@@ -80,7 +82,7 @@ echo 'Setup GNU Screen Configuration'
 echo
 
 # Remove existing configuration
-\rm -fr ~/.screenrc 2>/dev/null
+\rm -f ~/.screenrc 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
 
@@ -95,7 +97,7 @@ echo 'Setup X init Configuration'
 echo
 
 # Remove existing configuration
-\rm -fr ~/.xinitrc 2>/dev/null
+\rm -f ~/.xinitrc 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
 
