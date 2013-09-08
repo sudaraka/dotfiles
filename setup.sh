@@ -10,6 +10,7 @@ echo 'Copyright 2013 Sudaraka Wijesinghe. <sudaraka.org/contact>'
 echo 'Creative Commons Attribution 3.0 Unported License.'
 echo
 
+DOTFILES_DIR=$(realpath $(dirname $0));
 
 ########## Vim configuration ##################################################
 
@@ -21,7 +22,7 @@ echo
 \mkdir -pv ~/.vim/bundle
 \mkdir -pv ~/.vim/colors
 
-\ln -sv dotfiles/vimrc ~/.vimrc
+\ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
 
 # Install Vundle from github
 \git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -51,7 +52,7 @@ echo
 # Remove existing configuration
 \rm -fr ~/.bashrc 2>/dev/null
 
-\ln -sv dotfiles/bashrc ~/.bashrc
+\ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
 
 echo
 
@@ -66,7 +67,7 @@ echo
 # Remove existing configuration
 \rm -fr ~/.gitconfig 2>/dev/null
 
-\ln -sv dotfiles/gitconfig ~/.gitconfig
+\ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 
 echo
 
@@ -81,7 +82,7 @@ echo
 # Remove existing configuration
 \rm -fr ~/.screenrc 2>/dev/null
 
-\ln -sv dotfiles/screenrc ~/.screenrc
+\ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
 
 echo
 
