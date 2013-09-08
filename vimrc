@@ -266,14 +266,20 @@ set wildignore+=*.pyc
 Bundle 'scrooloose/nerdcommenter'
 
 "}}}
-" Plugin: Powerline {{{
+" Plugin: Vim-Fugitive {{{
+
+Bundle 'tpope/vim-fugitive'
+
+"}}}
+" Plugin: Vim-Airline {{{
 
 " Symlink a patched font
 "   sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
-Bundle 'Lokaltog/powerline'
+Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline-fonts'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 "}}}
 " Plugin: Vim-Surround {{{
