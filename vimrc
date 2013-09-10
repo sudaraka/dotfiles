@@ -135,9 +135,13 @@ noremap <silent> <C-PageDown> :bp<CR>
 
 " Ctrl+<movement>: move around the windows, instead of using Ctrl+w + <movement>
 map <c-j> <c-w>j
+map <c-Down> <c-w>j
 map <c-k> <c-w>k
+map <c-Up> <c-w>k
 map <c-l> <c-w>l
+map <c-Right> <c-w>l
 map <c-h> <c-w>h
+map <c-Left> <c-w>h
 
 " map sort function to a key
 nnoremap <silent> <Leader>s vip:!sort<CR>
