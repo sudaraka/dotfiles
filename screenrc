@@ -1,6 +1,5 @@
 startup_message off
 default8 on
-shelltitle ''
 
 hardstatus alwayslastline
 hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %M %d %Y %{W}%c:%s %{g}]'
