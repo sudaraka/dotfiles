@@ -112,3 +112,18 @@ fi;
 echo
 
 ########## GUI configuration ##################################################
+
+
+########## Dictionary file (aspell) ###########################################
+
+echo 'Setup Dictionary for Aspell'
+echo
+
+# Remove existing configuration
+\rm -f ~/.aspell.en.pws 2>/dev/null
+
+\ln -sv "$DOTFILES_DIR/aspell.en.pws" ~/.aspell.en.pws
+
+echo
+
+########## Dictionary file (aspell) ###########################################
