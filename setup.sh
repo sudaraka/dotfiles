@@ -95,16 +95,20 @@ echo
 ########## GNU Screen configuration ###########################################
 
 
-########## X init configuration ###############################################
+########## GUI configuration ##################################################
 
-echo 'Setup X init Configuration'
+echo 'Setup GUI Configuration'
 echo
 
 # Remove existing configuration
 \rm -f ~/.xinitrc 2>/dev/null
+\rm -f ~/.gtk-bookmarks 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
+if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
+    \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
+fi;
 
 echo
 
-########## X init configuration ###############################################
+########## GUI configuration ##################################################
