@@ -6,7 +6,6 @@ PATH=$HOME/bin:$PATH
 PATH=$PATH:$HOME/android-sdk-linux/tools
 PATH=$PATH:$HOME/android-sdk-linux/platform-tools
 PATH=$PATH:$HOME/heroku-client/bin
-PATH=$PATH:$HOME/src/django/django/bin
 
 export PATH
 
