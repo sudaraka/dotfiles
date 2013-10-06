@@ -1,0 +1,20 @@
+# vc: GNU Screen profile for vCreative work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/vc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir /var/disk2/projects/vcreative/ppo_symfony_base
+
+split -v
+split
+
+screen -t server bash --rcfile $HOME/.screen/bashrc/vc.server
+
+focus down
+screen -t command bash --rcfile $HOME/.screen/bashrc/vc.command
+
+focus right
+screen -t remote ssh vcsb

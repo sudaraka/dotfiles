@@ -86,8 +86,10 @@ echo 'Setup GNU Screen Configuration'
 echo
 
 # Remove existing configuration
+\rm -f ~/.screen 2>/dev/null
 \rm -f ~/.screenrc 2>/dev/null
 
+\ln -sv "$DOTFILES_DIR/screen" ~/.screen
 \ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
 
 echo
