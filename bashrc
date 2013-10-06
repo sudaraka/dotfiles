@@ -24,4 +24,16 @@ export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
 export XMODIFIERS=@im=ibus
 
+# Invoke GNU screen using extended configuration file
+# Based on article by Joseph McCullough
+# http://vertstudios.com/blog/multiple-screenrc-configurations-gnu-screen-tutorial/
+function scr() {
+    if [ ! -f $HOME/.screen/$1 ]; then
+        echo "'$1' is not found in $HOME/.screen";
+        return 1;
+    else
+        \screen -c $HOME/.screen/$1
+    fi;
+}
+
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
