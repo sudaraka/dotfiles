@@ -10,6 +10,6 @@
 . ~/.bashrc
 
 cd src/PPO/Bundle/AppBundle
-git pull
+git pull origin master
 cd ../CommonBundle
 git status

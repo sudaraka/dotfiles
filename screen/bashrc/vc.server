@@ -9,5 +9,5 @@
 
 . ~/.bashrc
 
-git pull
+git pull origin master
 app/console server:run
