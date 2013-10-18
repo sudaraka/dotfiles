@@ -283,7 +283,9 @@ Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline-fonts'
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+if has('gui_running')
+    let g:airline_powerline_fonts = 1
+endif
 
 "}}}
 " Plugin: Vim-Surround {{{
