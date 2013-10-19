@@ -114,6 +114,9 @@ let mapleader = ","
 " F2: show hide non-printable characters
 noremap <F2> :set list!<CR>
 
+" Removes highlight of your last search
+noremap <F3> :nohl<CR>:call clearmatches()<CR>
+
 " F4: split window horizontally
 noremap <silent> <F4> :sp<CR>
 
@@ -191,7 +194,7 @@ set showmatch
 set smartcase
 
 " Removes highlight of your last search
-noremap <F3> :nohl<CR>:call clearmatches()<CR>
+" *** See key binding for F3
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
