@@ -18,29 +18,37 @@ echo 'Setup Vim Configuration'
 echo
 
 # Remove existing configuration and recreate directories
-\rm -fr ~/.vim{,rc} 2>/dev/null
+\find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
+\rm -fr ~/.vimrc 2>/dev/null
 \mkdir -pv ~/.vim/bundle
 \mkdir -pv ~/.vim/colors
 
 \ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
 
 # Install Vundle from github
-\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -d ~/.vim/bundle/vundle ]; then
+    \git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi;
 
 # Make vim use aspell dictionary
 \mkdir -pv ~/.vim/bundle/vundle/spell
+\rm ~/.vim/bundle/vundle/spell/en.utf-8.add
 \ln -sv ../../../../.aspell.en.pws ~/.vim/bundle/vundle/spell/en.utf-8.add
 
 # Install wombat256 color theme
-\wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+\wget -nv -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
 # Run vim command to install bundles
-\vim +BundleInstall +qa
+\vim +BundleClean +BundleUpdate +BundleInstall +qa
 
-# Symlink patched font for powerline
+# Symlink patched font for powerline/airline
+\sudo mkdir -pv /usr/share/fonts/TTF 2>/dev/null
 \sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
 \sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
 
+echo
+
+# }}}
 ########## Vim configuration ##################################################
 
 
