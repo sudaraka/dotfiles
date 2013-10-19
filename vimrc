@@ -65,6 +65,7 @@ set autoindent
 set autoread
 set autowrite
 set cursorline
+set expandtab
 set hidden
 set lazyredraw
 set linebreak
@@ -90,10 +91,15 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
+set formatoptions-=t
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set modelines=0
+set shiftwidth=4
 set showbreak=↪
+set softtabstop=4
+set tabstop=4
 set termencoding=utf-8
+set textwidth=79
 
 " }}}
 " Key bindings {{{
