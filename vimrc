@@ -105,14 +105,14 @@ set textwidth=79
 " Key bindings {{{
 
 " Disable arrow key navigation
-noremap <Up> ""
-noremap <Down> ""
-noremap <Left> ""
-noremap <Right> ""
-noremap! <Up> <Esc>
-noremap! <Down> <Esc>
-noremap! <Left> <Esc>
-noremap! <Right> <Esc>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
 
 " Rebind <Leader> key
 let mapleader = ","
