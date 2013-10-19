@@ -19,14 +19,14 @@ autocmd! bufwritepost .vimrc source %
 " Remove tabs and spaces from end of the lines
 autocmd BufWritePre * :call <SID>remove_whitespace_trails()
 function! <SID>remove_whitespace_trails()
-	let _s=@/
-	let l = line(".")
-	let c = col(".")
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
 
-	%s/\s\+$//e
+    %s/\s\+$//e
 
-	let@/=_s
-	call cursor(l, c)
+    let@/=_s
+    call cursor(l, c)
 endfunction
 
 " Save when losing focus
