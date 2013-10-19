@@ -98,6 +98,16 @@ set termencoding=utf-8
 " }}}
 " Key bindings {{{
 
+" Disable arrow key navigation
+noremap <Up> ""
+noremap <Down> ""
+noremap <Left> ""
+noremap <Right> ""
+noremap! <Up> <Esc>
+noremap! <Down> <Esc>
+noremap! <Left> <Esc>
+noremap! <Right> <Esc>
+
 " Rebind <Leader> key
 let mapleader = ","
 
