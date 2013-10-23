@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias grep='grep --color=auto'
-alias ls='ls -alh --color=auto'
+alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
 alias tree='tree -CA'
 alias truecrypt='truecrypt -t'
