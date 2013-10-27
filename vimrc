@@ -104,15 +104,15 @@ set textwidth=79
 " }}}
 " Key bindings {{{
 
-" Disable arrow key navigation
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
+" Disable arrow key navigation in normal and visual modes
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+vnoremap <Up> <nop>
+vnoremap <Down> <nop>
+vnoremap <Left> <nop>
+vnoremap <Right> <nop>
 
 " Rebind <Leader> key
 let mapleader = ","
@@ -318,7 +318,7 @@ Bundle 'tpope/vim-surround'
 " Plugin: Color Highlight {{{
 
 Bundle 'chrisbra/color_highlight'
-let g:colorizer_auto_filetype='css,html,rc,conf,tpl,xml'
+let g:colorizer_auto_filetype='css,html,rc,conf,tpl,xml,ini'
 
 " }}}
 " Plugin: Vim-CSS3-Syntax {{{
