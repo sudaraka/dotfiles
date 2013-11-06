@@ -386,6 +386,11 @@ let g:pymode_lint_maxheight = 6
 let g:pymode_lint_signs = 1
 let g:pymode_lint_write = 1
 
+" Ignore certain errors/warnings
+"   F0401 - module import failures - when editing a Django app that runs in a
+"   virtual environment this show lot of errors.
+let g:pymode_lint_ignore = 'F0401'
+
 let g:pymode_run = 1
 
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
