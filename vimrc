@@ -189,6 +189,9 @@ inoremap <C-u> <esc>gUiwea
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Bind semicolon to colon and avoid extra keystroke (shift) for commandline
+nnoremap ; :
+
 " }}}
 " Search {{{
 
