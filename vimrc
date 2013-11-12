@@ -29,9 +29,6 @@ function! <SID>remove_whitespace_trails()
     call cursor(l, c)
 endfunction
 
-" Save when losing focus
-autocmd FocusLost * :silent! wall
-
 " Resize splits when the window is resized
 autocmd VimResized * :wincmd =
 
@@ -63,7 +60,7 @@ filetype plugin indent on
 
 set autoindent
 set autoread
-set autowrite
+"set autowrite
 set cursorline
 set expandtab
 set hidden
