@@ -190,7 +190,10 @@ inoremap <C-u> <esc>gUiwea
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Bind semicolon to colon and avoid extra keystroke (shift) for commandline
+nnoremap : <nop>
 nnoremap ; :
+vnoremap : <nop>
+vnoremap ; :
 
 " }}}
 " Search {{{
