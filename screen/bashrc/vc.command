@@ -9,8 +9,11 @@
 
 . ~/.bashrc
 
-cd src/PPO/Bundle/AppBundle
-git pull origin master
-cd ../CommonBundle
+cd src/PPO/Bundle
+
+#cd src/PPO/Bundle/AppBundle
+#git pull origin master
+
+cd CommonBundle
 git fetch origin master
 git status

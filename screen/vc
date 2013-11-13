@@ -13,8 +13,9 @@ split
 
 screen -t server bash --rcfile $HOME/.screen/bashrc/vc.server
 
-focus down
+focus right
 screen -t command bash --rcfile $HOME/.screen/bashrc/vc.command
 
-focus right
+focus left
+focus down
 screen -t remote ssh vcsb
