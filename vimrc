@@ -140,7 +140,7 @@ vnoremap <silent> <C-s> <C-c>:wa<CR>
 " Better copy & paste
 set clipboard=unnamed
 noremap <Leader>y "+yy
-vnoremap <Leader>y "+yy
+vnoremap <Leader>y "+yy<CR>
 inoremap <Leader>y <C-o>"+yya
 noremap <Leader>p "+p
 noremap <Leader><S-p> "+P
