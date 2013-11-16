@@ -11,11 +11,14 @@ chdir /var/disk2/projects/vcreative/ppo_symfony_base
 split -v
 split
 
-screen -t server bash --rcfile $HOME/.screen/bashrc/vc.server
-
 focus right
-screen -t command bash --rcfile $HOME/.screen/bashrc/vc.command
+screen -t server bash --rcfile $HOME/.screen/bashrc/vc.server
 
 focus left
 focus down
+screen -t command bash --rcfile $HOME/.screen/bashrc/vc.command
+
+focus top
 screen -t remote ssh vcsb
+
+focus right

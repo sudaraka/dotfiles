@@ -15,5 +15,12 @@ cd src/PPO/Bundle
 #git pull origin master
 
 cd CommonBundle
-git fetch origin master
+git pull origin master
+
+cd ../MobileBundle
+if [ -z "`git branch|grep '* master'`" ]; then
+    git fetch origin master
+else
+    git pull origin master
+fi;
 git status

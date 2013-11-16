@@ -10,4 +10,4 @@
 . ~/.bashrc
 
 git pull origin master
-app/console server:run
+#app/console server:run
