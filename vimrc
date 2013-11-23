@@ -335,7 +335,7 @@ Bundle 'hail2u/vim-css3-syntax'
 
 " Plugin: Phpfolding {{{
 
-Bundle 'vim-scripts/phpfolding.vim'
+Bundle 'rayburgemeestre/phpfolding.vim'
 
 "}}}
 " Plugin: Syntastic {{{
