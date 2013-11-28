@@ -313,11 +313,6 @@ if has('gui_running')
 endif
 
 "}}}
-" Plugin: Vim-Surround {{{
-
-Bundle 'tpope/vim-surround'
-
-" }}}
 
 " Use Silver Search for internal grep and CtrlP {{{
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
