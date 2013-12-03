@@ -323,7 +323,7 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
     " CtrlP
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore *.pyc'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U -g "" --ignore *.pyc'
     let g:ctrlp_use_caching = 0
 endif
 
