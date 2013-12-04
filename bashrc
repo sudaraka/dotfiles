@@ -36,4 +36,12 @@ function scr() {
     fi;
 }
 
+function git_pull_or_fetch_origin_master() {
+    if [ -z "`git branch|grep '* master'`" ]; then
+        git fetch origin master
+    else
+        git pull origin master
+    fi;
+}
+
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local

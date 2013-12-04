@@ -9,5 +9,6 @@
 
 . ~/.bashrc
 
-git pull origin master
+git_pull_or_fetch_origin_master;
+
 #app/console server:run
