@@ -214,7 +214,11 @@ nnoremap * *<c-o>
 
 " Open quickfix window for the last search result
 if executable('ag')
-    nnoremap <silent> <Leader>/ :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+    " Internal grep
+    " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    noremap <silent> <Leader>/ :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 else
     noremap <silent> <Leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 endif
@@ -290,6 +294,14 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 
+" Use Silver Search CtrlP
+" Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore *.pyc --ignore .git'
+    let g:ctrlp_use_caching = 0
+endif
+
+
 " }}}
 " Pligin: Nerdcommenter {{{
 
@@ -314,20 +326,6 @@ if has('gui_running')
 endif
 
 "}}}
-
-" Use Silver Search for internal grep and CtrlP {{{
-" Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
-
-if executable('ag')
-    " Internal grep
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    " CtrlP
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U -g "" --ignore *.pyc'
-    let g:ctrlp_use_caching = 0
-endif
-
-" }}}
 
 " Language: HTML/CSS {{{
 
