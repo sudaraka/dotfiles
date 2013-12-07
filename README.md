@@ -20,7 +20,7 @@ Targeted for:
 
 **Desktop:** XFCE
 
-*Should be compatible with other Linux, BSD distributions and Max OS.*
+*Should be compatible with other Linux, BSD distributions and Mac OS.*
 
 Included configuration for:
 ---------------------------
