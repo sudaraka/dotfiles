@@ -11,4 +11,4 @@
 
 git_pull_or_fetch_origin_master;
 
-#app/console server:run
+app/console server:run

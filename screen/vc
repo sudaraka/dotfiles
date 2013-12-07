@@ -21,4 +21,4 @@ screen -t command bash --rcfile $HOME/.screen/bashrc/vc.command
 focus top
 screen -t remote ssh vcsb
 
-focus right
+focus down
