@@ -297,7 +297,7 @@ set wildignore+=*.pyc
 " Use Silver Search CtrlP
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore *.pyc --ignore .git'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore *.pyc --ignore .git --ignore .ropeproject --ignore .virtualenv'
     let g:ctrlp_use_caching = 0
 endif
 
