@@ -116,6 +116,10 @@ echo
 \rm -f ~/.config/gtk-3.0 2>/dev/null
 \rm -f ~/.config/Trolltech.conf 2>/dev/null
 \rm -f ~/.gtk-bookmarks 2>/dev/null
+\rm -f ~/.i3 2>/dev/null
+\rm -f ~/.config/twmn/twmn.conf 2>/dev/null
+
+\mkdir -p ~/.config/twmn >/dev/null 2>&1
 
 \ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
 \ln -sv "$DOTFILES_DIR/gtkrc-2.0" ~/.gtkrc-2.0
@@ -124,6 +128,8 @@ echo
 if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
     \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
 fi;
+\ln -sv "$DOTFILES_DIR/i3" ~/.i3
+\ln -sv "$DOTFILES_DIR/i3/twmn.conf" ~/.config/twmn
 
 echo
 
