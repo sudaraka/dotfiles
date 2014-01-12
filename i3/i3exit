@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case "$1" in
+    logout)
+        i3-msg exit;
+        ;;
+    reboot)
+        systemctl reboot;
+        ;;
+    shutdown)
+        systemctl poweroff;
+        ;;
+    test)
+        notify-send -i ~/scripts/archlinux-install/archicon.png 'i3wm' 'test';
+        ;;
+    *)
+        exit 2;
+esac;
+
+exit 0;

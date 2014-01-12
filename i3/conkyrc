@@ -1,0 +1,72 @@
+background no
+out_to_x no
+out_to_console yes
+update_interval 2
+if_up_strictness address
+short_units yes
+
+TEXT
+,[ \
+    ${if_up wlp2s0} \
+    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/wireless8.xbm", "full_text":"" }, \
+    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#86cd74", "full_text":"${downspeed wlp2s0} " }, \
+    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed wlp2s0} " }, \
+    ${else} \
+        ${if_up enp1s0}\
+        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/net_wired.xbm", "full_text":"" }, \
+        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#fde76e", "full_text":"${downspeed enp1s0} " }, \
+        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed enp1s0} " }, \
+        ${else} \
+            ${if_up ppp0}\
+            { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/wireless1.xbm", "full_text":"" }, \
+            { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#fde76e", "full_text":"${downspeed ppp0} " }, \
+            { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed ppp0} " }, \
+            ${endif} \
+        ${endif} \
+    ${endif} \
+    { \
+        "icon_color":"\#886cd7", \
+        "icon":"/home/suda/.i3/icons/vol1.xbm", \
+        "color":"\#886cd7", \
+        "full_text":"${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} " \
+    }, \
+    ${if_empty ${battery BAT1}} \
+    ${else} \
+        ${if_match ${battery_percent BAT1}>85} \
+        { "icon_color":"\#86cd74", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#86cd74", "full_text":"${battery_percent BAT1}% " }, \
+        ${else} \
+            ${if_match ${battery_percent BAT1}>65} \
+            { "icon_color":"\#fade3e", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#fade3e", "full_text":"${battery_percent BAT1}% " }, \
+            ${else} \
+                ${if_match ${battery_percent BAT1}>32} \
+                { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#f0ad4e", "full_text":"${battery_percent BAT1}% " }, \
+                ${else} \
+                    ${if_match ${battery_percent BAT1}>9} \
+                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#e5786d", "full_text":"${battery_percent BAT1}% " }, \
+                    ${else} \
+                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4empty.xbm", "color":"\#e5786d", "full_text":"${battery_percent BAT1}% " }, \
+                    ${endif} \
+                ${endif} \
+            ${endif} \
+        ${endif} \
+    ${endif} \
+    ${if_match ${acpitemp}<50} \
+    { "icon_color": "\#88ccff", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#88ccff", "full_text": "${acpitemp}°C " }, \
+    ${else} \
+        ${if_match ${acpitemp}<65} \
+        { "icon_color": "\#ff6644", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#ff6644", "full_text": "${acpitemp}°C " }, \
+        ${else} \
+            ${if_match ${acpitemp}<80} \
+            { "icon_color": "\#ff0000", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#ff0000", "full_text": "${acpitemp}°C " }, \
+            ${else} \
+            { "icon_color": "\#ffffff", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#ffffff", "full_text": "${acpitemp}°C " }, \
+            ${endif} \
+        ${endif} \
+    ${endif} \
+    { \
+        "icon":"/home/suda/.i3/icons/clock2.xbm", \
+        "icon_color":"\#b5d3f3", \
+        "color":"\#b5d3f3", \
+        "full_text":" ${time %a, %b %d, %Y} ${time %l:%M %p} " \
+    } \
+]

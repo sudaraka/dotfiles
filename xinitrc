@@ -15,4 +15,6 @@ xbacklight -set 0
 xset -dpms
 xset s off
 
-exec startxfce4
+init-monitors
+
+exec i3 -V >> /tmp/i3.log 2>&1
