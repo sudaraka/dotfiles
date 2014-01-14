@@ -207,6 +207,7 @@ bindsym Mod4+t exec --no-startup-id vlc -q http://bglive-a.bitgravity.com/twit/l
 bindsym Mod4+v exec --no-startup-id gvim
 bindsym Mod4+w exec --no-startup-id firefox
 bindsym Mod4+Shift+w exec --no-startup-id chromium --incognito
+bindsym Print exec --no-startup-id xfce4-screenshooter -f
 
 bindsym Mod4+Shift+c workspace "Chat"
 bindsym Mod4+Shift+m workspace "Mail"
