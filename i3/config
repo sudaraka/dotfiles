@@ -161,8 +161,6 @@ bar {
     font pango:Droid Sans Mono 7
 }
 
-focus_follows_mouse no
-
 # Workspaces
 workspace 1 output LVDS1
 workspace 2 output LVDS1
