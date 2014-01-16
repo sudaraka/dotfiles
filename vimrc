@@ -146,8 +146,8 @@ noremap <Leader>p "+p
 noremap <Leader><S-p> "+P
 
 " Ctrl+PgUP/Down: buffer switching within the window
-noremap <silent> <C-PageUp> :bn<CR>
-noremap <silent> <C-PageDown> :bp<CR>
+noremap <silent> <C-PageUp> :bp<CR>
+noremap <silent> <C-PageDown> :bn<CR>
 
 " Ctrl+<movement>: move around the windows, instead of using Ctrl+w + <movement>
 map <c-j> <c-w>j
