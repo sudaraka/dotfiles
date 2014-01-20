@@ -280,6 +280,8 @@ set textwidth=80
 augroup ft_marker
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType javascript setlocal foldmethod=marker
+    autocmd FileType css setlocal foldmethod=marker
 augroup END
 
 nnoremap <Space> za
