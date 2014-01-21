@@ -1,4 +1,4 @@
-# vc.command: Initialize command window shell
+# ppo-mobile.command: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
 # Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/vc.command
 # License: CC-BY

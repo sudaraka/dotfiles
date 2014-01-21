@@ -1,4 +1,4 @@
-# vc: GNU Screen profile for vCreative work
+# ppo-mobile: GNU Screen profile for vCreative work
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
 # Source: https://github.com/sudaraka/dotfiles/blob/master/screen/vc
 # License: CC-BY
@@ -12,11 +12,11 @@ split -v
 split
 
 focus right
-screen -t server bash --rcfile $HOME/.screen/bashrc/vc.server
+screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
 
 focus left
 focus down
-screen -t command bash --rcfile $HOME/.screen/bashrc/vc.command
+screen -t command bash --rcfile $HOME/.screen/bashrc/ppo-mobile.command
 
 focus top
 screen -t remote ssh vcsb

@@ -1,0 +1,21 @@
+# ppo15: GNU Screen profile for vCreative work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/vc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir /var/disk2/projects/vcreative/ppo_symfony_base
+
+split -v
+screen -t command bash --rcfile $HOME/.screen/bashrc/ppo15.command
+
+focus right
+split
+screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
+
+focus down
+screen -t remote ssh vcsb
+
+focus left
