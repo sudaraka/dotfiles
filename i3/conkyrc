@@ -24,6 +24,7 @@ TEXT
             ${endif} \
         ${endif} \
     ${endif} \
+    { "icon_color":"\#6080b0", "icon":"/home/suda/.i3/icons/info7.xbm", "color":"\#6080b0", "full_text":"${execi 600 bbusage-i3} " }, \
     { \
         "icon_color":"\#886cd7", \
         "icon":"/home/suda/.i3/icons/vol1.xbm", \
