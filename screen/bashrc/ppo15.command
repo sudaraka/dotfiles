@@ -15,6 +15,7 @@ cd CommonBundle;
 git_pull_or_fetch_origin_master;
 
 cd ../AppBundle;
+git_pull_or_fetch_origin_master;
 git pull origin oldlook
 
 git status
