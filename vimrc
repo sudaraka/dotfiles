@@ -180,8 +180,9 @@ endif
 nnoremap <leader>v V`]
 
 " Case conversions
-nnoremap <C-u> gUiw
 inoremap <C-u> <esc>gUiwea
+nnoremap <C-u> gUiw
+vnoremap <C-u> gU
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
