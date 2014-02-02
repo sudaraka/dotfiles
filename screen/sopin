@@ -1,0 +1,17 @@
+# sopin: GNU Screen profile for sopin-web development
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/sopin
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir /var/disk2/projects/sopin/sopin-web/
+
+split -v
+screen -t command bash --rcfile $HOME/.screen/bashrc/sopin.command
+
+focus right
+screen -t server bash --rcfile $HOME/.screen/bashrc/sopin.server
+
+focus left
