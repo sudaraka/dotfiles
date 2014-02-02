@@ -194,6 +194,11 @@ vnoremap : <nop>
 vnoremap ; :
 
 " }}}
+" File types {{{
+
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" }}}
 " Search {{{
 
 set gdefault
