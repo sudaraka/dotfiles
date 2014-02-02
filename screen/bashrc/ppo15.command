@@ -1,6 +1,6 @@
 # ppo15.command: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/vc.command
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/ppo15.command
 # License: CC-BY
 #
 
