@@ -37,6 +37,38 @@ function scr() {
     fi;
 }
 
+# switch to the specified python environment installed in ~/.virtualenv
+function pyve() {
+    if [ -z "$1" ]; then
+        echo
+        echo 'Usage: pyve <environment_name>';
+        echo
+
+        return 1;
+    fi;
+
+    if [ ! -d "$HOME/.virtualenv/$1" ]; then
+        echo
+        echo "Python virtual environment $1 not found.";
+        echo
+
+        return 2;
+    fi;
+
+    if [ ! -f "$HOME/.virtualenv/$1/bin/activate" ]; then
+        echo
+        echo "$1 is not a valid python virtual environment.";
+        echo
+
+        return 3;
+    fi;
+
+    source $HOME/.virtualenv/$1/bin/activate
+
+    return 0;
+}
+
+# Fetch or pull the master branch, depending on which branch is the current
 function git_pull_or_fetch_origin_master() {
     if [ -z "`git branch|grep '* master'`" ]; then
         git fetch origin master
