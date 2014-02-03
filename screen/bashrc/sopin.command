@@ -9,4 +9,4 @@
 
 . ~/.bashrc
 
-. $HOME/.virtualenv/sopin/bin/activate
+pyve sopin
