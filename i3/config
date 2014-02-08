@@ -11,6 +11,9 @@
 
 set $mod Mod1
 
+set $display0 LVDS1
+set $display1 HDMI1
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -148,7 +151,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     id bar-1
-    output LVDS1
+    output $display0
     i3bar_command /usr/bin/i3bar-icons
     status_command ~/.i3/i3conky
     font pango:Droid Sans Mono 10
@@ -156,25 +159,25 @@ bar {
 
 bar {
     id bar-2
-    output HDMI1
+    output $display1
     tray_output none
     font pango:Droid Sans Mono 7
 }
 
 # Workspaces
-workspace 1 output LVDS1
-workspace 2 output LVDS1
-workspace 3 output LVDS1
-workspace 4 output LVDS1
-workspace 5 output LVDS1
-workspace 6 output LVDS1
-workspace 7 output LVDS1
-workspace 8 output LVDS1
-workspace "Chat" output LVDS1
-workspace "Mail" output LVDS1
-workspace "Twitter" output LVDS1
-workspace 9 output HDMI1
-workspace 10 output HDMI1
+workspace 1 output $display0
+workspace 2 output $display0
+workspace 3 output $display0
+workspace 4 output $display0
+workspace 5 output $display0
+workspace 6 output $display0
+workspace 7 output $display0
+workspace 8 output $display0
+workspace "Chat" output $display0
+workspace "Mail" output $display0
+workspace "Twitter" output $display0
+workspace 9 output $display1
+workspace 10 output $display1
 
 # Window borders
 new_window normal
