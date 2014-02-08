@@ -12,93 +12,93 @@ echo
 
 DOTFILES_DIR=$(realpath $(dirname $0));
 
-## Vim configuration {{{
+# Vim configuration {{{
 
-#echo 'Setup Vim Configuration'
-#echo
+echo 'Setup Vim Configuration'
+echo
 
-## Remove existing configuration and recreate directories
-#\find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
-#\rm -fr ~/.vimrc 2>/dev/null
-#\mkdir -pv ~/.vim/bundle
-#\mkdir -pv ~/.vim/colors
+# Remove existing configuration and recreate directories
+\find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
+\rm -fr ~/.vimrc 2>/dev/null
+\mkdir -pv ~/.vim/bundle
+\mkdir -pv ~/.vim/colors
 
-#\ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
+\ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
 
-## Install Vundle from github
-#if [ ! -d ~/.vim/bundle/vundle ]; then
-    #\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-#fi;
+# Install Vundle from github
+if [ ! -d ~/.vim/bundle/vundle ]; then
+   #\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi;
 
-## Make vim use aspell dictionary
-#\mkdir -pv ~/.vim/bundle/vundle/spell
-#\rm ~/.vim/bundle/vundle/spell/en.utf-8.add
-#\ln -sv ../../../../.aspell.en.pws ~/.vim/bundle/vundle/spell/en.utf-8.add
+# Make vim use aspell dictionary
+\mkdir -pv ~/.vim/bundle/vundle/spell
+\rm ~/.vim/bundle/vundle/spell/en.utf-8.add
+\ln -sv ../../../../.aspell.en.pws ~/.vim/bundle/vundle/spell/en.utf-8.add
 
-## Install wombat256 color theme
-#\wget -nv -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+# Install wombat256 color theme
+\wget -nv -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
-## Run vim command to install bundles
-#\vim +BundleClean +BundleUpdate +BundleInstall +qa
+# Run vim command to install bundles
+\vim +BundleClean +BundleUpdate +BundleInstall +qa
 
-## Symlink patched font for powerline/airline
-#\sudo mkdir -pv /usr/share/fonts/TTF 2>/dev/null
-#\sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
-#\sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
+# Symlink patched font for powerline/airline
+\sudo mkdir -pv /usr/share/fonts/TTF 2>/dev/null
+\sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
+\sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
 
-#echo
+echo
 
-## }}}
+# }}}
 
-## Bash configuration {{{
+# Bash configuration {{{
 
-#echo 'Setup Bash Configuration'
-#echo
+echo 'Setup Bash Configuration'
+echo
 
-## Remove existing configuration
-#\rm -f ~/.bash_profile 2>/dev/null
-#\rm -f ~/.bashrc 2>/dev/null
-#\rm -f ~/.bashrc.local 2>/dev/null
+# Remove existing configuration
+\rm -f ~/.bash_profile 2>/dev/null
+\rm -f ~/.bashrc 2>/dev/null
+\rm -f ~/.bashrc.local 2>/dev/null
 
-#\ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
-#\ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
-#if [ -f $DOTFILES_DIR/bashrc.`uname -n` ]; then
-    #\ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
-#fi;
+\ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
+\ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
+if [ -f $DOTFILES_DIR/bashrc.`uname -n` ]; then
+   #\ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
+fi;
 
-#echo
+echo
 
-## }}}
+# }}}
 
-## Git configuration {{{
+# Git configuration {{{
 
-#echo 'Setup Git Configuration'
-#echo
+echo 'Setup Git Configuration'
+echo
 
-## Remove existing configuration
-#\rm -f ~/.gitconfig 2>/dev/null
+# Remove existing configuration
+\rm -f ~/.gitconfig 2>/dev/null
 
-#\ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
+\ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 
-#echo
+echo
 
-## }}}
+# }}}
 
-## GNU Screen configuration {{{
+# GNU Screen configuration {{{
 
-#echo 'Setup GNU Screen Configuration'
-#echo
+echo 'Setup GNU Screen Configuration'
+echo
 
-## Remove existing configuration
-#\rm -f ~/.screen 2>/dev/null
-#\rm -f ~/.screenrc 2>/dev/null
+# Remove existing configuration
+\rm -f ~/.screen 2>/dev/null
+\rm -f ~/.screenrc 2>/dev/null
 
-#\ln -sv "$DOTFILES_DIR/screen" ~/.screen
-#\ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
+\ln -sv "$DOTFILES_DIR/screen" ~/.screen
+\ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
 
-#echo
+echo
 
-## }}}
+# }}}
 
 # GUI configuration {{{
 
