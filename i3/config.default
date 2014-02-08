@@ -11,7 +11,7 @@
 
 set $mod Mod1
 
-set $display0 LVDS1
+set $display0 %PRIMARY_DISPLAY%
 set $display1 HDMI1
 
 # Font for window titles. Will also be used by the bar unless a different font

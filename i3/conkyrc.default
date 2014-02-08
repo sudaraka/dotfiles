@@ -7,15 +7,15 @@ short_units yes
 
 TEXT
 ,[ \
-    ${if_up wlp2s0} \
+    ${if_up %WIRELESS_INTERFACE%} \
     { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/wireless8.xbm", "full_text":"" }, \
-    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#86cd74", "full_text":"${downspeed wlp2s0} " }, \
-    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed wlp2s0} " }, \
+    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#86cd74", "full_text":"${downspeed %WIRELESS_INTERFACE%} " }, \
+    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed %WIRELESS_INTERFACE%} " }, \
     ${else} \
-        ${if_up enp1s0}\
+        ${if_up %ETHERNET_INTERFACE%}\
         { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/net_wired.xbm", "full_text":"" }, \
-        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#fde76e", "full_text":"${downspeed enp1s0} " }, \
-        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed enp1s0} " }, \
+        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#fde76e", "full_text":"${downspeed %ETHERNET_INTERFACE%} " }, \
+        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed %ETHERNET_INTERFACE%} " }, \
         ${else} \
             ${if_up ppp0}\
             { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/wireless1.xbm", "full_text":"" }, \
