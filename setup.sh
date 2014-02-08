@@ -12,7 +12,7 @@ echo
 
 DOTFILES_DIR=$(realpath $(dirname $0));
 
-########## Vim configuration ##################################################
+# Vim configuration {{{
 
 echo 'Setup Vim Configuration'
 echo
@@ -49,10 +49,8 @@ fi;
 echo
 
 # }}}
-########## Vim configuration ##################################################
 
-
-########## Bash configuration #################################################
+# Bash configuration {{{
 
 echo 'Setup Bash Configuration'
 echo
@@ -70,10 +68,9 @@ fi;
 
 echo
 
-########## Bash configuration #################################################
+# }}}
 
-
-########## Git configuration ##################################################
+# Git configuration {{{
 
 echo 'Setup Git Configuration'
 echo
@@ -85,10 +82,9 @@ echo
 
 echo
 
-########## Git configuration ##################################################
+# }}}
 
-
-########## GNU Screen configuration ###########################################
+# GNU Screen configuration {{{
 
 echo 'Setup GNU Screen Configuration'
 echo
@@ -102,10 +98,9 @@ echo
 
 echo
 
-########## GNU Screen configuration ###########################################
+# }}}
 
-
-########## GUI configuration ##################################################
+# GUI configuration {{{
 
 echo 'Setup GUI Configuration'
 echo
@@ -131,16 +126,19 @@ fi;
 
 \mkdir -p ~/bin >/dev/null 2>&1
 
+MAIN_DISPLAY=`xrandr|grep 'connected primary'|cut -d' ' -f1`;
+\sed "s/^\(set \$display0 \).\+$/\1$MAIN_DISPLAY/" \
+    -i "$DOTFILES_DIR/i3/config" >/dev/null 2>&1;
+
 \ln -sv "$DOTFILES_DIR/i3" ~/.i3
 \ln -sv "$DOTFILES_DIR/i3/i3exit" ~/bin/i3exit
 \ln -sv "$DOTFILES_DIR/i3/twmn.conf" ~/.config/twmn
 
 echo
 
-########## GUI configuration ##################################################
+# }}}
 
-
-########## Dictionary file (aspell) ###########################################
+# Dictionary file (aspell) {{{
 
 echo 'Setup Dictionary for Aspell'
 echo
@@ -152,4 +150,4 @@ echo
 
 echo
 
-########## Dictionary file (aspell) ###########################################
+# }}}
