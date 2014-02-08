@@ -128,7 +128,11 @@ echo
 if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
     \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
 fi;
+
+\mkdir -p ~/bin >/dev/null 2>&1
+
 \ln -sv "$DOTFILES_DIR/i3" ~/.i3
+\ln -sv "$DOTFILES_DIR/i3/i3exit" ~/bin/i3exit
 \ln -sv "$DOTFILES_DIR/i3/twmn.conf" ~/.config/twmn
 
 echo
