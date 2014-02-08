@@ -126,7 +126,7 @@ fi;
 
 \mkdir -p ~/bin >/dev/null 2>&1
 
-MAIN_DISPLAY=`xrandr|grep 'connected primary'|cut -d' ' -f1`;
+MAIN_DISPLAY=`xrandr|grep '\sconnected'|head -n1|cut -d' ' -f1`;
 \sed "s/^\(set \$display0 \).\+$/\1$MAIN_DISPLAY/" \
     -i "$DOTFILES_DIR/i3/config" >/dev/null 2>&1;
 
