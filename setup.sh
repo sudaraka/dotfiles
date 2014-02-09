@@ -12,6 +12,12 @@ echo
 
 DOTFILES_DIR=$(realpath $(dirname $0));
 
+if [ -z "$DOTFILES_DIR" ]; then
+    echo 'Unable to determine dotfiles repository.';
+    echo 'Check if "realpath" package is missing in your system.'
+    exit 1;
+fi;
+
 # Vim configuration {{{
 
 echo 'Setup Vim Configuration'
