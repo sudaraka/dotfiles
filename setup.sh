@@ -27,7 +27,7 @@ echo
 
 # Install Vundle from github
 if [ ! -d ~/.vim/bundle/vundle ]; then
-   #\git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+   \git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi;
 
 # Make vim use aspell dictionary
@@ -63,7 +63,7 @@ echo
 \ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
 \ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
 if [ -f $DOTFILES_DIR/bashrc.`uname -n` ]; then
-   #\ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
+   \ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
 fi;
 
 echo
@@ -124,9 +124,27 @@ if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
     \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
 fi;
 
-MAIN_DISPLAY=`xrandr|grep '\sconnected'|head -n1|cut -d' ' -f1`;
-sed "s/^\(set \$display0 \).*\$/\1$MAIN_DISPLAY/" \
-    -i "$DOTFILES_DIR/i3/config"
+# setup i3wm config and scripts
+PRIMARY_DISPLAY=`xrandr|grep '\sconnected'|head -n1|cut -d' ' -f1`;
+WIRELESS_INTERFACE=`ip link|grep ': wl'|cut -d':' -f2|tr -d ' '`;
+ETHERNET_INTERFACE=`ip link|grep ': en'|cut -d':' -f2|tr -d ' '`;
+
+for file in config conkyrc; do
+    rm $DOTFILES_DIR/i3/$file #>/dev/null 2>&1
+    cp -v $DOTFILES_DIR/i3/$file{.default,} #>/dev/null 2>&1
+
+    \sed "s/%PRIMARY_DISPLAY%/$PRIMARY_DISPLAY/" \
+        -i "$DOTFILES_DIR/i3/$file" \
+        >/dev/null 2>&1;
+
+    \sed "s/%WIRELESS_INTERFACE%/$WIRELESS_INTERFACE/" \
+        -i "$DOTFILES_DIR/i3/$file" \
+        >/dev/null 2>&1;
+
+    \sed "s/%ETHERNET_INTERFACE%/$ETHERNET_INTERFACE/" \
+        -i "$DOTFILES_DIR/i3/$file" \
+        >/dev/null 2>&1;
+done;
 
 \ln -sv "$DOTFILES_DIR/i3" ~/.i3
 \ln -sv "$DOTFILES_DIR/i3/twmn.conf" ~/.config/twmn
