@@ -329,6 +329,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline-fonts'
 set laststatus=2
+let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 if has('gui_running')
     let g:airline_powerline_fonts = 1
@@ -384,37 +385,16 @@ imap <C-@> <C-Space>
 " Plugin: Python-Mode {{{
 
 Bundle 'klen/python-mode'
-", {'master': '1b4b8f1'}
+
 map <Leader>g :call RopeGotoDefinition()<CR>
-let ropevim_enable_shortcuts = 1
 
-let g:pymode_rope = 1
-let g:pymode_rope_extended_complete = 1
-let g:pymode_rope_goto_def_newwin = "vnew"
-
-let g:pymode_breakpoint = 0
-
-let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_funcs = 0
-let g:pymode_syntax_builtin_objs = 0
-
-let g:pymode_folding = 1
-
-let g:pymode_virtualenv = 1
-
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
-let g:pymode_lint_cwindow = 1
-let g:pymode_lint_maxheight = 6
-let g:pymode_lint_signs = 1
-let g:pymode_lint_write = 1
+let g:pymode_lint_unmodified = 1
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 
 " Ignore certain errors/warnings
 "   F0401 - module import failures - when editing a Django app that runs in a
 "   virtual environment this show lot of errors.
 let g:pymode_lint_ignore = 'F0401'
-
-let g:pymode_run = 1
 
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
