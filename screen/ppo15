@@ -12,10 +12,6 @@ split -v
 screen -t command bash --rcfile $HOME/.screen/bashrc/ppo15.command
 
 focus right
-split
 screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
-
-focus down
-screen -t remote ssh vcsb
 
 focus left
