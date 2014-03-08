@@ -183,6 +183,9 @@ nnoremap <leader>v V`]
 inoremap <C-u> <esc>gUiwea
 nnoremap <C-u> gUiw
 vnoremap <C-u> gU
+inoremap <C-l> <esc>guiwea
+nnoremap <C-l> guiw
+vnoremap <C-l> gu
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
