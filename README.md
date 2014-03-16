@@ -18,17 +18,17 @@ Targeted for:
 
 **Shell:** Bash
 
-**Desktop:** XFCE
-
-*Should be compatible with other Linux, BSD distributions and Mac OS.*
+**Desktop:** i3wm
 
 Included configuration for:
 ---------------------------
 * Vim 7.4.x
 * Bash 4.2.x
-* Git 1.8.x
+* Git 1.9.x
 * GNU Screen 4.01.x
+* Gtk theme and icons
 * Gtk bookmarks
+* Qt theme
 * Aspell custom English dictionary
 
   [url_contact]: http://sudaraka.org/contact/
