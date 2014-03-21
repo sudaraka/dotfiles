@@ -6,7 +6,7 @@
 
 source $HOME/.screenrc
 
-chdir /var/disk2/projects/vcreative/ppo_symfony_base
+chdir $PROJECTSDIR/vcreative/ppo_symfony_base
 
 split -v
 split

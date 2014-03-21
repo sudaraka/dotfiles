@@ -6,7 +6,7 @@
 
 source $HOME/.screenrc
 
-chdir /var/disk2/projects/sopin/sopin-web/src
+chdir $PROJECTSDIR/sopin/sopin-web/src
 
 split -v
 screen -t command bash --rcfile $HOME/.screen/bashrc/sopin.command
