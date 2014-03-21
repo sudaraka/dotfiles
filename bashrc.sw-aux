@@ -5,9 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias cdd='cd ~/Downloads/'
-alias cdp='cd ~/projects/'
-alias http='sudo systemctl restart httpd'
+export DOWNLOADSDIR="$HOME/downloads"
+export PROJECTSDIR="$HOME/projects"
+export VAULTDIR="$HOME/vault"
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking

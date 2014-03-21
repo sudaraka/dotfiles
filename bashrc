@@ -12,6 +12,9 @@ alias tree='tree -CA'
 alias truecrypt='truecrypt -t'
 alias gitk='gitk --all'
 alias gitg='gitk --all'
+alias cdd="cd $DOWNLOADSDIR"
+alias cdp="cd $PROJECTSDIR"
+alias cdv="cd $VAULTDIR"
 
 PS1="\[\e[0;33m\]\u@\h\[\e[1;92m\] \W\[\e[0;92m\] \$\[\e[0m\] "
 
