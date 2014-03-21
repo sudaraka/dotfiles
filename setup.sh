@@ -134,6 +134,7 @@ fi;
 PRIMARY_DISPLAY=`xrandr|grep '\sconnected'|head -n1|cut -d' ' -f1`;
 WIRELESS_INTERFACE=`ip link|grep ': wl'|cut -d':' -f2|tr -d ' '`;
 ETHERNET_INTERFACE=`ip link|grep ': en'|cut -d':' -f2|tr -d ' '`;
+BATTERY_ID=`find /sys/class/power_supply -type l -name BAT*|xargs basename`
 
 for file in config conkyrc; do
     rm $DOTFILES_DIR/i3/$file #>/dev/null 2>&1
@@ -148,6 +149,10 @@ for file in config conkyrc; do
         >/dev/null 2>&1;
 
     \sed "s/%ETHERNET_INTERFACE%/$ETHERNET_INTERFACE/" \
+        -i "$DOTFILES_DIR/i3/$file" \
+        >/dev/null 2>&1;
+
+    \sed "s/%BATTERY_ID%/$BATTERY_ID/" \
         -i "$DOTFILES_DIR/i3/$file" \
         >/dev/null 2>&1;
 done;

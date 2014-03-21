@@ -31,21 +31,21 @@ TEXT
         "color":"\#886cd7", \
         "full_text":"${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} " \
     }, \
-    ${if_empty ${battery BAT1}} \
+    ${if_empty ${battery %BATTERY_ID%}} \
     ${else} \
-        ${if_match ${battery_percent BAT1}>85} \
-        { "icon_color":"\#86cd74", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#86cd74", "full_text":"${battery_percent BAT1}% " }, \
+        ${if_match ${battery_percent %BATTERY_ID%}>85} \
+        { "icon_color":"\#86cd74", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#86cd74", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
         ${else} \
-            ${if_match ${battery_percent BAT1}>65} \
-            { "icon_color":"\#fade3e", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#fade3e", "full_text":"${battery_percent BAT1}% " }, \
+            ${if_match ${battery_percent %BATTERY_ID%}>65} \
+            { "icon_color":"\#fade3e", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#fade3e", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
             ${else} \
-                ${if_match ${battery_percent BAT1}>32} \
-                { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#f0ad4e", "full_text":"${battery_percent BAT1}% " }, \
+                ${if_match ${battery_percent %BATTERY_ID%}>32} \
+                { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#f0ad4e", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
                 ${else} \
-                    ${if_match ${battery_percent BAT1}>9} \
-                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#e5786d", "full_text":"${battery_percent BAT1}% " }, \
+                    ${if_match ${battery_percent %BATTERY_ID%}>9} \
+                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#e5786d", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
                     ${else} \
-                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4empty.xbm", "color":"\#e5786d", "full_text":"${battery_percent BAT1}% " }, \
+                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4empty.xbm", "color":"\#e5786d", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
                     ${endif} \
                 ${endif} \
             ${endif} \
