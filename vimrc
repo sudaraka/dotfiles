@@ -52,6 +52,45 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
+" Sub-routines for Django testing with in Vim {{{
+let g:django_test_module = ''
+
+" Run the test on module stored in global variable
+" (Run all the tests when module name is blank)
+function! g:django_run_test()
+    if filereadable('manage.py')
+        execute '!./manage.py test ' . g:django_test_module
+    endif
+endfunction
+
+" Show coverage report
+function! g:django_coverage_report()
+    execute '!coverage report -m'
+endfunction
+
+" Run test to gather coverage data
+function! g:django_coverage_run()
+    if filereadable('manage.py')
+        execute '!coverage run ./manage.py test'
+    endif
+endfunction
+
+" Run test with module name set based on the current file
+function! g:django_run_test_module()
+    if 0  == match(expand('%:t:h'), 'test_')
+        let g:django_test_module = substitute(fnamemodify(@%, ':r'), '/', '.', 'g')
+
+        call g:django_run_test()
+    endif
+endfunction
+
+" Clear global test module name
+function! g:django_clear_test_module()
+    let g:django_test_module = ''
+endfunction
+
+" }}}
+
 " }}}
 " Basic settings {{{
 
@@ -195,6 +234,24 @@ nnoremap : <nop>
 nnoremap ; :
 vnoremap : <nop>
 vnoremap ; :
+
+" Key binding for running Django test using default module value
+nnoremap <silent> <Leader>dt :call g:django_run_test()<CR>
+vnoremap <silent> <Leader>dt <esc>:call g:django_run_test()<CR>
+
+" Key binding for running set module name and run Django test
+nnoremap <silent> <Leader>dT :call g:django_run_test_module()<CR>
+vnoremap <silent> <Leader>dT <esc>:call g:django_run_test_module()<CR>
+
+" Key binding for clearing the global Django test module
+nnoremap <silent> <Leader>dx :call g:django_clear_test_module()<CR>
+vnoremap <silent> <Leader>dx <esc>:call g:django_clear_test_module()<CR>
+
+" Key binding for running coverage command for Django testing
+noremap <silent> <Leader>dc :call g:django_coverage_report()<CR>
+vnoremap <silent> <Leader>dc <esc>:call g:django_coverage_report()<CR>
+nnoremap <silent> <Leader>dC :call g:django_coverage_run()<CR>
+vnoremap <silent> <Leader>dC <esc>:call g:django_coverage_run()<CR>
 
 " }}}
 " File types {{{
