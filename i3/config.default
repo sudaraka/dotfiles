@@ -184,7 +184,7 @@ assign [class="Hotot"] "Twitter"
 assign [class="Pidgin"] "Chat"
 assign [class="Thunderbird"] "Mail"
 
-for_window [class="Gcalctool"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 for_window [class="Orage"] floating enable
 for_window [class="Pidgin" title="Buddy List"] floating enable
 for_window [class="Pidgin" title="^Conversations with"] floating disable
