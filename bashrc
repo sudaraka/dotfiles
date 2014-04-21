@@ -80,4 +80,16 @@ function git_pull_or_fetch_origin_master() {
     fi;
 }
 
+# Launch gvim from current directory
+function launch_gvim() {
+    echo 'NOTE: Make sure the terminal is not full-screen when gvim is launched.'
+    read -n1 -s -p 'Start gvim? (Y/n)' GVIM
+    echo ''
+
+    if [ -z "$GVIM" -o "$GVIM" = "Y" -o "$GVIM" = "y" ];
+    then
+        gvim
+    fi;
+}
+
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local

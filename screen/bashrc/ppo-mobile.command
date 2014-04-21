@@ -20,4 +20,6 @@ git_pull_or_fetch_origin_master;
 cd ../MobileBundle
 git_pull_or_fetch_origin_master;
 
+launch_gvim
+
 git status

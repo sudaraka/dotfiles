@@ -11,11 +11,6 @@
 
 http
 
-read -n1 -s -p 'Get off full-screen terminal to launch gvim'
-echo ''
-
-pushd web/wp-content >/dev/null
-gvim
-popd >/dev/null
+launch_gvim
 
 git status

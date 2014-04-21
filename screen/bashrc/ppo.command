@@ -18,4 +18,6 @@ cd ../PromoBundle;
 git_pull_or_fetch_origin_master;
 git pull origin prf
 
+launch_gvim
+
 git status
