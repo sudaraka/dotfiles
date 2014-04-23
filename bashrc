@@ -71,12 +71,19 @@ function pyve() {
     return 0;
 }
 
-# Fetch or pull the master branch, depending on which branch is the current
-function git_pull_or_fetch_origin_master() {
-    if [ -z "`git branch|grep '* master'`" ]; then
-        git fetch origin master
+# Fetch or pull the given branch, depending on which branch is the current
+function git_pull_or_fetch_remote_branch() {
+    REMOTE=$1
+    shift
+    BRANCH=$1
+
+    if [ -z "$REMOTE" ]; then REMOTE='origin'; fi;
+    if [ -z "$BRANCH" ]; then BRANCH='master'; fi;
+
+    if [ -z "`git branch|grep \"* $BRANCH\"`" ]; then
+        git fetch $REMOTE $BRANCH:$BRANCH
     else
-        git pull origin master
+        git pull $REMOTE $BRANCH
     fi;
 }
 

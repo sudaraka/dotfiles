@@ -12,12 +12,12 @@
 cd src/PPO/Bundle;
 
 cd CommonBundle;
-git_pull_or_fetch_origin_master;
-git pull origin prf
+git_pull_or_fetch_remote_branch;
+git_pull_or_fetch_remote_branch origin prf;
 
 cd ../PromoBundle;
-git_pull_or_fetch_origin_master;
-git pull origin prf
+git_pull_or_fetch_remote_branch;
+git_pull_or_fetch_remote_branch origin prf;
 
 launch_gvim
 

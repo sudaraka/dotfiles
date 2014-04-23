@@ -15,10 +15,10 @@ cd src/PPO/Bundle
 #git pull origin master
 
 cd CommonBundle
-git_pull_or_fetch_origin_master;
+git_pull_or_fetch_remote_branch;
 
 cd ../MobileBundle
-git_pull_or_fetch_origin_master;
+git_pull_or_fetch_remote_branch;
 
 launch_gvim
 

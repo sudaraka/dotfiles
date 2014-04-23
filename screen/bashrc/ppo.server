@@ -9,6 +9,6 @@
 
 . ~/.bashrc
 
-git_pull_or_fetch_origin_master;
+git_pull_or_fetch_remote_branch;
 
 app/console server:run
