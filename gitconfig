@@ -1,17 +1,16 @@
 [core]
-	editor		= vim
+    editor  = vim
 [user]
-	name        = Sudaraka Wijesinghe
-	email       = sudaraka.wijesinghe@gmail.com
-	signingkey	= D97F7914
+    name        = Sudaraka Wijesinghe
+    email       = sudaraka.wijesinghe@gmail.com
+    signingkey  = D97F7914
 [color]
-	diff		= auto
-	status		= auto
-	branch		= auto
-	ui			= true
+    diff        = auto
+    status      = auto
+    branch      = auto
+    ui          = true
 [alias]
-	l			= log --graph --decorate=short
-	ll			= log --graph --decorate=short --stat
+    l           = log --graph --decorate=short
+    ll          = log --graph --decorate=short --stat
 [push]
-	default		= simple
-
+    default     = simple
