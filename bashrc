@@ -10,8 +10,8 @@ alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
 alias tree='tree -CA'
 alias truecrypt='truecrypt -t'
-alias gitk='gitk --all'
-alias gitg='gitk --all'
+alias gitk='gitk --all --date-order'
+alias gitg='gitk --all --date-order'
 alias cdd="cd $DOWNLOADSDIR"
 alias cdp="cd $PROJECTSDIR"
 alias cdv="cd $VAULTDIR"
