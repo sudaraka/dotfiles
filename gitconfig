@@ -14,3 +14,7 @@
     ll          = log --graph --decorate=short --stat
 [push]
     default     = simple
+[diff]
+    external        = git_vimdiff.sh
+[difftool]
+    prompt          = false

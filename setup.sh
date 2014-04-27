@@ -86,6 +86,10 @@ echo
 
 \ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 
+\mkdir -p ~/bin >/dev/null 2>&1
+\rm ~/bin/git_vimdiff.sh >/dev/null 2>&1
+\ln -sv "$DOTFILES_DIR/git_vimdiff.sh" ~/bin/git_vimdiff.sh
+
 echo
 
 # }}}
