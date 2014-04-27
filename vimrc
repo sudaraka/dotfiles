@@ -99,7 +99,6 @@ filetype plugin indent on
 
 set autoindent
 set autoread
-"set autowrite
 set cursorline
 set expandtab
 set hidden
