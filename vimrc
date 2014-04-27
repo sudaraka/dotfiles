@@ -252,6 +252,17 @@ noremap N Nzz
 noremap } }zz
 noremap { {zz
 
+" quick type assistance for pairs
+inoremap <leader>' ''<esc>i
+inoremap <leader>" ""<esc>i
+inoremap <leader>( ()<esc>i
+inoremap <leader>[ []<esc>i
+inoremap <leader>{ {}<esc>i
+inoremap <leader><? <?php  ?><esc>2hi
+
+" quick type assistance for ending semicolon
+inoremap <leader>;  <esc>A;
+
 " Key binding for running Django test using default module value
 nnoremap <silent> <Leader>dt :call g:django_run_test()<CR>
 vnoremap <silent> <Leader>dt <esc>:call g:django_run_test()<CR>
