@@ -12,6 +12,7 @@
 [alias]
     l               = log --graph --decorate=short
     ll              = log --graph --decorate=short --stat
+    dif             = diff --no-ext-diff
 [push]
     default         = simple
 [merge]
