@@ -245,6 +245,13 @@ nnoremap ; :
 vnoremap : <nop>
 vnoremap ; :
 
+" Make search and line jumps center of the screen
+noremap G Gzz
+noremap n nzz
+noremap N Nzz
+noremap } }zz
+noremap { {zz
+
 " Key binding for running Django test using default module value
 nnoremap <silent> <Leader>dt :call g:django_run_test()<CR>
 vnoremap <silent> <Leader>dt <esc>:call g:django_run_test()<CR>
