@@ -135,6 +135,7 @@ set softtabstop=4
 set tabstop=4
 set termencoding=utf-8
 set textwidth=79
+set mouse-=a
 
 " }}}
 " Key bindings {{{
@@ -148,6 +149,16 @@ vnoremap <Up> <nop>
 vnoremap <Down> <nop>
 vnoremap <Left> <nop>
 vnoremap <Right> <nop>
+
+" Disable mouse wheel scrolling
+noremap <ScrollWheelUp> <nop>
+noremap <ScrollWheelDown> <nop>
+inoremap <ScrollWheelUp> <nop>
+inoremap <ScrollWheelDown> <nop>
+
+" Disable middle mouse click (paste)
+noremap <MiddleMouse> <nop>
+inoremap <MiddleMouse> <nop>
 
 " Rebind <Leader> key
 let mapleader = ","
