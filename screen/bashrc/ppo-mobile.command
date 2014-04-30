@@ -7,15 +7,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-. ~/.bashrc
-
-cd src/PPO/Bundle
-
-#cd src/PPO/Bundle/AppBundle
-#git pull origin master
-
-cd CommonBundle
-git_pull_or_fetch_remote_branch;
+NO_COMMON_EDITOR='TRUE';
+. ~/.screen/bashrc/ppo.command
 
 cd ../MobileBundle
 git_pull_or_fetch_remote_branch;

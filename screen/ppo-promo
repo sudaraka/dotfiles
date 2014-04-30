@@ -1,0 +1,17 @@
+# ppo-promo: GNU Screen profile for vCreative work (Promotions Bundle)
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/ppo
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/vcreative/ppo_symfony_base
+
+split -v
+screen -t command bash --rcfile $HOME/.screen/bashrc/ppo-promo.command
+
+focus right
+screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
+
+focus left

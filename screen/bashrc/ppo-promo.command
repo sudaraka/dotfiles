@@ -7,16 +7,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-. ~/.bashrc
+. ~/.screen/bashrc/ppo.command
 
-cd src/PPO/Bundle;
+git_pull_or_fetch_remote_branch origin prf;
 
-cd CommonBundle;
+cd ../PromoBundle;
 git_pull_or_fetch_remote_branch;
+git_pull_or_fetch_remote_branch origin prf;
 
-if [ -z "$NO_COMMON_EDITOR" ];
-then
-    launch_gvim
+launch_gvim
 
-    git status
-fi;
+git status

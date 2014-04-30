@@ -9,16 +9,13 @@ source $HOME/.screenrc
 chdir $PROJECTSDIR/vcreative/ppo_symfony_base
 
 split -v
-split
-
-focus right
-screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
-
-focus left
-focus down
 screen -t command bash --rcfile $HOME/.screen/bashrc/ppo-mobile.command
 
-focus top
-screen -t remote ssh vcsb
+focus right
+split
+screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
 
 focus down
+screen -t remote ssh vcsb
+
+focus left
