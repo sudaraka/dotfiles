@@ -258,6 +258,7 @@ inoremap <leader>" ""<esc>i
 inoremap <leader>( ()<esc>i
 inoremap <leader>[ []<esc>i
 inoremap <leader>{ {}<esc>i
+inoremap <leader>< <><esc>i
 inoremap <leader><? <?php  ?><esc>2hi
 
 " quick type assistance for ending semicolon
