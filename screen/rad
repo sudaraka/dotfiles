@@ -1,0 +1,11 @@
+# rad: GNU Screen profile for Radiators Warehouse work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/rad
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/radiators-warehouse
+
+screen -t command bash --rcfile $HOME/.screen/bashrc/rad.command
