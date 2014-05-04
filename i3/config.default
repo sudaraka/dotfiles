@@ -149,6 +149,13 @@ bar {
     i3bar_command /usr/bin/i3bar-icons
     status_command ~/.i3/i3conky
     font pango:Droid Sans Mono 10
+
+    colors {
+        focused_workspace   #cae682 #cae682 #101010
+        inactive_workspace  #101010 #101010 #cae682
+        active_workspace    #32322f #32322f #fade3e
+        urgent_workspace    #101010 #101010 #e5786d
+    }
 }
 
 bar {
@@ -156,6 +163,13 @@ bar {
     output $display1
     tray_output none
     font pango:Droid Sans Mono 7
+
+    colors {
+        focused_workspace   #cae682 #cae682 #101010
+        inactive_workspace  #101010 #101010 #cae682
+        active_workspace    #32322f #32322f #fade3e
+        urgent_workspace    #101010 #101010 #e5786d
+    }
 }
 
 # Workspaces
