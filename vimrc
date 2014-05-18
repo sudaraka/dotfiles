@@ -180,6 +180,8 @@ nnoremap <silent> <F6> <C-w>c
 vnoremap <silent> <F6> <C-w>c
 inoremap <silent> <F6> <esc><C-w>c
 
+" F9: run current file in shell
+noremap <silent> <F9> :!%<CR>
 
 " Ctrl+S: save all buffers
 nnoremap <silent> <C-s> :wa<CR>
