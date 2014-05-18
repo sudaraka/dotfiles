@@ -183,6 +183,12 @@ inoremap <silent> <F6> <esc><C-w>c
 " F9: run current file in shell
 noremap <silent> <F9> :!%<CR>
 
+" Ctrl+F4: close current buffer using bd
+noremap <silent> <C-F4> :bd<CR>
+
+" Ctrl+Shift+F4: close all buffers using bd
+noremap <silent> <C-S-F4> :1,9999bd<CR>
+
 " Ctrl+S: save all buffers
 nnoremap <silent> <C-s> :wa<CR>
 inoremap <silent> <C-s> <C-o>:wa<CR>
