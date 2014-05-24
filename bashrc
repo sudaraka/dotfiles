@@ -28,6 +28,15 @@ export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
 export XMODIFIERS=@im=ibus
 
+# Less Colors for Man Pages
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
 # Invoke GNU screen using extended configuration file
 # Based on article by Joseph McCullough
 # http://vertstudios.com/blog/multiple-screenrc-configurations-gnu-screen-tutorial/
