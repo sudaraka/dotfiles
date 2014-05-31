@@ -293,7 +293,7 @@ vnoremap <silent> <Leader>dC <esc>:call g:Django_coverage_run()<CR>
 " }}}
 " File types {{{
 
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
 
 " }}}
 " Search {{{
