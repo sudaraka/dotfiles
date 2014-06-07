@@ -181,7 +181,7 @@ vnoremap <silent> <F6> <C-w>c
 inoremap <silent> <F6> <esc><C-w>c
 
 " F9: run current file in shell
-noremap <silent> <F9> :!%<CR>
+noremap <silent> <F9> :!./%<CR>
 
 " Ctrl+F4: close current buffer using bd
 noremap <silent> <C-F4> :bd<CR>
