@@ -15,6 +15,7 @@ alias gitg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias cdp="pushd $PROJECTSDIR >/dev/null"
 alias cdv="pushd $VAULTDIR >/dev/null"
+alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
 
 PS1="\[\e[0;33m\]\u@\h\[\e[1;92m\] \W\[\e[0;92m\] \$\[\e[0m\] "
 

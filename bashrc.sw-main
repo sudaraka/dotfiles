@@ -6,7 +6,6 @@
 [[ $- != *i* ]] && return
 
 alias http='sudo systemctl restart httpd'
-alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
 alias vlcpos='sed "/geometry=@/d" -i ~/.config/vlc/vlc-qt-interface.conf'
 
 export DOWNLOADSDIR="/var/disk2/downloads"
