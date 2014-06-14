@@ -386,6 +386,8 @@ augroup ft_marker
     autocmd FileType javascript setlocal foldmethod=marker
     autocmd FileType css setlocal foldmethod=marker
     autocmd FileType sh setlocal foldmethod=marker
+    autocmd FileType twig setlocal foldmarker=[[[,]]]
+    autocmd FileType twig setlocal foldmethod=marker
 augroup END
 
 nnoremap <Space> za
