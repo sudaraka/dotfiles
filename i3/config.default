@@ -146,7 +146,6 @@ bindsym $mod+r mode "resize"
 bar {
     id bar-1
     output $display0
-    i3bar_command /usr/bin/i3bar-icons
     status_command ~/.i3/i3conky
     font pango:Droid Sans Mono 10
 
