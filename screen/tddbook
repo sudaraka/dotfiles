@@ -1,0 +1,12 @@
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/tddbook/source
+
+split -v
+screen -t command bash --rcfile $HOME/.screen/bashrc/tddbook.command
+
+focus right
+screen -t server bash --rcfile $HOME/.screen/bashrc/tddbook.server
+
+focus left

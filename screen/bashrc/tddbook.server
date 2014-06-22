@@ -1,0 +1,7 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+pyve tddbook
+./manage.py runserver
