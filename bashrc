@@ -13,7 +13,6 @@ alias truecrypt='truecrypt -t'
 alias gitk='gitk --all --date-order'
 alias gitg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
-alias cdp="pushd $PROJECTSDIR >/dev/null"
 alias cdv="pushd $VAULTDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
 
@@ -47,6 +46,18 @@ function scr() {
         return 1;
     else
         \screen -c $HOME/.screen/$1
+    fi;
+}
+
+# Switch to the project working directory
+function cdp() {
+    DIR=$1
+
+    if [ ! -d $PROJECTSDIR/$DIR ]; then
+        echo "Directory not found: $PROJECTSDIR/$DIR";
+        return 1;
+    else
+        pushd $PROJECTSDIR/$DIR >/dev/null
     fi;
 }
 
