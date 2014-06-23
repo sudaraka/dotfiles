@@ -65,12 +65,15 @@ echo
 \rm -f ~/.bash_profile 2>/dev/null
 \rm -f ~/.bashrc 2>/dev/null
 \rm -f ~/.bashrc.local 2>/dev/null
+\sudo rm -f /usr/share/bash-completion/completions/cdp 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
 \ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
 if [ -f $DOTFILES_DIR/bashrc.`uname -n` ]; then
    \ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
 fi;
+
+\sudo ln -sv $DOTFILES_DIR/cdp-completion.bash /usr/share/bash-completion/completions/cdp
 
 echo
 
