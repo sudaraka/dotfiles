@@ -14,6 +14,8 @@ set $mod Mod1
 set $display0 %PRIMARY_DISPLAY%
 set $display1 HDMI1
 
+set $font_size %FONT_SIZE%
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -21,7 +23,7 @@ set $display1 HDMI1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:Droid Sans 10
+font pango:Droid Sans $font_size
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -147,7 +149,7 @@ bar {
     id bar-1
     output $display0
     status_command ~/.i3/i3conky
-    font pango:Droid Sans Mono 10
+    font pango:Droid Sans Mono $font_size
 
     colors {
         focused_workspace   #cae682 #cae682 #101010
