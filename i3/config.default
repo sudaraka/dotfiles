@@ -195,10 +195,10 @@ new_float 1pixel
 hide_edge_borders both
 
 # Window specific settings
-assign [class="HipChat"] "Chat"
-assign [class="Hotot"] "Twitter"
-assign [class="Pidgin"] "Chat"
-assign [class="Thunderbird"] "Mail"
+assign [class="HipChat"] " chat"
+assign [class="Hotot"] " twitter"
+assign [class="Pidgin"] " chat"
+assign [class="Thunderbird"] " mail"
 
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Orage"] floating enable
@@ -241,7 +241,7 @@ exec --no-startup-id guake
 exec --no-startup-id xfce4-notes
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
-set $exit_mode     Shutdown      Reboot      Logout
+set $exit_mode      Shutdown       Reboot       Logout
 mode "$exit_mode" {
     bindsym s exec --no-startup-id i3exit shutdown, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
