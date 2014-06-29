@@ -8,66 +8,62 @@ short_units yes
 TEXT
 ,[ \
     ${if_up %WIRELESS_INTERFACE%} \
-    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/wireless8.xbm", "full_text":"" }, \
-    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#86cd74", "full_text":"${downspeed %WIRELESS_INTERFACE%} " }, \
-    { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed %WIRELESS_INTERFACE%} " }, \
+    { "color":"\#f0ad4e", "full_text":" " }, \
+    { "color":"\#86cd74", "full_text":"    ${downspeed %WIRELESS_INTERFACE%} " }, \
+    { "color":"\#f0ad4e", "full_text":"    ${upspeed %WIRELESS_INTERFACE%} " }, \
     ${else} \
         ${if_up %ETHERNET_INTERFACE%}\
-        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/net_wired.xbm", "full_text":"" }, \
-        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#fde76e", "full_text":"${downspeed %ETHERNET_INTERFACE%} " }, \
-        { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed %ETHERNET_INTERFACE%} " }, \
+		{ "color":"\#f0ad4e", "full_text":" " }, \
+        { "color":"\#86cd74", "full_text":"   ${downspeed %ETHERNET_INTERFACE%} " }, \
+        { "color":"\#f0ad4e", "full_text":"   ${upspeed %ETHERNET_INTERFACE%} " }, \
         ${else} \
             ${if_up ppp0}\
-            { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/wireless1.xbm", "full_text":"" }, \
-            { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/downright1.xbm", "color":"\#fde76e", "full_text":"${downspeed ppp0} " }, \
-            { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/upleft1.xbm", "color":"\#86cd74", "full_text":"${upspeed ppp0} " }, \
+            { "color":"\#f0ad4e", "full_text":" " }, \
+            { "color":"\#86cd74", "full_text":"   ${downspeed ppp0} " }, \
+            { "color":"\#f0ad4e", "full_text":"   ${upspeed ppp0} " }, \
             ${endif} \
         ${endif} \
     ${endif} \
-    { "icon_color":"\#6080b0", "icon":"/home/suda/.i3/icons/info7.xbm", "color":"\#6080b0", "full_text":"${execi 600 bbusage-i3} " }, \
+    { "color":"\#6080b0", "full_text":"    ${execi 600 bbusage-i3} " }, \
     { \
-        "icon_color":"\#886cd7", \
-        "icon":"/home/suda/.i3/icons/vol1.xbm", \
         "color":"\#886cd7", \
-        "full_text":"${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} " \
+        "full_text":"    ${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} " \
     }, \
     ${if_empty ${battery %BATTERY_ID%}} \
     ${else} \
         ${if_match ${battery_percent %BATTERY_ID%}>85} \
-        { "icon_color":"\#86cd74", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#86cd74", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
+        { "color":"\#86cd74", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
         ${else} \
             ${if_match ${battery_percent %BATTERY_ID%}>65} \
-            { "icon_color":"\#fade3e", "icon":"/home/suda/.i3/icons/batt4full.xbm", "color":"\#fade3e", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
+            { "color":"\#fade3e", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
             ${else} \
                 ${if_match ${battery_percent %BATTERY_ID%}>32} \
-                { "icon_color":"\#f0ad4e", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#f0ad4e", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
+                { "color":"\#f0ad4e", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
                 ${else} \
                     ${if_match ${battery_percent %BATTERY_ID%}>9} \
-                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4half.xbm", "color":"\#e5786d", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
+                    { "color":"\#e5786d", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
                     ${else} \
-                    { "icon_color":"\#e5786d", "icon":"/home/suda/.i3/icons/batt4empty.xbm", "color":"\#e5786d", "full_text":"${battery_percent %BATTERY_ID%}% " }, \
+                    { "color":"\#e5786d", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
                     ${endif} \
                 ${endif} \
             ${endif} \
         ${endif} \
     ${endif} \
     ${if_match ${acpitemp}<50} \
-    { "icon_color": "\#88ccff", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#88ccff", "full_text": "${acpitemp}°C " }, \
+    { "color": "\#88ccff", "full_text": "    ${acpitemp}°C " }, \
     ${else} \
         ${if_match ${acpitemp}<65} \
-        { "icon_color": "\#ff6644", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#ff6644", "full_text": "${acpitemp}°C " }, \
+        { "color": "\#ff6644", "full_text": "    ${acpitemp}°C " }, \
         ${else} \
             ${if_match ${acpitemp}<80} \
-            { "icon_color": "\#ff0000", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#ff0000", "full_text": "${acpitemp}°C " }, \
+            { "color": "\#ff0000", "full_text": "    ${acpitemp}°C " }, \
             ${else} \
-            { "icon_color": "\#ffffff", "icon":"/home/suda/.i3/icons/temp1.xbm", "color": "\#ffffff", "full_text": "${acpitemp}°C " }, \
+            { "color": "\#ffffff", "full_text": "    ${acpitemp}°C " }, \
             ${endif} \
         ${endif} \
     ${endif} \
     { \
-        "icon":"/home/suda/.i3/icons/clock2.xbm", \
-        "icon_color":"\#b5d3f3", \
         "color":"\#b5d3f3", \
-        "full_text":" ${time %a, %b %d, %Y} ${time %l:%M %p} " \
+        "full_text":"     ${time %a, %b %d, %Y} ${time %l:%M %p} " \
     } \
 ]
