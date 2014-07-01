@@ -187,6 +187,9 @@ done;
 \rm ~/bin/i3exit >/dev/null 2>&1
 \ln -sv "$DOTFILES_DIR/i3/i3exit" ~/bin/i3exit
 
+# Download "Font Awesome" used for icons in i3wm
+wget http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/fontawesome-webfont.ttf -C $HOME/.fonts/fontawesome-webfont.ttf
+
 echo
 
 # }}}
