@@ -396,11 +396,6 @@ vnoremap <Space> za
 " }}}
 " Programing environments {{{
 
-" Plugin: Splice {{{
-
-Bundle 'sjl/splice.vim'
-
-" }}}
 " Plugin: Vim-Indent-Guides {{{
 
 Bundle 'nathanaelkane/vim-indent-guides'
