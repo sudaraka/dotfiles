@@ -350,7 +350,10 @@ if has('gui_running')
 
     set guioptions-=m
     set guioptions-=T
-    set guioptions+=bhc
+    set guioptions-=r
+    set guioptions-=L
+    set guioptions-=b
+    set guioptions+=c
 endif
 
 " Installing wombat256 color theme:
