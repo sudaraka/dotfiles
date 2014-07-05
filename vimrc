@@ -487,6 +487,21 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 
+" Convert old PHP tags (<?) or new <?php
+function! g:PhpPort()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+
+    execute '%s/<?=/<?php echo /'
+    execute '%s/<?\s\+/<?php /'
+    execute '%s/<?$/<?php/'
+    execute 'retab'
+
+    let@/=_s
+    call cursor(l, c)
+endfunction
+
 " }}}
 " Language: Python {{{
 
