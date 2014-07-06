@@ -141,13 +141,14 @@ if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
 fi;
 
 # setup i3wm config and scripts
-PRIMARY_DISPLAY=`xrandr|grep '\sconnected'|head -n1|cut -d' ' -f1`;
+PRIMARY_DISPLAY=`xrandr|grep '\sconnected'|cut -d' ' -f1|head -n1`;
+SECONDARY_DISPLAY=`xrandr|grep '\sconnected'|cut -d' ' -f1|head -n2|tail -n1`;
 WIRELESS_INTERFACE=`ip link|grep ': wl'|cut -d':' -f2|tr -d ' '`;
 ETHERNET_INTERFACE=`ip link|grep ': en'|cut -d':' -f2|tr -d ' '`;
 BATTERY_ID=`find /sys/class/power_supply -type l -name BAT*|xargs basename`
 FONT_SIZE=10
 
-case "`xrandr |grep eDP-1|cut -d' ' -f3|cut -d'x' -f1`" in
+case "`xrandr |grep $PRIMARY_DISPLAY|cut -d' ' -f3|cut -d'x' -f1`" in
     1920) FONT_SIZE=12;;
 esac
 
@@ -160,6 +161,10 @@ for file in config conkyrc; do
     cp -v $DOTFILES_DIR/i3/$file{.default,} #>/dev/null 2>&1
 
     \sed "s/%PRIMARY_DISPLAY%/$PRIMARY_DISPLAY/" \
+        -i "$DOTFILES_DIR/i3/$file" \
+        >/dev/null 2>&1;
+
+    \sed "s/%SECONDARY_DISPLAY%/$SECONDARY_DISPLAY/" \
         -i "$DOTFILES_DIR/i3/$file" \
         >/dev/null 2>&1;
 

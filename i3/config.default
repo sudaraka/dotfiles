@@ -12,7 +12,7 @@
 set $mod Mod1
 
 set $display0 %PRIMARY_DISPLAY%
-set $display1 HDMI1
+set $display1 %SECONDARY_DISPLAY%
 
 set $font_size %FONT_SIZE%
 
