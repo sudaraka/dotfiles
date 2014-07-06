@@ -6,7 +6,7 @@
 
 echo 'Dotfiles Setup.'
 echo '==============='
-echo 'Copyright 2013 Sudaraka Wijesinghe. <sudaraka.org/contact>'
+echo 'Copyright 2013, 2014 Sudaraka Wijesinghe. <sudaraka.org/contact>'
 echo 'Creative Commons Attribution 3.0 Unported License.'
 echo
 
