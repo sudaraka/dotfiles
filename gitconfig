@@ -20,7 +20,7 @@
 [mergetool]
     prompt          = false
 [mergetool "splice"]
-    cmd             = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    cmd             = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
     trustExitCode   = true
 [diff]
     external        = git_vimdiff.sh
