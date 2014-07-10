@@ -332,6 +332,9 @@ nnoremap <c-z> mzzMzvzz
 " }}}
 " Color theme & GUI {{{
 
+Bundle 'tomasr/molokai'
+colorscheme molokai
+
 " Show whitespace
 " MUST be inserted BEFORE the colors scheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -355,17 +358,6 @@ if has('gui_running')
     set guioptions-=b
     set guioptions+=c
 endif
-
-" Installing wombat256 color theme:
-" mkdir -p ~/.vim/colors
-" wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-colorscheme wombat256mod
-
-" Manual overrides for color theme
-highlight ColorColumn   ctermbg=240                                                 guibg=#463535
-highlight CursorLine                                                                gui=bold
-highlight LineNr		ctermfg=179		ctermbg=none	cterm=none	guifg=#857b6f	guibg=#080808	gui=none
-highlight Normal		ctermfg=252		ctermbg=none	cterm=none	guifg=#e3e0d7	guibg=#080808	gui=none
 
 " }}}
 " Tabs and spaces {{{

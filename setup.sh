@@ -41,8 +41,8 @@ fi;
 \rm ~/.vim/spell/en.utf-8.add
 \ln -sv ../../.aspell.en.pws ~/.vim/spell/en.utf-8.add
 
-# Install wombat256 color theme
-\wget -nv -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+# Configure molokai color theme
+\ln -sv ~/.vim/bundle/molokai/colors/molokai.vim ~/.vim/colors/
 
 # Run vim command to install bundles
 \vim +BundleClean +BundleUpdate +BundleInstall +qa
