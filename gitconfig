@@ -10,7 +10,7 @@
     branch          = auto
     ui              = true
 [alias]
-    l               = log --graph --decorate=short
+    l               = log --graph --decorate=short --oneline
     ll              = log --graph --decorate=short --stat
     dif             = diff --no-ext-diff
 [push]
