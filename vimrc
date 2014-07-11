@@ -100,7 +100,6 @@ filetype plugin indent on
 set autoindent
 set autoread
 set cursorline
-set expandtab
 set hidden
 set lazyredraw
 set linebreak
@@ -126,15 +125,10 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
-set formatoptions-=t
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set modelines=0
-set shiftwidth=4
 set showbreak=↪
-set softtabstop=4
-set tabstop=4
 set termencoding=utf-8
-set textwidth=79
 set mouse-=a
 
 " }}}
@@ -360,12 +354,13 @@ if has('gui_running')
 endif
 
 " }}}
-" Tabs and spaces {{{
+" Formatting options {{{
 
 set expandtab
 set smartindent
 
-set formatoptions=qrnl
+set formatoptions=qrnlcoj
+set formatoptions-=t
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
