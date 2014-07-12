@@ -366,6 +366,46 @@ set softtabstop=2
 set tabstop=2
 set textwidth=80
 
+" Convert 4 space indentation to 2 spaces
+function! g:Indent4to2()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+
+    let _ts = &tabstop
+    let _sts = &softtabstop
+
+    execute 'set tabstop=4 softtabstop=4 noexpandtab'
+    execute 'retab!'
+    execute 'set tabstop=2 softtabstop=2 expandtab'
+    execute 'retab'
+
+    execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
+
+    let@/=_s
+    call cursor(l, c)
+endfunction
+
+" Convert 2 space indentation to 4 spaces
+function! g:Indent2to4()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+
+    let _ts = &tabstop
+    let _sts = &softtabstop
+
+    execute 'set tabstop=2 softtabstop=2 noexpandtab'
+    execute 'retab!'
+    execute 'set tabstop=4 softtabstop=4 expandtab'
+    execute 'retab'
+
+    execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
+
+    let@/=_s
+    call cursor(l, c)
+endfunction
+
 " }}}
 " Folding {{{
 
