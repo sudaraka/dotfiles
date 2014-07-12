@@ -136,12 +136,12 @@ bindsym $mod+r mode "resize"
 # 2013-12-29
 
 # Color index
-# #cae682 - normal green
-# #86cd74 - active green
-# #fde76e - insert yellow
-# #fade3e - active yellow
-# #b5d3f3 - visual blue
-# #e5786d - replace red
+# #b7eb46 - normal green
+# #82b414 - active green
+# #fd971f - insert yellow
+# #feed6c - active yellow
+# #62ade3 - visual blue
+# #ff5995 - replace red
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -153,10 +153,10 @@ bar {
     font pango:Droid Sans Mono $font_size
 
     colors {
-        focused_workspace   #cae682 #cae682 #101010
-        inactive_workspace  #101010 #101010 #cae682
-        active_workspace    #32322f #32322f #fade3e
-        urgent_workspace    #101010 #101010 #e5786d
+        focused_workspace   #b7eb46 #b7eb46 #101010
+        inactive_workspace  #101010 #101010 #b7eb46
+        active_workspace    #32322f #32322f #feed6c
+        urgent_workspace    #101010 #101010 #ff5995
     }
 }
 
@@ -167,10 +167,10 @@ bar {
     font pango:Droid Sans Mono 7
 
     colors {
-        focused_workspace   #cae682 #cae682 #101010
-        inactive_workspace  #101010 #101010 #cae682
-        active_workspace    #32322f #32322f #fade3e
-        urgent_workspace    #101010 #101010 #e5786d
+        focused_workspace   #b7eb46 #b7eb46 #101010
+        inactive_workspace  #101010 #101010 #b7eb46
+        active_workspace    #32322f #32322f #feed6c
+        urgent_workspace    #101010 #101010 #ff5995
     }
 }
 
