@@ -216,7 +216,7 @@ bindsym Mod4+g exec --no-startup-id gpodder
 bindsym Mod4+k exec --no-startup-id keepassx
 bindsym Mod4+m exec --no-startup-id thunderbird
 bindsym Mod4+n exec --no-startup-id geany
-bindsym Mod4+p exec --no-startup-id vlc -ZLq "/var/disk2/My Music Collection/"
+bindsym Mod4+p exec --no-startup-id vlc -ZLq "/home/suda/music/"
 bindsym Mod4+r exec --no-startup-id nitrotasks
 bindsym Mod4+t exec --no-startup-id vlc -q http://46.105.115.117/flosoft/mp4:twitStream_360/playlist.m3u8
 bindsym Mod4+v exec --no-startup-id gvim

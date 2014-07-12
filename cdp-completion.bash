@@ -12,7 +12,7 @@ _cdp() {
 
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts=`find $PROJECTSDIR -maxdepth 1 -type d ! -name "$PROJECTSDIR_BASE" -printf '%f\n'`
+    opts=`find $PROJECTSDIR/ -maxdepth 1 -type d ! -name "$PROJECTSDIR_BASE" -printf '%f\n'`
 
     COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 }

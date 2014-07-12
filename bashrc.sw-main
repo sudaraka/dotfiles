@@ -6,12 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias http='sudo systemctl restart httpd'
-alias vlcpos='sed "/geometry=@/d" -i ~/.config/vlc/vlc-qt-interface.conf'
-
-export DOWNLOADSDIR="/var/disk2/downloads"
-export PROJECTSDIR="/var/disk2/projects"
-export VAULTDIR="/var/disk2/vault"
 
 # gPodder home
 export GPODDER_HOME=~/.config/gpodder
-export GPODDER_DOWNLOAD_DIR=/var/disk2/gpodder
+export GPODDER_DOWNLOAD_DIR=$HOME/podcasts

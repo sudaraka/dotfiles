@@ -138,6 +138,8 @@ echo
 \ln -sv ~/src/numix-holo/gtk-3.0 ~/.config/
 if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
     \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
+else
+    \ln -sv "$DOTFILES_DIR/gtk-bookmarks" ~/.gtk-bookmarks
 fi;
 
 # setup i3wm config and scripts

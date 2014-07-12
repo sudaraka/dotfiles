@@ -16,13 +16,18 @@ alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias cdv="pushd $VAULTDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
 
+# Frequently used directories
+export DOWNLOADSDIR="$HOME/downloads"
+export PROJECTSDIR="$HOME/projects"
+export VAULTDIR="$HOME/vault"
+
 PS1="\[\e[0;33m\]\u@\h\[\e[1;92m\] \W\[\e[0;92m\] \$\[\e[0m\] "
 
 export EDITOR=vim
 export HISTFILESIZE=99999
 export TERM=xterm-256color
 
-#iBus settings
+# iBus settings
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
