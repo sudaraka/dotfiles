@@ -19,14 +19,14 @@ autocmd! bufwritepost .vimrc source %
 " Remove tabs and spaces from end of the lines
 autocmd BufWritePre * :call <SID>remove_whitespace_trails()
 function! <SID>remove_whitespace_trails()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
 
-    %s/\s\+$//e
+  %s/\s\+$//e
 
-    let@/=_s
-    call cursor(l, c)
+  let@/=_s
+  call cursor(l, c)
 endfunction
 
 " Resize splits when the window is resized
@@ -34,11 +34,11 @@ autocmd VimResized * :wincmd =
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
-    autocmd!
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
+  autocmd!
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   execute 'normal! g`"zvzz' |
+    \ endif
 augroup END
 
 " Visual Mode */# from Scrooloose
@@ -58,35 +58,35 @@ let g:django_test_module = ''
 " Run the test on module stored in global variable
 " (Run all the tests when module name is blank)
 function! g:Django_run_test()
-    if filereadable('manage.py')
-        execute '!./manage.py test ' . g:django_test_module
-    endif
+  if filereadable('manage.py')
+    execute '!./manage.py test ' . g:django_test_module
+  endif
 endfunction
 
 " Show coverage report
 function! g:Django_coverage_report()
-    execute '!coverage report -m'
+  execute '!coverage report -m'
 endfunction
 
 " Run test to gather coverage data
 function! g:Django_coverage_run()
-    if filereadable('manage.py')
-        execute '!coverage run ./manage.py test'
-    endif
+  if filereadable('manage.py')
+    execute '!coverage run ./manage.py test'
+  endif
 endfunction
 
 " Run test with module name set based on the current file
 function! g:Django_run_test_module()
-    if 0  == match(expand('%:t:h'), 'test_')
-        let g:django_test_module = substitute(fnamemodify(@%, ':r'), '/', '.', 'g')
+  if 0  == match(expand('%:t:h'), 'test_')
+    let g:django_test_module = substitute(fnamemodify(@%, ':r'), '/', '.', 'g')
 
-        call g:Django_run_test()
-    endif
+    call g:Django_run_test()
+  endif
 endfunction
 
 " Clear global test module name
 function! g:Django_clear_test_module()
-    let g:django_test_module = ''
+  let g:django_test_module = ''
 endfunction
 
 " }}}
@@ -224,7 +224,7 @@ nmap Q gqap
 
 " Ctrl+A: Select all (only in gui, conflicts with screen)
 if has('gui_running')
-    nnoremap <silent> <C-a> ggVG
+  nnoremap <silent> <C-a> ggVG
 endif
 
 " Easier linewise reselection of what you just pasted.
@@ -311,13 +311,13 @@ nnoremap * *<c-o>
 
 " Open quickfix window for the last search result
 if executable('ag')
-    " Internal grep
-    " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
-    set grepprg=ag\ --nogroup\ --nocolor
+  " Internal grep
+  " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
+  set grepprg=ag\ --nogroup\ --nocolor
 
-    noremap <silent> <Leader>/ :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  noremap <silent> <Leader>/ :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 else
-    noremap <silent> <Leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+  noremap <silent> <Leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 endif
 
 " "Focus" the current line.
@@ -343,14 +343,14 @@ set colorcolumn=+0
 set t_Co=256
 
 if has('gui_running')
-    set guifont=Monaco\ for\ Powerline\ 11
+  set guifont=Monaco\ for\ Powerline\ 11
 
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=L
-    set guioptions-=b
-    set guioptions+=c
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions-=b
+  set guioptions+=c
 endif
 
 " }}}
@@ -368,42 +368,42 @@ set textwidth=80
 
 " Convert 4 space indentation to 2 spaces
 function! g:Indent4to2()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
 
-    let _ts = &tabstop
-    let _sts = &softtabstop
+  let _ts = &tabstop
+  let _sts = &softtabstop
 
-    execute 'set tabstop=4 softtabstop=4 noexpandtab'
-    execute 'retab!'
-    execute 'set tabstop=2 softtabstop=2 expandtab'
-    execute 'retab'
+  execute 'set tabstop=4 softtabstop=4 noexpandtab'
+  execute 'retab!'
+  execute 'set tabstop=2 softtabstop=2 expandtab'
+  execute 'retab'
 
-    execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
+  execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
 
-    let@/=_s
-    call cursor(l, c)
+  let@/=_s
+  call cursor(l, c)
 endfunction
 
 " Convert 2 space indentation to 4 spaces
 function! g:Indent2to4()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
 
-    let _ts = &tabstop
-    let _sts = &softtabstop
+  let _ts = &tabstop
+  let _sts = &softtabstop
 
-    execute 'set tabstop=2 softtabstop=2 noexpandtab'
-    execute 'retab!'
-    execute 'set tabstop=4 softtabstop=4 expandtab'
-    execute 'retab'
+  execute 'set tabstop=2 softtabstop=2 noexpandtab'
+  execute 'retab!'
+  execute 'set tabstop=4 softtabstop=4 expandtab'
+  execute 'retab'
 
-    execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
+  execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
 
-    let@/=_s
-    call cursor(l, c)
+  let@/=_s
+  call cursor(l, c)
 endfunction
 
 " }}}
@@ -411,13 +411,13 @@ endfunction
 
 " default marker based folding
 augroup ft_marker
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType javascript setlocal foldmethod=marker
-    autocmd FileType css setlocal foldmethod=marker
-    autocmd FileType sh setlocal foldmethod=marker
-    autocmd FileType twig setlocal foldmarker=[[[,]]]
-    autocmd FileType twig setlocal foldmethod=marker
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+  autocmd FileType javascript setlocal foldmethod=marker
+  autocmd FileType css setlocal foldmethod=marker
+  autocmd FileType sh setlocal foldmethod=marker
+  autocmd FileType twig setlocal foldmarker=[[[,]]]
+  autocmd FileType twig setlocal foldmethod=marker
 augroup END
 
 nnoremap <Space> za
@@ -449,8 +449,8 @@ set wildignore+=*.pyc
 " Use Silver Search CtrlP
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore *.pyc --ignore .git --ignore .ropeproject --ignore .virtualenv --ignore __pycache__'
-    let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore *.pyc --ignore .git --ignore .ropeproject --ignore .virtualenv --ignore __pycache__'
+  let g:ctrlp_use_caching = 0
 endif
 
 
@@ -468,14 +468,14 @@ Bundle 'tpope/vim-fugitive'
 " Plugin: Vim-Airline {{{
 
 " Symlink a patched font
-"   sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
+" sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
 Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline-fonts'
 set laststatus=2
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 if has('gui_running')
-    let g:airline_powerline_fonts = 1
+  let g:airline_powerline_fonts = 1
 endif
 
 "}}}
@@ -524,17 +524,17 @@ imap <C-@> <C-Space>
 
 " Convert old PHP tags (<?) or new <?php
 function! g:PhpPort()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
 
-    execute '%s/<?=/<?php echo /'
-    execute '%s/<?\s\+/<?php /'
-    execute '%s/<?$/<?php/'
-    execute 'retab'
+  execute '%s/<?=/<?php echo /'
+  execute '%s/<?\s\+/<?php /'
+  execute '%s/<?$/<?php/'
+  execute 'retab'
 
-    let@/=_s
-    call cursor(l, c)
+  let@/=_s
+  call cursor(l, c)
 endfunction
 
 " }}}
@@ -550,8 +550,8 @@ let g:pymode_lint_unmodified = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 
 " Ignore certain errors/warnings
-"   F0401 - module import failures - when editing a Django app that runs in a
-"   virtual environment this show lot of errors.
+" F0401 - module import failures - when editing a Django app that runs in a
+" virtual environment this show lot of errors.
 let g:pymode_lint_ignore = 'F0401'
 
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
@@ -562,14 +562,14 @@ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
 set completeopt=longest,menuone
 function! OmniPopup(action)
-    if pumvisible()
-       if a:action == 'j'
-            return "\<C-N>"
-       elseif a:action == 'k'
-            return "\<C-P>"
-       endif
-    endif
-    return a:action
+  if pumvisible()
+     if a:action == 'j'
+      return "\<C-N>"
+     elseif a:action == 'k'
+      return "\<C-P>"
+     endif
+  endif
+  return a:action
 endfunction
 
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
