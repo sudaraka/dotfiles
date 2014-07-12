@@ -144,7 +144,7 @@ fi;
 
 # setup i3wm config and scripts
 PRIMARY_DISPLAY=`xrandr|grep '\sconnected'|cut -d' ' -f1|head -n1`;
-SECONDARY_DISPLAY=`xrandr|grep '\sconnected'|cut -d' ' -f1|head -n2|tail -n1`;
+SECONDARY_DISPLAY=`xrandr|grep 'HDMI'|cut -d' ' -f1|head -n1`;
 WIRELESS_INTERFACE=`ip link|grep ': wl'|cut -d':' -f2|tr -d ' '`;
 ETHERNET_INTERFACE=`ip link|grep ': en'|cut -d':' -f2|tr -d ' '`;
 BATTERY_ID=`find /sys/class/power_supply -type l -name BAT*|xargs basename`
