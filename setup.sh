@@ -86,8 +86,10 @@ echo
 
 # Remove existing configuration
 \rm -f ~/.gitconfig 2>/dev/null
+\rm -f ~/.gitk 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
+\ln -sv "$DOTFILES_DIR/gitk" ~/.gitk
 
 \mkdir -p ~/bin >/dev/null 2>&1
 \rm ~/bin/git_vimdiff.sh >/dev/null 2>&1
