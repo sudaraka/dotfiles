@@ -13,9 +13,9 @@ echo
 DOTFILES_DIR=$(realpath $(dirname $0));
 
 if [ -z "$DOTFILES_DIR" ]; then
-    echo 'Unable to determine dotfiles repository.';
-    echo 'Check if "realpath" package is missing in your system.'
-    exit 1;
+  echo 'Unable to determine dotfiles repository.';
+  echo 'Check if "realpath" package is missing in your system.'
+  exit 1;
 fi;
 
 # Vim configuration {{{
@@ -86,10 +86,10 @@ echo
 
 # Remove existing configuration
 \rm -f ~/.gitconfig 2>/dev/null
-\rm -f ~/.gitk 2>/dev/null
+\rm -f ~/.config/git/gitk 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
-\ln -sv "$DOTFILES_DIR/gitk" ~/.gitk
+\ln -sv "$DOTFILES_DIR/gitk" ~/.config/git/gitk
 
 \mkdir -p ~/bin >/dev/null 2>&1
 \rm ~/bin/git_vimdiff.sh >/dev/null 2>&1
@@ -139,9 +139,9 @@ echo
 \ln -sv "$DOTFILES_DIR/Trolltech.conf" ~/.config/
 \ln -sv ~/src/numix-holo/gtk-3.0 ~/.config/
 if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
-    \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
+  \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
 else
-    \ln -sv "$DOTFILES_DIR/gtk-bookmarks" ~/.gtk-bookmarks
+  \ln -sv "$DOTFILES_DIR/gtk-bookmarks" ~/.gtk-bookmarks
 fi;
 
 # setup i3wm config and scripts
@@ -153,40 +153,40 @@ BATTERY_ID=`find /sys/class/power_supply -type l -name BAT*|xargs basename`
 FONT_SIZE=10
 
 case "`xrandr |grep $PRIMARY_DISPLAY|cut -d' ' -f3|cut -d'x' -f1`" in
-    1920) FONT_SIZE=12;;
+  1920) FONT_SIZE=12;;
 esac
 
 if [ -z "$WIRELESS_INTERFACE" ]; then
-    WIRELESS_INTERFACE="wlnx0"
+  WIRELESS_INTERFACE="wlnx0"
 fi;
 
 for file in config conkyrc; do
-    rm $DOTFILES_DIR/i3/$file #>/dev/null 2>&1
-    cp -v $DOTFILES_DIR/i3/$file{.default,} #>/dev/null 2>&1
+  rm $DOTFILES_DIR/i3/$file #>/dev/null 2>&1
+  cp -v $DOTFILES_DIR/i3/$file{.default,} #>/dev/null 2>&1
 
-    \sed "s/%PRIMARY_DISPLAY%/$PRIMARY_DISPLAY/" \
-        -i "$DOTFILES_DIR/i3/$file" \
-        >/dev/null 2>&1;
+  \sed "s/%PRIMARY_DISPLAY%/$PRIMARY_DISPLAY/" \
+    -i "$DOTFILES_DIR/i3/$file" \
+    >/dev/null 2>&1;
 
-    \sed "s/%SECONDARY_DISPLAY%/$SECONDARY_DISPLAY/" \
-        -i "$DOTFILES_DIR/i3/$file" \
-        >/dev/null 2>&1;
+  \sed "s/%SECONDARY_DISPLAY%/$SECONDARY_DISPLAY/" \
+    -i "$DOTFILES_DIR/i3/$file" \
+    >/dev/null 2>&1;
 
-    \sed "s/%WIRELESS_INTERFACE%/$WIRELESS_INTERFACE/" \
-        -i "$DOTFILES_DIR/i3/$file" \
-        >/dev/null 2>&1;
+  \sed "s/%WIRELESS_INTERFACE%/$WIRELESS_INTERFACE/" \
+    -i "$DOTFILES_DIR/i3/$file" \
+    >/dev/null 2>&1;
 
-    \sed "s/%ETHERNET_INTERFACE%/$ETHERNET_INTERFACE/" \
-        -i "$DOTFILES_DIR/i3/$file" \
-        >/dev/null 2>&1;
+  \sed "s/%ETHERNET_INTERFACE%/$ETHERNET_INTERFACE/" \
+    -i "$DOTFILES_DIR/i3/$file" \
+    >/dev/null 2>&1;
 
-    \sed "s/%BATTERY_ID%/$BATTERY_ID/" \
-        -i "$DOTFILES_DIR/i3/$file" \
-        >/dev/null 2>&1;
+  \sed "s/%BATTERY_ID%/$BATTERY_ID/" \
+    -i "$DOTFILES_DIR/i3/$file" \
+    >/dev/null 2>&1;
 
-    \sed "s/%FONT_SIZE%/$FONT_SIZE/" \
-        -i "$DOTFILES_DIR/i3/$file" \
-        >/dev/null 2>&1;
+  \sed "s/%FONT_SIZE%/$FONT_SIZE/" \
+    -i "$DOTFILES_DIR/i3/$file" \
+    >/dev/null 2>&1;
 done;
 
 \ln -sv "$DOTFILES_DIR/i3" ~/.i3
