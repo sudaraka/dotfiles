@@ -152,7 +152,7 @@ ETHERNET_INTERFACE=`ip link|grep ': en'|cut -d':' -f2|tr -d ' '`;
 BATTERY_ID=`find /sys/class/power_supply -type l -name BAT*|xargs basename`
 FONT_SIZE=10
 
-case "`xrandr |grep $PRIMARY_DISPLAY|cut -d' ' -f3|cut -d'x' -f1`" in
+case "`xrandr |grep $PRIMARY_DISPLAY|cut -d' ' -f4|cut -d'x' -f1`" in
   1920) FONT_SIZE=12;;
 esac
 
