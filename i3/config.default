@@ -112,20 +112,20 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -146,32 +146,33 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    id bar-1
-    output $display0
-    status_command ~/.i3/i3conky
-    font pango:Font Awsome $font_size
-    font pango:Droid Sans Mono $font_size
+  id bar-1
+  output $display0
+  output default
+  status_command ~/.i3/i3conky
+  font pango:Font Awsome $font_size
+  font pango:Monaco for Powerline $font_size
 
-    colors {
-        focused_workspace   #b7eb46 #b7eb46 #101010
-        inactive_workspace  #101010 #101010 #b7eb46
-        active_workspace    #32322f #32322f #feed6c
-        urgent_workspace    #101010 #101010 #ff5995
-    }
+  colors {
+    focused_workspace #b7eb46 #b7eb46 #101010
+    inactive_workspace  #101010 #101010 #b7eb46
+    active_workspace  #32322f #32322f #feed6c
+    urgent_workspace  #101010 #101010 #ff5995
+  }
 }
 
 bar {
-    id bar-2
-    output $display1
-    tray_output none
-    font pango:Droid Sans Mono 7
+  id bar-2
+  output $display1
+  tray_output none
+  font pango:Monaco for Powerline 10
 
-    colors {
-        focused_workspace   #b7eb46 #b7eb46 #101010
-        inactive_workspace  #101010 #101010 #b7eb46
-        active_workspace    #32322f #32322f #feed6c
-        urgent_workspace    #101010 #101010 #ff5995
-    }
+  colors {
+    focused_workspace #b7eb46 #b7eb46 #101010
+    inactive_workspace  #101010 #101010 #b7eb46
+    active_workspace  #32322f #32322f #feed6c
+    urgent_workspace  #101010 #101010 #ff5995
+  }
 }
 
 # Workspaces
@@ -241,13 +242,13 @@ exec --no-startup-id guake
 exec --no-startup-id xfce4-notes
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
-set $exit_mode      Shutdown       Reboot       Logout
+set $exit_mode      Shutdown     Reboot     Logout
 mode "$exit_mode" {
-    bindsym s exec --no-startup-id i3exit shutdown, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym l exec --no-startup-id i3exit logout, mode "default"
-    bindsym t exec --no-startup-id i3exit test, mode "default"
+  bindsym s exec --no-startup-id i3exit shutdown, mode "default"
+  bindsym r exec --no-startup-id i3exit reboot, mode "default"
+  bindsym l exec --no-startup-id i3exit logout, mode "default"
+  bindsym t exec --no-startup-id i3exit test, mode "default"
 
-    bindsym Escape mode "default"
+  bindsym Escape mode "default"
 }
 bindsym $mod+Shift+End mode "$exit_mode"
