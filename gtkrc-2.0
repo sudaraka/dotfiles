@@ -1,4 +1,4 @@
 gtk-icon-theme-name = "elementary-xfce-darkest"
 gtk-theme-name = "numix-holo"
-gtk-font-name = "Droid Sans 10"
+gtk-font-name = "Droid Sans 12"
 gtk-fallback-icon-theme = gnome
