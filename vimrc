@@ -343,13 +343,7 @@ set colorcolumn=+0
 set t_Co=256
 
 if has('gui_running')
-  let _screen_width = system("xrandr|grep 'connected primary'|cut -d' ' -f4|cut -d'x' -f1")
-
-  set guifont=Monaco\ for\ Powerline\ 11
-
-  if _screen_width > 1366
-    set guifont=Monaco\ for\ Powerline\ 12
-  endif
+  set guifont=Monaco\ for\ Powerline\ 12
 
   set guioptions-=m
   set guioptions-=T
