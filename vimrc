@@ -343,7 +343,7 @@ set colorcolumn=+0
 set t_Co=256
 
 if has('gui_running')
-  set guifont=Monaco\ for\ Powerline\ 12
+  set guifont=Monaco\ for\ Powerline\ 11
 
   set guioptions-=m
   set guioptions-=T
