@@ -191,7 +191,7 @@ workspace " 9" output $display1
 workspace " 10" output $display1
 
 # Window borders
-new_window 1pixel
+new_window none
 new_float 1pixel
 hide_edge_borders both
 
