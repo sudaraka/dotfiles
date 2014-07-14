@@ -1,6 +1,6 @@
-set mainfont {{Droid Sans} 11}
-set textfont {{Monaco for Powerline} 11}
-set uifont {{Droid Sans} 11 bold}
+set mainfont {{Droid Sans} 10}
+set textfont {{Monaco for Powerline} 10}
+set uifont {{Droid Sans} 10 bold}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
@@ -50,12 +50,12 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 479x1019+0+0
+set geometry(main) 959x1026+0+0
 set geometry(state) normal
-set geometry(topwidth) 479
+set geometry(topwidth) 959
 set geometry(topheight) 210
 set geometry(pwsash0) "434 1"
 set geometry(pwsash1) "454 1"
 set geometry(botwidth) 464
-set geometry(botheight) 804
+set geometry(botheight) 811
 set permviews {}
