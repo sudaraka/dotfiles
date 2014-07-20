@@ -288,6 +288,7 @@ vnoremap <silent> <Leader>dC <esc>:call g:Django_coverage_run()<CR>
 " File types {{{
 
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
+autocmd BufNewFile,BufRead,BufWritePost *.json,*.webapp set filetype=json
 
 " }}}
 " Search {{{
@@ -525,6 +526,13 @@ Bundle 'shutnik/jshint2.vim'
 let jshint2_read = 1
 let jshint2_save = 1
 let jshint2_color = 1
+
+"}}}
+" Plugin: Vim-JSON {{{
+
+Bundle 'elzr/vim-json'
+
+let g:vim_json_syntax_conceal = 0
 
 "}}}
 
