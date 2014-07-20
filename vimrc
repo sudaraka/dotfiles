@@ -505,6 +505,30 @@ Bundle 'evidens/vim-twig'
 "}}}
 
 " }}}
+" Language: JavaScript {{{
+
+" Plugin: Vim-JavaScript {{{
+" for JavaScript syntax highlighting
+
+Bundle 'pangloss/vim-javascript'
+
+let javascript_enable_domhtmlcss = 1
+let b:javascript_fold = 1
+let g:javascript_conceal = 1
+
+"}}}
+" Plugin: JSHint2 {{{
+" for JavaScript syntax checking
+
+Bundle 'shutnik/jshint2.vim'
+
+let jshint2_read = 1
+let jshint2_save = 1
+let jshint2_color = 1
+
+"}}}
+
+" }}}
 " Language: PHP {{{
 
 " Plugin: Phpfolding {{{
