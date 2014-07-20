@@ -479,6 +479,11 @@ if has('gui_running')
 endif
 
 "}}}
+" Plugin: Syntastic {{{
+
+Bundle 'scrooloose/syntastic'
+
+"}}}
 
 " Language: HTML/CSS {{{
 
@@ -493,6 +498,11 @@ let g:colorizer_auto_filetype='css,html,rc,conf,tpl,xml,ini'
 Bundle 'hail2u/vim-css3-syntax'
 
 " }}}
+" Plugin: Vim-Twig {{{
+
+Bundle 'evidens/vim-twig'
+
+"}}}
 
 " }}}
 " Language: PHP {{{
@@ -500,16 +510,6 @@ Bundle 'hail2u/vim-css3-syntax'
 " Plugin: Phpfolding {{{
 
 Bundle 'rayburgemeestre/phpfolding.vim'
-
-"}}}
-" Plugin: Syntastic {{{
-
-Bundle 'scrooloose/syntastic'
-
-"}}}
-" Plugin: Vim-Twig {{{
-
-Bundle 'evidens/vim-twig'
 
 "}}}
 
