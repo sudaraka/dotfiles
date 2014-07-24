@@ -504,6 +504,12 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'evidens/vim-twig'
 
 "}}}
+" Plugin: Emmet-Vim {{{
+
+Bundle 'mattn/emmet-vim'
+let g:user_emmet_mode = 'i'
+
+"}}}
 
 " }}}
 " Language: JavaScript {{{
