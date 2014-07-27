@@ -65,13 +65,13 @@ endfunction
 
 " Show coverage report
 function! g:Django_coverage_report()
-    execute '!coverage report -m'
+    !coverage report -m
 endfunction
 
 " Run test to gather coverage data
 function! g:Django_coverage_run()
     if filereadable('manage.py')
-        execute '!coverage run ./manage.py test'
+        !coverage run ./manage.py test
     endif
 endfunction
 
@@ -376,10 +376,10 @@ function! g:Indent4to2()
     let _ts = &tabstop
     let _sts = &softtabstop
 
-    execute 'set tabstop=4 softtabstop=4 noexpandtab'
-    execute 'retab!'
-    execute 'set tabstop=2 softtabstop=2 expandtab'
-    execute 'retab'
+    set tabstop=4 softtabstop=4 noexpandtab
+    retab!
+    set tabstop=2 softtabstop=2 expandtab
+    retab
 
     execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
 
@@ -396,10 +396,10 @@ function! g:Indent2to4()
     let _ts = &tabstop
     let _sts = &softtabstop
 
-    execute 'set tabstop=2 softtabstop=2 noexpandtab'
-    execute 'retab!'
-    execute 'set tabstop=4 softtabstop=4 expandtab'
-    execute 'retab'
+    set tabstop=2 softtabstop=2 noexpandtab
+    retab!
+    set tabstop=4 softtabstop=4 expandtab
+    retab
 
     execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
 
@@ -566,10 +566,10 @@ function! g:PhpPort()
     let l = line(".")
     let c = col(".")
 
-    execute '%s/<?=/<?php echo /'
-    execute '%s/<?\s\+/<?php /'
-    execute '%s/<?$/<?php/'
-    execute 'retab'
+    %s/<?=/<?php echo /e
+    %s/<?\s\+/<?php /e
+    %s/<?$/<?php/e
+    retab
 
     let@/=_s
     call cursor(l, c)
