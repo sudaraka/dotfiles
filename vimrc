@@ -158,7 +158,7 @@ inoremap <MiddleMouse> <nop>
 let mapleader = ","
 
 " F2: show hide non-printable characters
-noremap <F2> :set list!<CR>
+noremap <F2> :set list!<CR>:call indent_guides#toggle()<CR>
 
 " Removes highlight of your last search
 noremap <F3> :nohl<CR>:call clearmatches()<CR>
@@ -435,7 +435,7 @@ Bundle 'sjl/splice.vim'
 " Plugin: Vim-Indent-Guides {{{
 
 Bundle 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_enable_on_vim_startup=0
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:indent_guides_auto_colors = 1
