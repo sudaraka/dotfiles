@@ -289,6 +289,7 @@ vnoremap <silent> <Leader>dC <esc>:call g:Django_coverage_run()<CR>
 
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
 autocmd BufNewFile,BufRead,BufWritePost *.json,*.webapp set filetype=json
+autocmd BufNewFile,BufRead,BufWritePost *.js.* set filetype=javascript
 
 " }}}
 " Search {{{
