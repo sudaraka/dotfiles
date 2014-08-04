@@ -508,7 +508,7 @@ Bundle 'evidens/vim-twig'
 " Plugin: Emmet-Vim {{{
 
 Bundle 'mattn/emmet-vim'
-let g:user_emmet_mode = 'i'
+let g:user_emmet_mode = 'ni'
 
 "}}}
 
