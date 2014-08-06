@@ -215,8 +215,8 @@ nnoremap <silent> <Leader>s vip:!sort<CR>
 vnoremap <silent> <Leader>s :!sort<CR>
 
 " easier moving of code blocks
-vnoremap < <gv  " better indentation
-vnoremap > >gv  " better indentation
+vnoremap < <gv^
+vnoremap > >gv
 
 " easier formatting of paragraphs
 vmap Q gq
