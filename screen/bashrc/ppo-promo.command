@@ -9,11 +9,8 @@
 
 . ~/.screen/bashrc/ppo.command
 
-git_pull_or_fetch_remote_branch origin prf;
-
 cd ../PromoBundle;
 git_pull_or_fetch_remote_branch;
-git_pull_or_fetch_remote_branch origin prf;
 
 launch_gvim
 
