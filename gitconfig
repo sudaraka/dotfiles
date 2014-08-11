@@ -10,7 +10,7 @@
     branch          = auto
     ui              = true
 [alias]
-    l               = log --graph --decorate=short --oneline
+    l               = log --graph --decorate=short --oneline --all --date=short --format=format:'%C(bold red)%h%C(reset) %C(yellow)%ad%C(reset)%C(bold green)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     ll              = log --graph --decorate=short --stat
     dif             = diff --no-ext-diff
 [push]
