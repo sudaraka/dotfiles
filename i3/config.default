@@ -234,7 +234,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmut
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
 # Autostart
-exec --no-startup-id twmnd
 exec --no-startup-id ibus-daemon -d
 exec --no-startup-id hotot
 exec --no-startup-id pidgin

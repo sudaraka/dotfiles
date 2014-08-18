@@ -130,9 +130,9 @@ echo
 \rm -f ~/.config/Trolltech.conf 2>/dev/null
 \rm -f ~/.gtk-bookmarks 2>/dev/null
 \rm -f ~/.i3 2>/dev/null
-\rm -f ~/.config/twmn/twmn.conf 2>/dev/null
+\rm -f ~/.config/dunst/dunstrc 2>/dev/null
 
-\mkdir -p ~/.config/twmn >/dev/null 2>&1
+\mkdir -p ~/.config/dunst >/dev/null 2>&1
 
 \ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
 \ln -sv "$DOTFILES_DIR/gtkrc-2.0" ~/.gtkrc-2.0
@@ -190,7 +190,7 @@ for file in config conkyrc; do
 done;
 
 \ln -sv "$DOTFILES_DIR/i3" ~/.i3
-\ln -sv "$DOTFILES_DIR/i3/twmn.conf" ~/.config/twmn
+\ln -sv "$DOTFILES_DIR/i3/dunstrc" ~/.config/dunst
 
 \mkdir -p ~/bin >/dev/null 2>&1
 \rm ~/bin/i3exit >/dev/null 2>&1

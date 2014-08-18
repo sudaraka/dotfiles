@@ -1,0 +1,42 @@
+[global]
+    follow = keyboard
+    startup_notification = no
+
+    font = "Monaco for Powerline 10"
+    allow_markup = yes
+    format = <span color="#62abe3"><b>%s %p</b></span>\n%b
+    alignment = left
+    icon_position = left
+    separator_color = #20292a
+    indicate_hidden = yes
+    word_wrap = yes
+    show_age_threshold = 60
+
+    geometry = "400x5-10+10"
+    padding = 8
+    horizontal_padding = 10
+    separator_height = 2
+    shrink = yes
+    sticky_history = yes
+    sort = no
+    idle_threshold = 60
+
+[frame]
+    width = 2
+    color = #293739
+
+[urgency_normal]
+    background = #1b1d1e
+    foreground = #d0d0d0
+    timeout = 10
+
+[urgency_critical]
+    background = #1b1d1e
+    foreground = #ff5595
+    timeout = 0
+
+[pidgin_message]
+    appname = Pidgin
+    summary = *says:
+    timeout = 0
+    format = <small>%s\n\n</small><span color="#b7eb46">%b</span>\n
