@@ -3,9 +3,10 @@
 #
 
 PATH=$HOME/bin:$PATH
-PATH=$PATH:$HOME/android-sdk-linux/tools
-PATH=$PATH:$HOME/android-sdk-linux/platform-tools
-PATH=$PATH:$HOME/heroku-client/bin
+PATH=$PATH:$HOME/opt/android-sdk-linux/tools
+PATH=$PATH:$HOME/opt/android-sdk-linux/platform-tools
+PATH=$PATH:$HOME/opt/heroku-client/bin
+PATH=$PATH:$HOME/opt/firefox
 
 export PATH
 
