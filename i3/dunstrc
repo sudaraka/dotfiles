@@ -19,16 +19,16 @@
     shrink = yes
     sticky_history = yes
     sort = no
-    idle_threshold = 60
+    idle_threshold = 30
 
 [frame]
-    width = 2
+    width = 1
     color = #293739
 
 [urgency_normal]
     background = #1b1d1e
     foreground = #d0d0d0
-    timeout = 10
+    timeout = 30
 
 [urgency_critical]
     background = #1b1d1e
@@ -38,5 +38,5 @@
 [pidgin_message]
     appname = Pidgin
     summary = *says:
-    timeout = 0
+    timeout = 180
     format = <small>%s\n\n</small><span color="#b7eb46">%b</span>\n
