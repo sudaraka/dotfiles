@@ -1,0 +1,11 @@
+# msc: GNU Screen profile for MiracleSealants work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/msc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/miracle-sealants
+
+screen -t command bash --rcfile $HOME/.screen/bashrc/msc.command
