@@ -1,0 +1,3 @@
+# .gitshrc
+
+PS1="`_git_headname`\[\e[1;30m\]:\[\e[0m\]`_git_upstream_state``_git_repo_state``_git_dirty``_git_dirty_stash`\[\e[1;92m\] \W\[\e[0;92m\] \$\[\e[0m\] "

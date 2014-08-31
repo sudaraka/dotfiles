@@ -86,9 +86,11 @@ echo
 
 # Remove existing configuration
 \rm -f ~/.gitconfig 2>/dev/null
+\rm -f ~/.gitshrc 2>/dev/null
 \rm -f ~/.config/git/gitk 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
+\ln -sv "$DOTFILES_DIR/gitshrc" ~/.gitshrc
 \ln -sv "$DOTFILES_DIR/gitk" ~/.config/git/gitk
 
 \mkdir -p ~/bin >/dev/null 2>&1
