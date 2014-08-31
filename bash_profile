@@ -7,6 +7,7 @@ PATH=$PATH:$HOME/opt/android-sdk-linux/tools
 PATH=$PATH:$HOME/opt/android-sdk-linux/platform-tools
 PATH=$PATH:$HOME/opt/heroku-client/bin
 PATH=$PATH:$HOME/opt/firefox
+PATH=$PATH:$HOME/opt/node/bin
 
 export PATH
 
