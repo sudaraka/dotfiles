@@ -19,9 +19,4 @@ then
     launch_gvim
 
     git status
-fi
-
-if [ -z "$NO_COMMON_SHELL" ];
-then
-    git sh
-fi
+fi;

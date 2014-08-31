@@ -6,5 +6,3 @@
 pyve tddbook
 
 launch_gvim
-
-git sh

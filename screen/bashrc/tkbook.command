@@ -6,5 +6,3 @@
 pyve tkbook
 
 launch_gvim
-
-git sh

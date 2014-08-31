@@ -7,7 +7,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-NO_COMMON_SHELL='TRUE';
 . ~/.screen/bashrc/ppo.command
 
 cd ../PromoBundle;
@@ -16,5 +15,3 @@ git_pull_or_fetch_remote_branch;
 launch_gvim
 
 git status
-
-git sh
