@@ -16,3 +16,5 @@ git_pull_or_fetch_remote_branch;
 launch_gvim
 
 git status
+
+git sh
