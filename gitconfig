@@ -24,6 +24,7 @@
     ph              = push
     pl              = pull
     r               = reset
+    rv              = revert
     s               = status
     st              = stash
 [push]
