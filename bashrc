@@ -76,7 +76,7 @@ function pyve() {
         return 1;
     fi;
 
-    if [ ! -d "$HOME/.virtualenv/$1" ]; then
+    if [ ! -d "$HOME/opt/virtualenv/$1" ]; then
         echo
         echo "Python virtual environment $1 not found.";
         echo
@@ -84,7 +84,7 @@ function pyve() {
         return 2;
     fi;
 
-    if [ ! -f "$HOME/.virtualenv/$1/bin/activate" ]; then
+    if [ ! -f "$HOME/opt/virtualenv/$1/bin/activate" ]; then
         echo
         echo "$1 is not a valid python virtual environment.";
         echo
@@ -92,7 +92,7 @@ function pyve() {
         return 3;
     fi;
 
-    source $HOME/.virtualenv/$1/bin/activate
+    source $HOME/opt/virtualenv/$1/bin/activate
 
     return 0;
 }
