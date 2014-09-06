@@ -10,8 +10,9 @@ alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
 alias tree='tree -CA'
 alias truecrypt='truecrypt -t'
-alias gitk='gitk --all --date-order'
-alias gitg='gitk --all --date-order'
+alias g='git'
+alias gk='gitk --all --date-order'
+alias gg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias cdv="pushd $VAULTDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
