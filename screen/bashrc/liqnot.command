@@ -15,4 +15,4 @@ pyve liqnot
 
 launch_gvim
 
-git status
+git s

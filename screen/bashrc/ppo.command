@@ -18,5 +18,5 @@ if [ -z "$NO_COMMON_EDITOR" ];
 then
     launch_gvim
 
-    git status
+    git s
 fi;

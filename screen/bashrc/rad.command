@@ -13,4 +13,4 @@ http
 
 launch_gvim
 
-git status
+git s
