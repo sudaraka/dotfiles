@@ -12,20 +12,25 @@
     ui              = true
 [alias]
     a               = add
+    ai              = add -i
+    ap              = add -p
     c               = commit -m
     ca              = commit -am
     ch              = checkout
     d               = diff --no-ext-diff
     ds              = diff --no-ext-diff --staged
     f               = fetch
+    fom             = fetch origin master
     l               = log --graph --decorate=short --oneline --all --date=short --format=format:'%C(bold red)%h%C(reset) %C(yellow)%ad%C(reset)%C(bold green)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     ll              = log --graph --decorate=short --stat
     m               = merge
     ph              = push
     pl              = pull
     r               = reset
+    rh              = reset --hard
     rv              = revert
-    s               = status
+    s               = status -sb
+    sl              = status
     st              = stash
 [push]
     default         = simple
