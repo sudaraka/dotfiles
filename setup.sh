@@ -203,7 +203,7 @@ done;
 # Download "Font Awesome" used for icons in i3wm
 \rm -f ~/.fonts/fontawesome-webfont.ttf >/dev/null 2>&1
 \mkdir -p ~/.fonts >/dev/null 2>&1
-\wget http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/fonts/fontawesome-webfont.ttf -O ~/.fonts/fontawesome-webfont.ttf >/dev/null 2>&1
+\ln -sv ~/src/Font-Awesome/fonts/FontAwesome.otf ~/.fonts/
 
 echo
 
