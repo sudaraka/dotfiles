@@ -8,7 +8,7 @@ short_units yes
 TEXT
 ,[ \
   ${if_up %WIRELESS_INTERFACE%} \
-  { "color":"\#fd971f", "full_text":" " }, \
+  { "color":"\#fd971f", "full_text":" " }, \
   { "color":"\#82b414", "full_text":"    ${downspeed %WIRELESS_INTERFACE%} " }, \
   { "color":"\#fd971f", "full_text":"    ${upspeed %WIRELESS_INTERFACE%} " }, \
   ${else} \
@@ -32,7 +32,7 @@ TEXT
   ${if_empty ${battery %BATTERY_ID%}} \
   ${else} \
     ${if_match ${battery_percent %BATTERY_ID%}>85} \
-    { "color":"\#82b414", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+    { "color":"\#82b414", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
     ${else} \
       ${if_match ${battery_percent %BATTERY_ID%}>65} \
       { "color":"\#fd971f", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
@@ -43,7 +43,7 @@ TEXT
           ${if_match ${battery_percent %BATTERY_ID%}>9} \
           { "color":"\#f92672", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
           ${else} \
-          { "color":"\#f92672", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+          { "color":"\#f92672", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
           ${endif} \
         ${endif} \
       ${endif} \
@@ -64,6 +64,6 @@ TEXT
   ${endif} \
   { \
     "color":"\#94d8e5", \
-    "full_text":"     ${time %a, %b %d, %Y} ${time %l:%M %p} " \
+    "full_text":"     ${time %a, %b %d, %Y}   ${time %l:%M %p} " \
   } \
 ]
