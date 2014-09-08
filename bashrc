@@ -17,6 +17,12 @@ alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias cdv="pushd $VAULTDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
 
+# Make GIT completion work with "g" alias
+# Based on Stackoverflow answer by chris_sutter and Ondrej Machulda
+# https://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases
+source /usr/share/git/completion/git-completion.bash
+__git_complete g __git_main
+
 # Frequently used directories
 export DOWNLOADSDIR="$HOME/downloads"
 export PROJECTSDIR="$HOME/projects"
