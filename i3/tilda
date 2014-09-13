@@ -58,6 +58,7 @@ back_blue = 0
 text_red = 65535
 text_green = 65535
 text_blue = 65535
+scroll_history_infinite = false
 scroll_background = false
 scroll_on_output = false
 notebook_border = false
