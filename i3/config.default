@@ -16,6 +16,21 @@ set $display1 %SECONDARY_DISPLAY%
 
 set $font_size %FONT_SIZE%
 
+# Workspace names
+set $ws_chat    "1: chat"
+set $ws_mail    "2: mail"
+set $ws_twitter "3: twitter"
+set $ws_1       "4: 1"
+set $ws_2       "5: 2"
+set $ws_3       "6: 3"
+set $ws_4       "7: 4"
+set $ws_5       "8: 5"
+set $ws_6       "9: 6"
+set $ws_7       "10: 7"
+set $ws_8       "11: 8"
+set $ws_9       "12: 9"
+set $ws_0       "13: 10"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -80,28 +95,32 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym Mod4+1 workspace " 1"
-bindsym Mod4+2 workspace " 2"
-bindsym Mod4+3 workspace " 3"
-bindsym Mod4+4 workspace " 4"
-bindsym Mod4+5 workspace " 5"
-bindsym Mod4+6 workspace " 6"
-bindsym Mod4+7 workspace " 7"
-bindsym Mod4+8 workspace " 8"
-bindsym Mod4+9 workspace " 9"
-bindsym Mod4+0 workspace " 10"
+bindsym Mod4+1 workspace $ws_1
+bindsym Mod4+2 workspace $ws_2
+bindsym Mod4+3 workspace $ws_3
+bindsym Mod4+4 workspace $ws_4
+bindsym Mod4+5 workspace $ws_5
+bindsym Mod4+6 workspace $ws_6
+bindsym Mod4+7 workspace $ws_7
+bindsym Mod4+8 workspace $ws_8
+bindsym Mod4+9 workspace $ws_9
+bindsym Mod4+0 workspace $ws_0
+
+bindsym Mod4+Shift+c workspace $ws_chat
+bindsym Mod4+Shift+m workspace $ws_mail
+bindsym Mod4+Shift+t workspace $ws_twitter
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace " 1"
-bindsym $mod+Shift+2 move container to workspace " 2"
-bindsym $mod+Shift+3 move container to workspace " 3"
-bindsym $mod+Shift+4 move container to workspace " 4"
-bindsym $mod+Shift+5 move container to workspace " 5"
-bindsym $mod+Shift+6 move container to workspace " 6"
-bindsym $mod+Shift+7 move container to workspace " 7"
-bindsym $mod+Shift+8 move container to workspace " 8"
-bindsym $mod+Shift+9 move container to workspace " 9"
-bindsym $mod+Shift+0 move container to workspace " 10"
+bindsym $mod+Shift+1 move container to workspace $ws_1
+bindsym $mod+Shift+2 move container to workspace $ws_2
+bindsym $mod+Shift+3 move container to workspace $ws_3
+bindsym $mod+Shift+4 move container to workspace $ws_4
+bindsym $mod+Shift+5 move container to workspace $ws_5
+bindsym $mod+Shift+6 move container to workspace $ws_6
+bindsym $mod+Shift+7 move container to workspace $ws_7
+bindsym $mod+Shift+8 move container to workspace $ws_8
+bindsym $mod+Shift+9 move container to workspace $ws_9
+bindsym $mod+Shift+0 move container to workspace $ws_0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -152,6 +171,7 @@ bar {
   status_command ~/.i3/i3conky
   font pango:Font Awsome $font_size
   font pango:Monaco for Powerline $font_size
+  strip_workspace_numbers yes
 
   colors {
     focused_workspace #b7eb46 #b7eb46 #101010
@@ -165,7 +185,9 @@ bar {
   id bar-2
   output $display1
   tray_output none
+  font pango:Font Awsome 10
   font pango:Monaco for Powerline 10
+  strip_workspace_numbers yes
 
   colors {
     focused_workspace #b7eb46 #b7eb46 #101010
@@ -176,19 +198,22 @@ bar {
 }
 
 # Workspaces
-workspace " 1" output $display0
-workspace " 2" output $display0
-workspace " 3" output $display0
-workspace " 4" output $display0
-workspace " 5" output $display0
-workspace " 6" output $display0
-workspace " 7" output $display0
-workspace " 8" output $display0
-workspace " chat" output $display0
-workspace " mail" output $display0
-workspace " twitter" output $display0
-workspace " 9" output $display1
-workspace " 10" output $display1
+workspace $ws_chat output $display0
+workspace $ws_mail output $display0
+workspace $ws_twitter output $display0
+workspace $ws_1 output $display0
+workspace $ws_2 output $display0
+workspace $ws_3 output $display0
+workspace $ws_4 output $display0
+workspace $ws_5 output $display0
+workspace $ws_6 output $display0
+workspace $ws_7 output $display0
+workspace $ws_8 output $display0
+workspace $ws_9 output $display1
+workspace $ws_0 output $display1
+
+# Switch to workspace 1
+exec i3-msg workspace $ws_1
 
 # Window borders
 new_window none
@@ -196,10 +221,10 @@ new_float 1pixel
 hide_edge_borders both
 
 # Window specific settings
-assign [class="HipChat"] " chat"
-assign [class="Hotot"] " twitter"
-assign [class="Pidgin"] " chat"
-assign [class="Thunderbird"] " mail"
+assign [class="HipChat"] $ws_chat
+assign [class="Hotot"] $ws_twitter
+assign [class="Pidgin"] $ws_chat
+assign [class="Thunderbird"] $ws_mail
 
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Orage"] floating enable
@@ -224,10 +249,6 @@ bindsym Mod4+v exec --no-startup-id gvim
 bindsym Mod4+w exec --no-startup-id firefox
 bindsym Mod4+Shift+w exec --no-startup-id chromium --incognito
 bindsym Print exec --no-startup-id xfce4-screenshooter -f
-
-bindsym Mod4+Shift+c workspace " chat"
-bindsym Mod4+Shift+m workspace " mail"
-bindsym Mod4+Shift+t workspace " twitter"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
