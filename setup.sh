@@ -201,9 +201,11 @@ done;
 \ln -sv "$DOTFILES_DIR/i3/i3exit" ~/bin/i3exit
 
 # Download "Font Awesome" used for icons in i3wm
+\rm -f ~/.fonts/FontAwesome.otf >/dev/null 2>&1
 \rm -f ~/.fonts/fontawesome-webfont.ttf >/dev/null 2>&1
 \mkdir -p ~/.fonts >/dev/null 2>&1
 \ln -sv ~/src/Font-Awesome/fonts/FontAwesome.otf ~/.fonts/
+\ln -sv ~/src/Font-Awesome/fonts/fontawesome-webfont.ttf ~/.fonts/
 
 echo
 
