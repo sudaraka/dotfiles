@@ -570,6 +570,8 @@ function! g:PhpPort()
     %s/<?=/<?php echo /e
     %s/<?\s\+/<?php /e
     %s/<?$/<?php/e
+    %s/<?\([^p]\)/<?php \1/e
+    %s/\[\"\([^"]\+\)"]/['\1']/e
     retab
 
     let@/=_s
