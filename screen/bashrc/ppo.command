@@ -7,6 +7,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias sbc='cd ../CommonBundle'
+alias sbp='cd ../PromoBundle'
+
 . ~/.bashrc
 
 cd src/PPO/Bundle;
@@ -18,5 +21,12 @@ if [ -z "$NO_COMMON_EDITOR" ];
 then
     launch_gvim
 
-    git s
+    g s
 fi;
+
+cd ../PromoBundle;
+git_pull_or_fetch_remote_branch;
+
+launch_gvim
+
+g s
