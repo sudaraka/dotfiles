@@ -15,6 +15,7 @@ xbacklight -set 10
 xset -dpms
 xset s off
 
-init-monitors
+#init-monitors
+xrandr --output HDMI1 --auto --primary --output LVDS1 --off
 
 exec i3 -V >> /tmp/i3.log 2>&1
