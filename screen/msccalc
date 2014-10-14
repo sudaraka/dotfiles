@@ -1,0 +1,15 @@
+# msccalc: GNU Screen profile for MSC Calculator development
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/msccalc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/msc-calc/src
+
+split
+screen -t server bash --rcfile $HOME/.screen/bashrc/msccalc.server
+
+focus down
+screen -t command bash --rcfile $HOME/.screen/bashrc/msccalc.command
