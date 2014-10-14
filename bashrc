@@ -16,6 +16,7 @@ alias gg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias cdv="pushd $VAULTDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
+alias jslint='jslint --color --white --predef $ --predef jQuery'
 
 # Make GIT completion work with "g" alias
 # Based on Stackoverflow answer by chris_sutter and Ondrej Machulda
