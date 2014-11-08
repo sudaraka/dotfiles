@@ -14,6 +14,7 @@
     a               = add
     ai              = add -i
     ap              = add -p
+    b               = branch
     c               = commit -m
     ca              = commit -am
     ch              = checkout
@@ -27,6 +28,7 @@
     m               = merge
     ph              = push
     pl              = pull
+    rb              = rebase
     r               = reset
     rh              = reset --hard
     rv              = revert
