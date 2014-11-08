@@ -416,6 +416,7 @@ augroup ft_marker
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType javascript setlocal foldmethod=marker
+    autocmd FileType conf setlocal foldmethod=marker
     autocmd FileType css setlocal foldmethod=marker
     autocmd FileType sh setlocal foldmethod=marker
     autocmd FileType twig setlocal foldmarker=[[[,]]]
