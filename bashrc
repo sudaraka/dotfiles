@@ -29,7 +29,7 @@ export DOWNLOADSDIR="$HOME/downloads"
 export PROJECTSDIR="$HOME/projects"
 export VAULTDIR="$HOME/vault"
 
-PS1="\[\e[0;33m\]\u@\h\[\e[1;92m\] \W\[\e[0;92m\] \$\[\e[0m\] "
+PROMPT_COMMAND=set_cli_prompt
 
 export EDITOR=vim
 export HISTFILESIZE=99999
@@ -131,6 +131,37 @@ function launch_gvim() {
     then
         gvim
     fi;
+}
+
+# Check if current directory is a git repo
+function is_git_repo {
+    git branch > /dev/null 2>&1
+}
+
+# Check if git working directory is dirty
+function is_git_dirty() {
+    if is_git_repo; then
+        [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+    fi
+}
+
+# Get git branch for prompt
+parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1\\[\\e[0m\\]:/'
+}
+
+# Set final symbol of the prompt
+function set_cli_prompt_symbol () {
+    if [ is_git_repo -a '*' = "`is_git_dirty`" ]; then
+        echo "\[\e[1;31m\]\$"
+    else
+        echo "\[\e[0;92m\]\$"
+    fi
+}
+
+# Update CLI prompt
+set_cli_prompt() {
+    PS1="\[\e[0;33m\]\u@\h \[\e[0;35m\]$(parse_git_branch)\[\e[1;92m\]\W $(set_cli_prompt_symbol)\[\e[0m\] "
 }
 
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
