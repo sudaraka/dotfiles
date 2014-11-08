@@ -151,17 +151,23 @@ parse_git_branch() {
 }
 
 # Set final symbol of the prompt
-function set_cli_prompt_symbol () {
+function set_cli_prompt_symbol() {
     if [ is_git_repo -a '*' = "`is_git_dirty`" ]; then
-        echo "\[\e[1;31m\]\$"
+        echo "\[\e[0;91m\]\$"
     else
         echo "\[\e[0;92m\]\$"
     fi
 }
 
+function parse_pyve() {
+    if [ ! -z "$VIRTUAL_ENV" ]; then
+        echo "\[\e[1;96m\]`basename \"$VIRTUAL_ENV\"`\[\e[0m\]:"
+    fi
+}
+
 # Update CLI prompt
 set_cli_prompt() {
-    PS1="\[\e[0;33m\]\u@\h \[\e[0;35m\]$(parse_git_branch)\[\e[1;92m\]\W $(set_cli_prompt_symbol)\[\e[0m\] "
+    PS1="\[\e[0;33m\]\u@\h $(parse_pyve)\[\e[1;35m\]$(parse_git_branch)\[\e[1;92m\]\W $(set_cli_prompt_symbol)\[\e[0m\] "
 }
 
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
