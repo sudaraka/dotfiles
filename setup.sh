@@ -224,3 +224,14 @@ echo
 echo
 
 # }}}
+
+# iPython Notebook {{{
+
+echo 'Setup iPython Notebook'
+echo
+
+\systemctl --user enable "$DOTFILES_DIR/ipython-notebook.service"
+
+echo
+
+# }}}
