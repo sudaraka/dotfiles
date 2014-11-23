@@ -487,6 +487,13 @@ endif
 Bundle 'scrooloose/syntastic'
 
 "}}}
+" Plugin: Vim-Webdevicons {{{
+
+if has('gui_running')
+    Bundle 'ryanoasis/vim-webdevicons'
+endif
+
+"}}}
 
 " Language: HTML/CSS {{{
 
