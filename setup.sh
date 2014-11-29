@@ -65,6 +65,7 @@ echo
 \rm -f ~/.bash_profile 2>/dev/null
 \rm -f ~/.bashrc 2>/dev/null
 \rm -f ~/.bashrc.local 2>/dev/null
+\rm -f ~/.signature 2>/dev/null
 \sudo rm -f /usr/share/bash-completion/completions/cdp 2>/dev/null
 
 \ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
@@ -74,6 +75,8 @@ if [ -f $DOTFILES_DIR/bashrc.`uname -n` ]; then
 fi;
 
 \sudo ln -sv $DOTFILES_DIR/cdp-completion.bash /usr/share/bash-completion/completions/cdp
+
+\ln -sv "$DOTFILES_DIR/signature" ~/.signature
 
 echo
 
