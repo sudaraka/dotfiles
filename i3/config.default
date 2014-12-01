@@ -225,6 +225,7 @@ assign [class="HipChat"] $ws_chat
 assign [class="Hotot"] $ws_twitter
 assign [class="Pidgin"] $ws_chat
 assign [class="Thunderbird"] $ws_mail
+assign [class="Claws-mail"] $ws_mail
 
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Pidgin" title="Buddy List"] floating enable
@@ -238,7 +239,7 @@ bindsym Mod4+e exec --no-startup-id thunar
 bindsym Mod4+f exec --no-startup-id filezilla
 bindsym Mod4+g exec --no-startup-id gpodder
 bindsym Mod4+k exec --no-startup-id keepassx
-bindsym Mod4+m exec --no-startup-id thunderbird
+bindsym Mod4+m exec --no-startup-id claws-mail
 bindsym Mod4+n exec --no-startup-id geany
 bindsym Mod4+p exec --no-startup-id vlc -ZLq "/home/suda/music/"
 bindsym Mod4+r exec --no-startup-id nitrotasks
