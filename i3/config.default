@@ -227,12 +227,10 @@ assign [class="Pidgin"] $ws_chat
 assign [class="Thunderbird"] $ws_mail
 
 for_window [class="Gnome-calculator"] floating enable
-for_window [class="Orage"] floating enable
 for_window [class="Pidgin" title="Buddy List"] floating enable
 for_window [class="Pidgin" title="^Conversations with"] floating disable
 for_window [class="Thunar" title="File Operation Progress"] floating enable
 for_window [class="Vlc"] floating enable
-for_window [class="Xfce4-notes"] floating enable
 
 # Key bindings
 bindsym Mod4+c exec --no-startup-id gnome-calculator
