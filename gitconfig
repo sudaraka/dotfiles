@@ -2,8 +2,8 @@
     editor          = vim
 [user]
     name            = Sudaraka Wijesinghe
-    email           = sudaraka.wijesinghe@gmail.com
-    signingkey      = D97F7914
+    email           = sudaraka@sudaraka.org
+    signingkey      = 14A657B6
 [color]
     branch          = auto
     diff            = auto
