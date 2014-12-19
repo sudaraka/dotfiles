@@ -620,8 +620,3 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " }}}
 
 " }}}
-" Presentation {{{
-
-Bundle 'presenting.vim'
-
-" }}}
