@@ -290,6 +290,7 @@ vnoremap <silent> <Leader>dC <esc>:call g:Django_coverage_run()<CR>
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
 autocmd BufNewFile,BufRead,BufWritePost *.json,*.webapp set filetype=json
 autocmd BufNewFile,BufRead,BufWritePost *.js.* set filetype=javascript
+autocmd BufNewFile,BufRead,BufWritePost *.less set filetype=less
 
 " }}}
 " Search {{{
@@ -510,6 +511,11 @@ Bundle 'evidens/vim-twig'
 
 Bundle 'mattn/emmet-vim'
 let g:user_emmet_mode = 'ni'
+
+"}}}
+" Plugin: Vim-Less {{{
+
+Bundle 'groenewege/vim-less'
 
 "}}}
 
