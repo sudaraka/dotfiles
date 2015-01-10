@@ -6,7 +6,7 @@
 
 source $HOME/.screenrc
 
-chdir $PROJECTSDIR/radiators-warehouse
+chdir $PROJECTSDIR/radiators-warehouse/web
 
 screen -t grunt bash --rcfile $HOME/.screen/bashrc/rad.grunt
 

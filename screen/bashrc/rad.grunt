@@ -9,6 +9,4 @@
 
 . ~/.bashrc
 
-cd web
-
 grunt watch
