@@ -1,0 +1,13 @@
+# gearpeers: GNU Screen profile for gearpeers.com work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/gearpeers
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/gearpeers
+
+screen -t grunt bash --rcfile $HOME/.screen/bashrc/gearpeers.grunt
+
+screen -t command bash --rcfile $HOME/.screen/bashrc/gearpeers.command
