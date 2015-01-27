@@ -8,4 +8,6 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/miracle-sealants
 
+screen -t grunt bash --rcfile $HOME/.screen/bashrc/msc.grunt
+
 screen -t command bash --rcfile $HOME/.screen/bashrc/msc.command
