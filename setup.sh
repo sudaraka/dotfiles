@@ -238,3 +238,17 @@ echo
 echo
 
 # }}}
+
+# Npm configuration {{{
+
+echo 'Setup Npm Configuration'
+echo
+
+# Remove existing configuration
+\rm -f ~/.npmrc 2>/dev/null
+
+\ln -sv "$DOTFILES_DIR/npmrc" ~/.npmrc
+
+echo
+
+# }}}
