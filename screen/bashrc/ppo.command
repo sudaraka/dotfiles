@@ -7,10 +7,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias sbc='cd ../CommonBundle'
-alias sbp='cd ../PromoBundle'
-
 . ~/.bashrc
+
+BUNDLE_DIR="`pwd`/src/PPO/Bundle"
+
+alias sbc="cd $BUNDLE_DIR/CommonBundle"
+alias sbp="cd $BUNDLE_DIR/PromoBundle"
 
 cd src/PPO/Bundle;
 

@@ -8,10 +8,6 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/vcreative/ppo_symfony_base
 
-split -v
-screen -t command bash --rcfile $HOME/.screen/bashrc/ppo.command
-
-focus right
 screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
 
-focus left
+screen -t command bash --rcfile $HOME/.screen/bashrc/ppo.command
