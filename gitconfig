@@ -18,7 +18,7 @@
     c               = commit
     ca              = commit -a
     ch              = checkout
-    cp              = cherry-pick
+    cp              = cherry-pick -x
     d               = diff --no-ext-diff
     ds              = diff --no-ext-diff --staged
     f               = fetch
