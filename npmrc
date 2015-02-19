@@ -1,7 +1,7 @@
 ; npm userconfig file
 
 unicode=false
-link=true
+link=false
 init.author.name=Sudaraka Wijesinghe
 init.author.email=sudaraka@sudaraka.org
 init.author.url=http://sudaraka.org/
