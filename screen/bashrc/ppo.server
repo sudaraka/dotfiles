@@ -11,4 +11,4 @@
 
 git_pull_or_fetch_remote_branch;
 
-http
+app/console server:run
