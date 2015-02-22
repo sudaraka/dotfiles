@@ -14,7 +14,6 @@ alias g='git'
 alias gk='gitk --all --date-order'
 alias gg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
-alias cdv="pushd $VAULTDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
 alias jslint='jslint --color --white --predef $ --predef jQuery'
 
@@ -27,7 +26,6 @@ __git_complete g __git_main
 # Frequently used directories
 export DOWNLOADSDIR="$HOME/downloads"
 export PROJECTSDIR="$HOME/projects"
-export VAULTDIR="$HOME/vault"
 export PYVEDIR="$HOME/opt/virtualenv"
 
 PROMPT_COMMAND=set_cli_prompt

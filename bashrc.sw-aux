@@ -5,6 +5,3 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export DOWNLOADSDIR="$HOME/downloads"
-export PROJECTSDIR="$HOME/projects"
-export VAULTDIR="$HOME/vault"
