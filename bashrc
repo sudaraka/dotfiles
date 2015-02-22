@@ -28,6 +28,7 @@ __git_complete g __git_main
 export DOWNLOADSDIR="$HOME/downloads"
 export PROJECTSDIR="$HOME/projects"
 export VAULTDIR="$HOME/vault"
+export PYVEDIR="$HOME/opt/virtualenv"
 
 PROMPT_COMMAND=set_cli_prompt
 
