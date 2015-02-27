@@ -468,6 +468,8 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'tpope/vim-fugitive'
 
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
 "}}}
 " Plugin: Vim-Airline {{{
 
