@@ -471,6 +471,11 @@ Bundle 'tpope/vim-fugitive'
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 "}}}
+" Plugin: Vim-Gitgutter {{{
+
+Bundle 'airblade/vim-gitgutter'
+
+"}}}
 " Plugin: Vim-Airline {{{
 
 " Symlink a patched font
