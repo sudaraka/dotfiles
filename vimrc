@@ -333,7 +333,7 @@ Bundle 'tomasr/molokai'
 colorscheme molokai
 
 " Show whitespace
-" MUST be inserted BEFORE the colors scheme command
+" MUST be inserted AFTER the colors scheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
