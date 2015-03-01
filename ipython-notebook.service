@@ -5,7 +5,7 @@ Description=iPython Notebook
 Type=simple
 PIDFile=/tmp/ipython-notebook
 WorkingDirectory=%h/notes
-ExecStart=/home/suda/opt/virtualenv/ipn/bin/ipython notebook --no-browser --no-mathjax --ip=127.0.0.1 --port=8888 --port-retries=0
+ExecStart=/home/suda/opt/virtualenv/ipn/bin/ipython notebook --no-browser --no-mathjax --ip=127.0.0.1 --port=8888 --port-retries=0 --FileContentsManager.hide_globs=['*.sh','*.localstorage']
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 
