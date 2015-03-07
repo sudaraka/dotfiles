@@ -56,3 +56,5 @@
     dirty-stash     = red
     repo-state      = blue
     upstream-state  = cyan
+[rebase]
+	autosquash = true
