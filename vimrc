@@ -415,13 +415,8 @@ endfunction
 " default marker based folding
 augroup ft_marker
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType javascript setlocal foldmethod=marker
-    autocmd FileType conf setlocal foldmethod=marker
-    autocmd FileType css setlocal foldmethod=marker
-    autocmd FileType sh setlocal foldmethod=marker
     autocmd FileType twig setlocal foldmarker=[[[,]]]
-    autocmd FileType twig setlocal foldmethod=marker
+    autocmd FileType javascript,vim,conf,css,sh,html,twig  setlocal foldmethod=marker
 augroup END
 
 nnoremap <Space> za
