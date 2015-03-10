@@ -495,11 +495,6 @@ let g:colorizer_auto_filetype='css,html,rc,conf,tpl,xml,ini'
 Bundle 'hail2u/vim-css3-syntax'
 
 " }}}
-" Plugin: Vim-Twig {{{
-
-Bundle 'evidens/vim-twig'
-
-"}}}
 " Plugin: Emmet-Vim {{{
 
 Bundle 'mattn/emmet-vim'
