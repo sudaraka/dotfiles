@@ -9,7 +9,7 @@
 
 . ~/.bashrc
 
-http
+httpd
 
 launch_gvim
 

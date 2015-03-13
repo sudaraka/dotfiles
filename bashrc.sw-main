@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias http='sudo systemctl restart httpd'
+alias httpd='sudo systemctl restart httpd'
 
 # gPodder home
 export GPODDER_HOME=~/.config/gpodder
