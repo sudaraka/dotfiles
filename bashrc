@@ -8,7 +8,7 @@
 alias grep='grep --color=auto'
 alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
-alias tree='tree -CA'
+alias tree='tree -CA --dirsfirst'
 alias truecrypt='truecrypt -t'
 alias g='git'
 alias gk='gitk --all --date-order'
