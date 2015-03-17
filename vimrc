@@ -480,12 +480,6 @@ Bundle 'scrooloose/syntastic'
 
 " Language: HTML/CSS {{{
 
-" Plugin: Color Highlight {{{
-
-Bundle 'chrisbra/color_highlight'
-let g:colorizer_auto_filetype='css,html,rc,conf,tpl,xml,ini'
-
-" }}}
 " Plugin: Vim-CSS3-Syntax {{{
 
 Bundle 'hail2u/vim-css3-syntax'
