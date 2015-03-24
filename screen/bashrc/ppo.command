@@ -19,7 +19,13 @@ alias sbp="cd $BUNDLE_DIR/PromoBundle"
 
 
 sbc;
-git_pull_or_fetch_remote_branch;
+CURRENT_BRANCH="`git branch|grep '^\*'|cut -d' ' -f2`"
+
+git_pull_or_fetch_remote_branch
+
+if [ "master" == "$CURRENT_BRANCH" ]; then
+    git_pull_or_fetch_remote_branch origin $CURRENT_BRANCH
+fi
 
 if [ -z "$NO_COMMON_EDITOR" ];
 then
@@ -29,7 +35,13 @@ then
 fi;
 
 sbp;
-git_pull_or_fetch_remote_branch;
+CURRENT_BRANCH="`git branch|grep '^\*'|cut -d' ' -f2`"
+
+git_pull_or_fetch_remote_branch
+
+if [ "master" == "$CURRENT_BRANCH" ]; then
+    git_pull_or_fetch_remote_branch origin $CURRENT_BRANCH
+fi
 
 launch_gvim
 

@@ -114,7 +114,7 @@ function git_pull_or_fetch_remote_branch() {
     if [ -z "$BRANCH" ]; then BRANCH='master'; fi;
 
     if [ -z "`git branch|grep \"* $BRANCH\"`" ]; then
-        git fetch $REMOTE $BRANCH:$BRANCH
+        git fetch $REMOTE $BRANCH
     else
         git pull $REMOTE $BRANCH
     fi;
