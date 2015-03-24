@@ -1,0 +1,13 @@
+# flapi.server: Initialize server window shell
+# Author: [Sudaraka Wijesinghe](http://sudaraka.org/contact)
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/flapi.server
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+pyve flapi
+./server.py

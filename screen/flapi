@@ -1,0 +1,18 @@
+# flapi: GNU Screen profile for Family Legacy API development
+# Author: [Sudaraka Wijesinghe](http://sudaraka.org/contact)
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/flapi
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/family-legacy-api/
+
+screen -t grunt bash --rcfile $HOME/.screen/bashrc/flapi.grunt
+
+split
+resize 10
+screen -t server bash --rcfile $HOME/.screen/bashrc/flapi.server
+
+focus down
+screen -t command bash --rcfile $HOME/.screen/bashrc/flapi.command
