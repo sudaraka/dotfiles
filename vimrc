@@ -289,8 +289,8 @@ vnoremap <silent> <Leader>dC <esc>:call g:Django_coverage_run()<CR>
 
 autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
 autocmd BufNewFile,BufRead,BufWritePost *.json,*.webapp set filetype=json
-autocmd BufNewFile,BufRead,BufWritePost *.js.* set filetype=javascript
 autocmd BufNewFile,BufRead,BufWritePost *.html.* set filetype=html
+autocmd BufNewFile,BufRead,BufWritePost *.js.* set filetype=javascript
 autocmd BufNewFile,BufRead,BufWritePost *.less set filetype=less
 
 " }}}
@@ -435,7 +435,7 @@ set wildignore+=*.pyc
 " Use Silver Search CtrlP
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "*coverage*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules" --ignore ".tmp/*"'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules" --ignore ".tmp/*"'
     let g:ctrlp_use_caching = 0
 endif
 
