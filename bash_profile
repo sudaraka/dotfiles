@@ -4,17 +4,19 @@
 
 PATH=$HOME/bin:$PATH
 
-OPT_DIRS=''
-OPT_DIRS="$OPT_DIRS android-sdk-linux/tools"
-OPT_DIRS="$OPT_DIRS android-sdk-linux/platform-tools"
-OPT_DIRS="$OPT_DIRS heroku-client/bin"
-OPT_DIRS="$OPT_DIRS node/bin"
-OPT_DIRS="$OPT_DIRS io.js/bin"
-OPT_DIRS="$OPT_DIRS firefox"
+OPT_DIR="$HOME/opt"
 
-for dir in $OPT_DIRS; do
-    if [ -d $HOME/opt/$dir ]; then
-        PATH=$PATH:$HOME/opt/$dir
+EXTRA_PATH=''
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/tools"
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/platform-tools"
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/heroku-client/bin"
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/node/bin"
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/io.js/bin"
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
+
+for dir in $EXTRA_PATH; do
+    if [ -d $dir ]; then
+        PATH=$PATH:$dir
     fi;
 done;
 
