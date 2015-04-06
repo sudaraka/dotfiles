@@ -8,6 +8,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/family-legacy-api/
 
+setenv PATH $PATH:$PROJECTSDIR/family-legacy-api/bin
+
 screen -t grunt bash --rcfile $HOME/.screen/bashrc/flapi.grunt
 
 split
