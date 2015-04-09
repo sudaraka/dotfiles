@@ -8,6 +8,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/radiators-warehouse/web
 
+setenv PATH $PATH:$PROJECTSDIR/radiators-warehouse/web/bin
+
 screen -t grunt bash --rcfile $HOME/.screen/bashrc/rad.grunt
 
 screen -t command bash --rcfile $HOME/.screen/bashrc/rad.command
