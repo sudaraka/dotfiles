@@ -1,6 +1,0 @@
-
-source $HOME/.screenrc
-
-chdir $PROJECTSDIR/tkbook
-
-screen -t command bash --rcfile $HOME/.screen/bashrc/tkbook.command
