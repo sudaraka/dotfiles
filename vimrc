@@ -292,6 +292,7 @@ autocmd BufNewFile,BufRead,BufWritePost *.json,*.webapp set filetype=json
 autocmd BufNewFile,BufRead,BufWritePost *.html.* set filetype=html
 autocmd BufNewFile,BufRead,BufWritePost *.js.* set filetype=javascript
 autocmd BufNewFile,BufRead,BufWritePost *.less set filetype=less
+autocmd FileType json :setlocal sw=2 ts=2 sts=2
 
 " }}}
 " Search {{{
