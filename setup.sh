@@ -24,12 +24,12 @@ echo 'Setup Vim Configuration'
 echo
 
 # Remove existing configuration and recreate directories
-\find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
-\rm -fr ~/.vimrc 2>/dev/null
-\mkdir -pv ~/.vim/bundle
-\mkdir -pv ~/.vim/colors
+find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
+rm -fr ~/.vimrc 2>/dev/null
+mkdir -pv ~/.vim/bundle
+mkdir -pv ~/.vim/colors
 
-\ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
+ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
 
 # Install Vundle from github
 if [ ! -d ~/.vim/bundle/vundle ]; then
@@ -37,20 +37,20 @@ if [ ! -d ~/.vim/bundle/vundle ]; then
 fi;
 
 # Make vim use aspell dictionary
-\mkdir -pv ~/.vim/spell
-\rm ~/.vim/spell/en.utf-8.add
-\ln -sv ../../.aspell.en.pws ~/.vim/spell/en.utf-8.add
+mkdir -pv ~/.vim/spell
+rm ~/.vim/spell/en.utf-8.add
+ln -sv ../../.aspell.en.pws ~/.vim/spell/en.utf-8.add
 
 # Configure molokai color theme
-\ln -sv ~/.vim/bundle/molokai/colors/molokai.vim ~/.vim/colors/
+ln -sv ~/.vim/bundle/molokai/colors/molokai.vim ~/.vim/colors/
 
 # Run vim command to install bundles
-\vim +BundleClean +BundleUpdate +BundleInstall +qa
+vim +BundleClean +BundleUpdate +BundleInstall +qa
 
 # Symlink patched font for powerline/airline
-\sudo mkdir -pv /usr/share/fonts/TTF 2>/dev/null
-\sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
-\sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
+sudo mkdir -pv /usr/share/fonts/TTF 2>/dev/null
+sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
+sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
 
 echo
 
@@ -62,23 +62,23 @@ echo 'Setup Bash Configuration'
 echo
 
 # Remove existing configuration
-\rm -f ~/.bash_profile 2>/dev/null
-\rm -f ~/.bashrc 2>/dev/null
-\rm -f ~/.bashrc.local 2>/dev/null
-\rm -f ~/.signature 2>/dev/null
-\sudo rm -f /usr/share/bash-completion/completions/cdp 2>/dev/null
-\sudo rm -f /usr/share/bash-completion/completions/pyve 2>/dev/null
+rm -f ~/.bash_profile 2>/dev/null
+rm -f ~/.bashrc 2>/dev/null
+rm -f ~/.bashrc.local 2>/dev/null
+rm -f ~/.signature 2>/dev/null
+sudo rm -f /usr/share/bash-completion/completions/cdp 2>/dev/null
+sudo rm -f /usr/share/bash-completion/completions/pyve 2>/dev/null
 
-\ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
-\ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
+ln -sv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
+ln -sv "$DOTFILES_DIR/bashrc" ~/.bashrc
 if [ -f $DOTFILES_DIR/bashrc.`uname -n` ]; then
-   \ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
+   ln -sv "$DOTFILES_DIR/bashrc.`uname -n`" ~/.bashrc.local
 fi;
 
-\sudo ln -sv $DOTFILES_DIR/cdp-completion.bash /usr/share/bash-completion/completions/cdp
-\sudo ln -sv $DOTFILES_DIR/pyve-completion.bash /usr/share/bash-completion/completions/pyve
+sudo ln -sv $DOTFILES_DIR/cdp-completion.bash /usr/share/bash-completion/completions/cdp
+sudo ln -sv $DOTFILES_DIR/pyve-completion.bash /usr/share/bash-completion/completions/pyve
 
-\ln -sv "$DOTFILES_DIR/signature" ~/.signature
+ln -sv "$DOTFILES_DIR/signature" ~/.signature
 
 echo
 
@@ -90,17 +90,17 @@ echo 'Setup Git Configuration'
 echo
 
 # Remove existing configuration
-\rm -f ~/.gitconfig 2>/dev/null
-\rm -f ~/.gitshrc 2>/dev/null
-\rm -f ~/.config/git/gitk 2>/dev/null
+rm -f ~/.gitconfig 2>/dev/null
+rm -f ~/.gitshrc 2>/dev/null
+rm -f ~/.config/git/gitk 2>/dev/null
 
-\ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
-\ln -sv "$DOTFILES_DIR/gitshrc" ~/.gitshrc
-\ln -sv "$DOTFILES_DIR/gitk" ~/.config/git/gitk
+ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
+ln -sv "$DOTFILES_DIR/gitshrc" ~/.gitshrc
+ln -sv "$DOTFILES_DIR/gitk" ~/.config/git/gitk
 
-\mkdir -p ~/bin >/dev/null 2>&1
-\rm ~/bin/git_vimdiff.sh >/dev/null 2>&1
-\ln -sv "$DOTFILES_DIR/git_vimdiff.sh" ~/bin/git_vimdiff.sh
+mkdir -p ~/bin >/dev/null 2>&1
+rm ~/bin/git_vimdiff.sh >/dev/null 2>&1
+ln -sv "$DOTFILES_DIR/git_vimdiff.sh" ~/bin/git_vimdiff.sh
 
 echo
 
@@ -112,14 +112,14 @@ echo 'Setup GNU Screen Configuration'
 echo
 
 # Remove existing configuration
-\rm -f ~/.screen 2>/dev/null
-\rm -f ~/.screenrc 2>/dev/null
-\sudo rm -f /usr/share/bash-completion/completions/scr 2>/dev/null
+rm -f ~/.screen 2>/dev/null
+rm -f ~/.screenrc 2>/dev/null
+sudo rm -f /usr/share/bash-completion/completions/scr 2>/dev/null
 
-\ln -sv "$DOTFILES_DIR/screen" ~/.screen
-\ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
+ln -sv "$DOTFILES_DIR/screen" ~/.screen
+ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
 
-\sudo ln -sv $DOTFILES_DIR/scr-completion.bash /usr/share/bash-completion/completions/scr
+sudo ln -sv $DOTFILES_DIR/scr-completion.bash /usr/share/bash-completion/completions/scr
 
 echo
 
@@ -131,25 +131,25 @@ echo 'Setup GUI Configuration'
 echo
 
 # Remove existing configuration
-\rm -f ~/.xinitrc 2>/dev/null
-\rm -f ~/.gtkrc-2.0 2>/dev/null
-\rm -f ~/.config/gtk-3.0 2>/dev/null
-\rm -f ~/.config/Trolltech.conf 2>/dev/null
-\rm -f ~/.gtk-bookmarks 2>/dev/null
-\rm -f ~/.i3 2>/dev/null
-\rm -f ~/.config/dunst/dunstrc 2>/dev/null
-\rm -f ~/.config/tilda/config_0 2>/dev/null
+rm -f ~/.xinitrc 2>/dev/null
+rm -f ~/.gtkrc-2.0 2>/dev/null
+rm -f ~/.config/gtk-3.0 2>/dev/null
+rm -f ~/.config/Trolltech.conf 2>/dev/null
+rm -f ~/.gtk-bookmarks 2>/dev/null
+rm -f ~/.i3 2>/dev/null
+rm -f ~/.config/dunst/dunstrc 2>/dev/null
+rm -f ~/.config/tilda/config_0 2>/dev/null
 
-\mkdir -p ~/.config/{dunst,tilda} >/dev/null 2>&1
+mkdir -p ~/.config/{dunst,tilda} >/dev/null 2>&1
 
-\ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
-\ln -sv "$DOTFILES_DIR/gtkrc-2.0" ~/.gtkrc-2.0
-\ln -sv "$DOTFILES_DIR/Trolltech.conf" ~/.config/
-\ln -sv ~/src/numix-holo/gtk-3.0 ~/.config/
+ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
+ln -sv "$DOTFILES_DIR/gtkrc-2.0" ~/.gtkrc-2.0
+ln -sv "$DOTFILES_DIR/Trolltech.conf" ~/.config/
+ln -sv ~/src/numix-holo/gtk-3.0 ~/.config/
 if [ -f "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ]; then
-  \ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
+  ln -sv "$DOTFILES_DIR/gtk-bookmarks.`uname -n`" ~/.gtk-bookmarks
 else
-  \ln -sv "$DOTFILES_DIR/gtk-bookmarks" ~/.gtk-bookmarks
+  ln -sv "$DOTFILES_DIR/gtk-bookmarks" ~/.gtk-bookmarks
 fi;
 
 # setup i3wm config and scripts
@@ -172,45 +172,45 @@ for file in config conkyrc; do
   rm $DOTFILES_DIR/i3/$file #>/dev/null 2>&1
   cp -v $DOTFILES_DIR/i3/$file{.default,} #>/dev/null 2>&1
 
-  \sed "s/%PRIMARY_DISPLAY%/$PRIMARY_DISPLAY/" \
+  sed "s/%PRIMARY_DISPLAY%/$PRIMARY_DISPLAY/" \
     -i "$DOTFILES_DIR/i3/$file" \
     >/dev/null 2>&1;
 
-  \sed "s/%SECONDARY_DISPLAY%/$SECONDARY_DISPLAY/" \
+  sed "s/%SECONDARY_DISPLAY%/$SECONDARY_DISPLAY/" \
     -i "$DOTFILES_DIR/i3/$file" \
     >/dev/null 2>&1;
 
-  \sed "s/%WIRELESS_INTERFACE%/$WIRELESS_INTERFACE/" \
+  sed "s/%WIRELESS_INTERFACE%/$WIRELESS_INTERFACE/" \
     -i "$DOTFILES_DIR/i3/$file" \
     >/dev/null 2>&1;
 
-  \sed "s/%ETHERNET_INTERFACE%/$ETHERNET_INTERFACE/" \
+  sed "s/%ETHERNET_INTERFACE%/$ETHERNET_INTERFACE/" \
     -i "$DOTFILES_DIR/i3/$file" \
     >/dev/null 2>&1;
 
-  \sed "s/%BATTERY_ID%/$BATTERY_ID/" \
+  sed "s/%BATTERY_ID%/$BATTERY_ID/" \
     -i "$DOTFILES_DIR/i3/$file" \
     >/dev/null 2>&1;
 
-  \sed "s/%FONT_SIZE%/$FONT_SIZE/" \
+  sed "s/%FONT_SIZE%/$FONT_SIZE/" \
     -i "$DOTFILES_DIR/i3/$file" \
     >/dev/null 2>&1;
 done;
 
-\ln -sv "$DOTFILES_DIR/i3" ~/.i3
-\ln -sv "$DOTFILES_DIR/i3/dunstrc" ~/.config/dunst
-\ln -sv "$DOTFILES_DIR/i3/tilda" ~/.config/tilda/config_0
+ln -sv "$DOTFILES_DIR/i3" ~/.i3
+ln -sv "$DOTFILES_DIR/i3/dunstrc" ~/.config/dunst
+ln -sv "$DOTFILES_DIR/i3/tilda" ~/.config/tilda/config_0
 
-\mkdir -p ~/bin >/dev/null 2>&1
-\rm ~/bin/i3exit >/dev/null 2>&1
-\ln -sv "$DOTFILES_DIR/i3/i3exit" ~/bin/i3exit
+mkdir -p ~/bin >/dev/null 2>&1
+rm ~/bin/i3exit >/dev/null 2>&1
+ln -sv "$DOTFILES_DIR/i3/i3exit" ~/bin/i3exit
 
 # Download "Font Awesome" used for icons in i3wm
-\rm -f ~/.fonts/FontAwesome.otf >/dev/null 2>&1
-\rm -f ~/.fonts/fontawesome-webfont.ttf >/dev/null 2>&1
-\mkdir -p ~/.fonts >/dev/null 2>&1
-\ln -sv ~/src/Font-Awesome/fonts/FontAwesome.otf ~/.fonts/
-\ln -sv ~/src/Font-Awesome/fonts/fontawesome-webfont.ttf ~/.fonts/
+rm -f ~/.fonts/FontAwesome.otf >/dev/null 2>&1
+rm -f ~/.fonts/fontawesome-webfont.ttf >/dev/null 2>&1
+mkdir -p ~/.fonts >/dev/null 2>&1
+ln -sv ~/src/Font-Awesome/fonts/FontAwesome.otf ~/.fonts/
+ln -sv ~/src/Font-Awesome/fonts/fontawesome-webfont.ttf ~/.fonts/
 
 echo
 
@@ -222,9 +222,9 @@ echo 'Setup Dictionary for Aspell'
 echo
 
 # Remove existing configuration
-\rm -f ~/.aspell.en.pws 2>/dev/null
+rm -f ~/.aspell.en.pws 2>/dev/null
 
-\ln -sv "$DOTFILES_DIR/aspell.en.pws" ~/.aspell.en.pws
+ln -sv "$DOTFILES_DIR/aspell.en.pws" ~/.aspell.en.pws
 
 echo
 
@@ -235,7 +235,7 @@ echo
 echo 'Setup iPython Notebook'
 echo
 
-\systemctl --user enable "$DOTFILES_DIR/ipython-notebook.service"
+systemctl --user enable "$DOTFILES_DIR/ipython-notebook.service"
 
 echo
 
@@ -247,9 +247,9 @@ echo 'Setup Npm Configuration'
 echo
 
 # Remove existing configuration
-\rm -f ~/.npmrc 2>/dev/null
+rm -f ~/.npmrc 2>/dev/null
 
-\ln -sv "$DOTFILES_DIR/npmrc" ~/.npmrc
+ln -sv "$DOTFILES_DIR/npmrc" ~/.npmrc
 
 echo
 
