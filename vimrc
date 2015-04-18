@@ -52,6 +52,10 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
+" Convert JSON string to object
+" Used for parsing emmet snippet files
+" Extracted from:
+"   https://github.com/mattn/webapi-vim/blob/master/autoload/webapi/json.vim#L66
 function! JSON_decode(json)
     let json = join(split(a:json, "\n"), "")
 
@@ -125,7 +129,7 @@ inoremap <MiddleMouse> <nop>
 " Rebind <Leader> key
 let mapleader = ","
 
-" F2: show hide non-printable characters
+" F2: show/hide non-printable characters
 noremap <F2> :set list!<CR>
 
 " Removes highlight of your last search
@@ -141,9 +145,6 @@ noremap <silent> <F5> :vsp<CR>
 nnoremap <silent> <F6> <C-w>c
 vnoremap <silent> <F6> <C-w>c
 inoremap <silent> <F6> <esc><C-w>c
-
-" F9: run current file in shell
-noremap <silent> <F9> :!./%<CR>
 
 " Ctrl+F4: close current buffer using bd
 noremap <silent> <C-F4> :bd<CR>
@@ -195,9 +196,6 @@ if has('gui_running')
     nnoremap <silent> <C-a> ggVG
 endif
 
-" Easier linewise reselection of what you just pasted.
-nnoremap <leader>v V`]
-
 " Case conversions
 inoremap <C-u> <esc>gUiwea
 nnoremap <C-u> gUiw
@@ -205,9 +203,6 @@ vnoremap <C-u> gU
 inoremap <C-l> <esc>guiwea
 nnoremap <C-l> guiw
 vnoremap <C-l> gu
-
-" Sudo to write
-cnoremap w!! w !sudo tee % >/dev/null
 
 " Bind semicolon to colon and avoid extra keystroke (shift) for commandline
 nnoremap : <nop>
@@ -221,18 +216,6 @@ noremap n nzz
 noremap N Nzz
 noremap } }zz
 noremap { {zz
-
-" quick type assistance for pairs
-inoremap <leader>' ''<esc>i
-inoremap <leader>" ""<esc>i
-inoremap <leader>( ()<esc>i
-inoremap <leader>[ []<esc>i
-inoremap <leader>{ {}<esc>i
-inoremap <leader>< <><esc>i
-inoremap <leader><? <?php  ?><esc>2hi
-
-" quick type assistance for ending semicolon
-inoremap <leader>;  <esc>A;
 
 " }}}
 " File types {{{
@@ -528,8 +511,8 @@ let g:pymode_lint_unmodified = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 
 " Ignore certain errors/warnings
-"   F0401 - module import failures - when editing a Django app that runs in a
-"   virtual environment this show lot of errors.
+"   F0401 - module import failures - when editing files in a virtual
+"   environment this show lot of errors.
 let g:pymode_lint_ignore = 'F0401'
 
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
