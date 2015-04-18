@@ -91,6 +91,13 @@ endfunction
 
 " }}}
 
+function! JSON_decode(json)
+    let json = join(split(a:json, "\n"), "")
+
+    sandbox let ret = eval(json)
+
+    return ret
+endfunction
 " }}}
 " Basic settings {{{
 
@@ -490,6 +497,7 @@ Bundle 'hail2u/vim-css3-syntax'
 
 Bundle 'mattn/emmet-vim'
 let g:user_emmet_mode = 'ni'
+let g:user_emmet_settings = JSON_decode(join(readfile(expand('~/.emmetrc')), "\n"))
 
 "}}}
 " Plugin: Vim-Less {{{

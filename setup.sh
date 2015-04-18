@@ -26,10 +26,12 @@ echo
 # Remove existing configuration and recreate directories
 find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
 rm -fr ~/.vimrc 2>/dev/null
+rm -fr ~/.emmetrc 2>/dev/null
 mkdir -pv ~/.vim/bundle
 mkdir -pv ~/.vim/colors
 
 ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
+ln -sv "$DOTFILES_DIR/emmet-snippets.json" ~/.emmetrc
 
 # Install Vundle from github
 if [ ! -d ~/.vim/bundle/vundle ]; then
