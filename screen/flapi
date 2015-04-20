@@ -10,11 +10,13 @@ chdir $PROJECTSDIR/family-legacy-api/
 
 setenv PATH $PATH:$PROJECTSDIR/family-legacy-api/bin
 
-screen -t grunt bash --rcfile $HOME/.screen/bashrc/flapi.grunt
-
 split
 resize 10
 screen -t server bash --rcfile $HOME/.screen/bashrc/flapi.server
+
+split -v
+focus right
+screen -t watch bash --rcfile $HOME/.screen/bashrc/flapi.watch
 
 focus down
 screen -t command bash --rcfile $HOME/.screen/bashrc/flapi.command

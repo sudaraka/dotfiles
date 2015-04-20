@@ -10,4 +10,4 @@
 . ~/.bashrc
 
 pyve flapi
-grunt
+npm run watch
