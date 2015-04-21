@@ -1,7 +1,7 @@
 {
   "html": {
     "snippets": {
-      "cl": "console.log('|${child}');"
+      "cl": "console.log(|${child});"
     }
   }
 }
