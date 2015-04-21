@@ -1,6 +1,6 @@
-# rad.grunt: Initialize grunt window shell
+# rad.watch: Initialize grunt window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/rad.grunt
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/rad.watch
 # License: CC-BY
 #
 
@@ -9,4 +9,4 @@
 
 . ~/.bashrc
 
-grunt watch
+npm run watch

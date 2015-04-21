@@ -10,6 +10,9 @@ chdir $PROJECTSDIR/radiators-warehouse/web
 
 setenv PATH $PATH:$PROJECTSDIR/radiators-warehouse/web/bin
 
-screen -t grunt bash --rcfile $HOME/.screen/bashrc/rad.grunt
+split
+resize 10
+screen -t watch bash --rcfile $HOME/.screen/bashrc/rad.watch
 
+focus down
 screen -t command bash --rcfile $HOME/.screen/bashrc/rad.command
