@@ -5,9 +5,11 @@ case "$1" in
         i3-msg exit;
         ;;
     reboot)
+        sudo umount -a -t nfs
         systemctl reboot;
         ;;
     shutdown)
+        sudo umount -a -t nfs
         systemctl poweroff;
         ;;
     test)
