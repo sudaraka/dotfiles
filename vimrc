@@ -150,7 +150,7 @@ inoremap <silent> <F6> <esc><C-w>c
 noremap <silent> <C-F4> :bd<CR>
 
 " Ctrl+Shift+F4: close all buffers using bd
-noremap <silent> <C-S-F4> :1,9999bd<CR>
+noremap <silent> <C-S-F4> :%bd<CR>
 
 " Ctrl+S: save all buffers
 nnoremap <silent> <C-s> :wa<CR>
