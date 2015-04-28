@@ -9,6 +9,8 @@
 
 . ~/.bashrc
 
+alias tree="tree -CA --dirsfirst -I 'node_modules*'"
+
 launch_gvim
 
 git s
