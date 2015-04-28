@@ -10,6 +10,9 @@ chdir $PROJECTSDIR/gearpeers
 
 setenv PATH $PATH:$PROJECTSDIR/gearpeers/bin
 
-screen -t grunt bash --rcfile $HOME/.screen/bashrc/gearpeers.grunt
+split
+resize 10
+screen -t watch bash --rcfile $HOME/.screen/bashrc/gearpeers.watch
 
+focus down
 screen -t command bash --rcfile $HOME/.screen/bashrc/gearpeers.command

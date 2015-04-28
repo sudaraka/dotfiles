@@ -1,6 +1,6 @@
-# gearpeers.grunt: Initialize grunt window shell
+# gearpeers.watch: Initialize watch (grunt) window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/gearpeers.grunt
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/gearpeers.watch
 # License: CC-BY
 #
 
@@ -9,4 +9,4 @@
 
 . ~/.bashrc
 
-grunt watch
+npm run watch
