@@ -8,6 +8,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/gearpeers
 
+setenv PATH $PATH:$PROJECTSDIR/gearpeers/bin
+
 screen -t grunt bash --rcfile $HOME/.screen/bashrc/gearpeers.grunt
 
 screen -t command bash --rcfile $HOME/.screen/bashrc/gearpeers.command
