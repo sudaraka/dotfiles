@@ -15,6 +15,7 @@
     ai              = add -i
     ap              = add -p
     b               = branch
+    bl              = branch -vv
     c               = commit
     ca              = commit -a
     ch              = checkout
