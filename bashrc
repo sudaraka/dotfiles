@@ -31,8 +31,10 @@ export PYVEDIR="$HOME/opt/virtualenv"
 PROMPT_COMMAND=set_cli_prompt
 
 export EDITOR=vim
-export HISTFILESIZE=99999
 export TERM=xterm-256color
+
+# History
+export HISTFILESIZE=999999
 
 # iBus settings
 export GTK_IM_MODULE=ibus
