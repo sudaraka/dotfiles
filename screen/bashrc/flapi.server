@@ -15,4 +15,4 @@ pushd src/docs/_build
 python -m http.server >/tmp/flapi.doc.log 2>&1 &
 popd
 
-server.py
+manage.py runserver
