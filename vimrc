@@ -414,11 +414,6 @@ Bundle 'scrooloose/syntastic'
 
 " Language: HTML/CSS {{{
 
-" Plugin: Vim-CSS3-Syntax {{{
-
-Bundle 'hail2u/vim-css3-syntax'
-
-" }}}
 " Plugin: Emmet-Vim {{{
 
 Bundle 'mattn/emmet-vim'
@@ -514,8 +509,6 @@ let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 "   F0401 - module import failures - when editing files in a virtual
 "   environment this show lot of errors.
 let g:pymode_lint_ignore = 'F0401'
-
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " }}}
 
