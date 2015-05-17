@@ -12,7 +12,11 @@
 pyve flapi
 
 pushd src/docs/_build
-python -m http.server >/tmp/flapi.doc.log 2>&1 &
+python -m http.server 5001 >/tmp/flapi.doc.log 2>&1 &
+popd
+
+pushd src/examples
+python -m http.server 5002 >/tmp/flapi.exmample.log 2>&1 &
 popd
 
 manage.py runserver
