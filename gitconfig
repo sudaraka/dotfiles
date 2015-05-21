@@ -16,8 +16,8 @@
     ap              = add -p
     b               = branch
     bl              = branch -vv
-    c               = commit
-    ca              = commit -a
+    c               = commit -e
+    ca              = commit -ae
     ch              = checkout
     cp              = cherry-pick -x
     d               = diff --no-ext-diff
