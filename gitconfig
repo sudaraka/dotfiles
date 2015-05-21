@@ -41,22 +41,9 @@
     st              = stash
 [push]
     default         = simple
-[merge]
-    tool            = splice
-[mergetool]
-    prompt          = false
-[mergetool "splice"]
-    cmd             = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-    trustExitCode   = true
 [diff]
     external        = git_vimdiff.sh
 [difftool]
     prompt          = false
-[color "sh"]
-    branch          = yellow
-    dirty           = red bold
-    dirty-stash     = red
-    repo-state      = blue
-    upstream-state  = cyan
 [rebase]
 	autosquash = true
