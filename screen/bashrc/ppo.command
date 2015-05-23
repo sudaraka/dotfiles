@@ -7,21 +7,19 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias sbc='cd ../CommonBundle'
-alias sbp='cd ../PromoBundle'
-
 . ~/.bashrc
 
 BUNDLE_DIR="`pwd`/src/PPO/Bundle"
 
 alias sbc="cd $BUNDLE_DIR/CommonBundle"
 alias sbp="cd $BUNDLE_DIR/PromoBundle"
+alias sbt="cd $BUNDLE_DIR/TVBundle"
 
 
 sbc;
 CURRENT_BRANCH="`git branch|grep '^\*'|cut -d' ' -f2`"
 
-git_pull_or_fetch_remote_branch
+#git_pull_or_fetch_remote_branch
 
 if [ "master" != "$CURRENT_BRANCH" -a ! -z "`git config branch.$CURRENT_BRANCH.remote`" ]; then
     git_pull_or_fetch_remote_branch origin $CURRENT_BRANCH
@@ -34,10 +32,10 @@ then
     g s
 fi;
 
-sbp;
+sbt;
 CURRENT_BRANCH="`git branch|grep '^\*'|cut -d' ' -f2`"
 
-git_pull_or_fetch_remote_branch
+#git_pull_or_fetch_remote_branch
 
 if [ "master" != "$CURRENT_BRANCH" -a ! -z "`git config branch.$CURRENT_BRANCH.remote`" ]; then
     git_pull_or_fetch_remote_branch origin $CURRENT_BRANCH
