@@ -136,41 +136,40 @@ function launch_gvim() {
     fi;
 }
 
-# Check if current directory is a git repo
-function is_git_repo {
-    git branch > /dev/null 2>&1
-}
-
-# Check if git working directory is dirty
-function is_git_dirty() {
-    if is_git_repo; then
-        [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
-    fi
-}
-
-# Get git branch for prompt
-parse_git_branch() {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1\\[\\e[0m\\]:/'
-}
-
-# Set final symbol of the prompt
-function set_cli_prompt_symbol() {
-    if [ is_git_repo -a '*' = "`is_git_dirty`" ]; then
-        echo "\[\e[0;91m\]\$"
-    else
-        echo "\[\e[0;92m\]\$"
-    fi
-}
-
-function parse_pyve() {
-    if [ ! -z "$VIRTUAL_ENV" ]; then
-        echo "\[\e[1;96m\]`basename \"$VIRTUAL_ENV\"`\[\e[0m\]:"
-    fi
-}
-
 # Update CLI prompt
 set_cli_prompt() {
-    PS1="\[\e[0;33m\]\u@\h $(parse_pyve)\[\e[1;35m\]$(parse_git_branch)\[\e[1;92m\]\W $(set_cli_prompt_symbol)\[\e[0m\] "
+    P=''
+
+    # Username and host
+    P="\[\e[48;5;72;38;5;238m\] "
+    ARROW_COLOR='38;5;72'
+
+    # Python virtual environment
+    if [ ! -z "$VIRTUAL_ENV" ]; then
+        P="$P\[\e[0;${ARROW_COLOR};48;5;67m\]\[\e[38;5;221m\] `basename $VIRTUAL_ENV` "
+        ARROW_COLOR='38;5;67'
+    fi
+
+    # Git branch
+    GIT_BRANCH=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+    if [ ! -z "$GIT_BRANCH" ]; then
+        P="$P\[\e[0;${ARROW_COLOR};48;5;172m\]\[\e[38;5;238m\]  $GIT_BRANCH "
+
+        if [ "$(git status 2> /dev/null | tail -n1)" != *"working directory clean"* ]; then
+            P="$P\[\e[38;5;226m\]⚡ "
+        fi
+
+        ARROW_COLOR='38;5;172'
+    fi
+
+    # Working directory
+    P="$P\[\e[0;${ARROW_COLOR};48;5;238m\]\[\e[38;5;249m\] \W "
+    ARROW_COLOR='38;5;238'
+
+    # Ending
+    P="$P\[\e[0;${ARROW_COLOR}m\]\[\e[48;5;236m\]\[\e[0;38;5;236m\]\[\e[0m\] "
+
+    PS1=$P
 }
 
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
