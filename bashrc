@@ -155,7 +155,7 @@ set_cli_prompt() {
     if [ ! -z "$GIT_BRANCH" ]; then
         P="$P\[\e[0;${ARROW_COLOR};48;5;172m\]\[\e[38;5;238m\]  $GIT_BRANCH "
 
-        if [ "$(git status 2> /dev/null | tail -n1)" != *"working directory clean"* ]; then
+        if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
             P="$P\[\e[38;5;226m\]⚡ "
         fi
 
