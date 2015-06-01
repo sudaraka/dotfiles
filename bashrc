@@ -151,7 +151,7 @@ set_cli_prompt() {
     fi
 
     # Git branch
-    GIT_BRANCH=`git status 2>/dev/null|head -n1|cut -d' ' -f3`
+    GIT_BRANCH=`git status 2>/dev/null|head -n1|awk '{print $(NF)}'`
     if [ ! -z "$GIT_BRANCH" ]; then
         P="$P\[\e[0;${ARROW_COLOR};48;5;172m\]\[\e[38;5;238m\]  $GIT_BRANCH "
 
