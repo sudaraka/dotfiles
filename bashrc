@@ -153,6 +153,11 @@ set_cli_prompt() {
     # Git branch
     GIT_BRANCH=`git status 2>/dev/null|head -n1|awk '{print $(NF)}'`
     if [ ! -z "$GIT_BRANCH" ]; then
+        GIT_TAG=`git describe --tags --abbrev=0 2>/dev/null`
+        if [ ! -z "$GIT_TAG" ]; then
+            GIT_BRANCH="$GIT_BRANCH [$GIT_TAG]"
+        fi
+
         P="$P\[\e[0;${ARROW_COLOR};48;5;172m\]\[\e[38;5;238m\]  $GIT_BRANCH "
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
