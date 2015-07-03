@@ -1,6 +1,11 @@
-init.author.name=Sudaraka Wijesinghe
-init.author.email=sudaraka@sudaraka.org
-init.author.url=http://sudaraka.org/
+color=true
+git-tag-version=true
+init-author-email=sudaraka@sudaraka-org
+init-author-name=Sudaraka Wijesinghe
+init-author-url=http://sudaraka-org/
 init-version=0.0.0
 message=Version %s
 sign-git-tag=true
+spin=true
+tag-version-prefix=v
+unicode=true
