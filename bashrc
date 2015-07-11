@@ -8,14 +8,12 @@
 alias grep='grep --color=auto'
 alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
-alias tree='tree -CA --dirsfirst'
+alias tree='tree -C --dirsfirst'
 alias truecrypt='truecrypt -t'
 alias g='git'
-alias gk='gitk --all --date-order'
 alias gg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
-alias jslint='jslint --color --white --predef $ --predef jQuery'
 
 # Make GIT completion work with "g" alias
 # Based on Stackoverflow answer by chris_sutter and Ondrej Machulda
