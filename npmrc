@@ -3,6 +3,7 @@ git-tag-version=true
 init-author-email=sudaraka@sudaraka-org
 init-author-name=Sudaraka Wijesinghe
 init-author-url=http://sudaraka-org/
+init-license=BSD-2-Clause
 init-version=0.0.0
 message=Version %s
 sign-git-tag=true
