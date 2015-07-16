@@ -6,7 +6,7 @@
 
 source $HOME/.screenrc
 
-chdir $PROJECTSDIR/vcreative/ppo_symfony_base
+chdir $PROJECTSDIR/vcreative/vsuite
 
 screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
 

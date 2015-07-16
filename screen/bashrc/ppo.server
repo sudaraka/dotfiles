@@ -9,6 +9,25 @@
 
 . ~/.bashrc
 
-git_pull_or_fetch_remote_branch;
+function vsuite() {
+    # Kill any running PHP instances
+    pkill php
 
-app/console server:run
+    # Update assets
+    if [ ! -z "$1" ]; then
+        app/console assets:install
+        app/console assetic:dump
+    fi
+
+    # Clear cache
+    rm -fr app/cache/dev
+
+    # Start server
+    notify-send -i `pwd`/src/PPO/Bundle/CommonBundle/Resources/public/img/VC-Square.png 'vCreative app suite' 'Starting development server...'
+    app/console server:run
+}
+
+git fetch --all
+git_pull_or_fetch_remote_branch
+
+vsuite

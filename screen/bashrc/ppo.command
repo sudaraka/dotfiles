@@ -16,31 +16,14 @@ alias sbp="cd $BUNDLE_DIR/PromoBundle"
 alias sbt="cd $BUNDLE_DIR/TVBundle"
 
 
-sbc;
-CURRENT_BRANCH="`git branch|grep '^\*'|cut -d' ' -f2`"
-
-#git_pull_or_fetch_remote_branch
-
-if [ "master" != "$CURRENT_BRANCH" -a ! -z "`git config branch.$CURRENT_BRANCH.remote`" ]; then
-    git_pull_or_fetch_remote_branch origin $CURRENT_BRANCH
-fi
-
 if [ -z "$NO_COMMON_EDITOR" ];
 then
+    sbc
     launch_gvim
-
-    g s
 fi;
 
-sbt;
-CURRENT_BRANCH="`git branch|grep '^\*'|cut -d' ' -f2`"
-
-#git_pull_or_fetch_remote_branch
-
-if [ "master" != "$CURRENT_BRANCH" -a ! -z "`git config branch.$CURRENT_BRANCH.remote`" ]; then
-    git_pull_or_fetch_remote_branch origin $CURRENT_BRANCH
-fi
-
+sbt
 launch_gvim
 
+sbc
 g s
