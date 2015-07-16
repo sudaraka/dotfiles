@@ -11,19 +11,9 @@
 
 BUNDLE_DIR="`pwd`/src/PPO/Bundle"
 
-alias sbc="cd $BUNDLE_DIR/CommonBundle"
-alias sbp="cd $BUNDLE_DIR/PromoBundle"
-alias sbt="cd $BUNDLE_DIR/TVBundle"
+alias sbc="pushd $BUNDLE_DIR/CommonBundle"
+alias sbp="pushd $BUNDLE_DIR/PromoBundle"
+alias sbt="pushd $BUNDLE_DIR/TVBundle"
 
-
-if [ -z "$NO_COMMON_EDITOR" ];
-then
-    sbc
-    launch_gvim
-fi;
-
-sbt
 launch_gvim
-
-sbc
 g s
