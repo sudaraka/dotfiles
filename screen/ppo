@@ -9,5 +9,8 @@ source $HOME/.screenrc
 chdir $PROJECTSDIR/vcreative/vsuite
 
 screen -t server bash --rcfile $HOME/.screen/bashrc/ppo.server
+split
+resize 10
+focus down
 
 screen -t command bash --rcfile $HOME/.screen/bashrc/ppo.command
