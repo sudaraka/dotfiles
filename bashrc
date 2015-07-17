@@ -134,6 +134,10 @@ function launch_gvim() {
     fi;
 }
 
+alias_of() {
+    echo $(alias "$1" 2>/dev/null | awk -F= '{ print $2 }' | sed s/\'//g)
+}
+
 # Update CLI prompt
 set_cli_prompt() {
     P=''
@@ -156,13 +160,23 @@ set_cli_prompt() {
             GIT_BRANCH="$GIT_BRANCH [$GIT_TAG]"
         fi
 
-        P="$P\[\e[0;${ARROW_COLOR};48;5;172m\]\[\e[38;5;238m\]  $GIT_BRANCH "
+        # Is git or g aliased to github client
+        GIT_ALIAS=$(alias_of 'git')
+        G_ALIAS=$(alias_of 'g')
+        GIT_SYMBOL=''
+        GIT_COLOR=172
+        if [ "hub" == "$GIT_ALIAS" -o "hub" == "$G_ALIAS" ]; then
+            GIT_SYMBOL=''
+            GIT_COLOR=32
+        fi
+
+        P="$P\[\e[0;${ARROW_COLOR};48;5;${GIT_COLOR}m\]\[\e[38;5;238m\] $GIT_SYMBOL $GIT_BRANCH "
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
             P="$P\[\e[38;5;226m\]⚡ "
         fi
 
-        ARROW_COLOR='38;5;172'
+        ARROW_COLOR='38;5;${GIT_COLOR}'
     fi
 
     # Working directory
