@@ -47,3 +47,5 @@
     prompt          = false
 [rebase]
 	autosquash = true
+[hub]
+	protocol = https
