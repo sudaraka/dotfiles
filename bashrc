@@ -140,17 +140,15 @@ alias_of() {
 
 # Update CLI prompt
 set_cli_prompt() {
-    P=''
+    BG=236
 
-    # Username and host
-    P="\[\e[48;5;72;38;5;238m\] "
-    ARROW_COLOR='38;5;72'
+    # Ending
+    P="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\]\[\e[0;38;5;${BG}m\]\[\e[0m\] "
+    BG=$(( BG + 2 ))
 
-    # Python virtual environment
-    if [ ! -z "$VIRTUAL_ENV" ]; then
-        P="$P\[\e[0;${ARROW_COLOR};48;5;67m\]\[\e[38;5;221m\] `basename $VIRTUAL_ENV` "
-        ARROW_COLOR='38;5;67'
-    fi
+    # Working directory
+    P="\[\e[0;38;5;$(( BG + 2));48;5;${BG}m\]\[\e[38;5;249m\] \W $P"
+    BG=$(( BG + 2 ))
 
     # Git branch
     GIT_BRANCH=`git status 2>/dev/null|head -n1|awk '{print $(NF)}'`
@@ -164,27 +162,30 @@ set_cli_prompt() {
         GIT_ALIAS=$(alias_of 'git')
         G_ALIAS=$(alias_of 'g')
         GIT_SYMBOL=''
-        GIT_COLOR=172
+        GIT_COLOR=208
         if [ "hub" == "$GIT_ALIAS" -o "hub" == "$G_ALIAS" ]; then
             GIT_SYMBOL=''
-            GIT_COLOR=32
+            GIT_COLOR=31
         fi
 
-        P="$P\[\e[0;${ARROW_COLOR};48;5;${GIT_COLOR}m\]\[\e[38;5;238m\] $GIT_SYMBOL $GIT_BRANCH "
+        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;${GIT_COLOR}m\]$GIT_SYMBOL\[\e[38;5;249m\] $GIT_BRANCH "
+        BG=$(( BG + 2 ))
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
-            P="$P\[\e[38;5;226m\]⚡ "
+            GIT_BLOCK="$GIT_BLOCK\[\e[38;5;226m\]⚡"
         fi
 
-        ARROW_COLOR='38;5;${GIT_COLOR}'
+        P="$GIT_BLOCK $P"
     fi
 
-    # Working directory
-    P="$P\[\e[0;${ARROW_COLOR};48;5;238m\]\[\e[38;5;249m\] \W "
-    ARROW_COLOR='38;5;238'
+    # Python virtual environment
+    if [ ! -z "$VIRTUAL_ENV" ]; then
+        P="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\]\[\e[38;5;39m\] `basename $VIRTUAL_ENV` $P"
+        BG=$(( BG + 2 ))
+    fi
 
-    # Ending
-    P="$P\[\e[0;${ARROW_COLOR}m\]\[\e[48;5;236m\]\[\e[0;38;5;236m\]\[\e[0m\] "
+    # Starting block
+    P="\[\e[48;5;107m\] \[\e[38;5;107;48;5;${BG}m\]$P"
 
     PS1=$P
 }
