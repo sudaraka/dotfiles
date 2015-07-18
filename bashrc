@@ -153,9 +153,12 @@ set_cli_prompt() {
     # Git branch
     GIT_BRANCH=`git status 2>/dev/null|head -n1|awk '{print $(NF)}'`
     if [ ! -z "$GIT_BRANCH" ]; then
+        GIT_BLOCK=''
         GIT_TAG=`git describe --tags --abbrev=0 2>/dev/null`
+
         if [ ! -z "$GIT_TAG" ]; then
-            GIT_BRANCH="$GIT_BRANCH [$GIT_TAG]"
+            GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;223m\]\[\e[38;5;249m\] $GIT_TAG $GIT_BLOCK"
+            BG=$(( BG + 2 ))
         fi
 
         # Is git or g aliased to github client
@@ -168,7 +171,7 @@ set_cli_prompt() {
             GIT_COLOR=31
         fi
 
-        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;${GIT_COLOR}m\]$GIT_SYMBOL\[\e[38;5;249m\] $GIT_BRANCH "
+        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;${GIT_COLOR}m\]$GIT_SYMBOL\[\e[38;5;249m\] $GIT_BRANCH $GIT_BLOCK"
         BG=$(( BG + 2 ))
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
