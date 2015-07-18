@@ -157,7 +157,7 @@ set_cli_prompt() {
         GIT_TAG=`git describe --tags --abbrev=0 2>/dev/null`
 
         if [ ! -z "$GIT_TAG" ]; then
-            GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;223m\]\[\e[38;5;249m\] $GIT_TAG $GIT_BLOCK"
+            GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;229m\]\[\e[38;5;249m\] $GIT_TAG $GIT_BLOCK"
             BG=$(( BG + 2 ))
         fi
 
@@ -183,7 +183,7 @@ set_cli_prompt() {
 
     # Python virtual environment
     if [ ! -z "$VIRTUAL_ENV" ]; then
-        P="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\]\[\e[38;5;39m\] `basename $VIRTUAL_ENV` $P"
+        P="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\]\[\e[38;5;45m\] `basename $VIRTUAL_ENV` $P"
         BG=$(( BG + 2 ))
     fi
 
