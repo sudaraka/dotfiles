@@ -157,7 +157,7 @@ set_cli_prompt() {
         GIT_TAG=`git describe --tags --abbrev=0 2>/dev/null`
 
         if [ ! -z "$GIT_TAG" ]; then
-            GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;229m\]\[\e[38;5;249m\] $GIT_TAG $GIT_BLOCK"
+            GIT_BLOCK=" \[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;229m\]\[\e[38;5;249m\] $GIT_TAG$GIT_BLOCK"
             BG=$(( BG + 2 ))
         fi
 
@@ -171,11 +171,11 @@ set_cli_prompt() {
             GIT_COLOR=31
         fi
 
-        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;${GIT_COLOR}m\]$GIT_SYMBOL\[\e[38;5;249m\] $GIT_BRANCH $GIT_BLOCK"
+        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;${GIT_COLOR}m\]$GIT_SYMBOL\[\e[38;5;249m\] $GIT_BRANCH$GIT_BLOCK"
         BG=$(( BG + 2 ))
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
-            GIT_BLOCK="$GIT_BLOCK\[\e[38;5;226m\]⚡"
+            GIT_BLOCK="$GIT_BLOCK\[\e[38;5;226m\] ⚡"
         fi
 
         P="$GIT_BLOCK $P"
