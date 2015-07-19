@@ -8,7 +8,7 @@
 alias grep='grep --color=auto'
 alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
-alias tree='tree -C --dirsfirst'
+alias tree='tree -C --dirsfirst -I "__pyc*|node_modules*"'
 alias truecrypt='truecrypt -t'
 alias g='git'
 alias gg='gitk --all --date-order'

@@ -9,8 +9,6 @@
 
 . ~/.bashrc
 
-alias tree='tree -CAI __*'
-
 pyve sopin
 
 launch_gvim

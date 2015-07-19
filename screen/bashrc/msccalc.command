@@ -9,7 +9,7 @@
 
 . ~/.bashrc
 
-alias tree="tree -CA -I '__pyc*|*coverage*'"
+alias tree='tree -C --dirsfirst -I "__pyc*|node_modules*|coverage*"'
 
 pyve msc-calc
 

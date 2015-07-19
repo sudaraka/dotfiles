@@ -9,7 +9,7 @@
 
 . ~/.bashrc
 
-alias tree="tree -CA --dirsfirst -I '__pyc*|coverage*|node_modules*|_build*'"
+alias tree="tree -C --dirsfirst -I '__pyc*|coverage*|node_modules*|_build*'"
 
 pyve flapi
 
