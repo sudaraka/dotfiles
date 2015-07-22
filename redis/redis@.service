@@ -1,0 +1,11 @@
+[Unit]
+Description= Redis - Advanced key-value store
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/suda/opt/redis/bin/redis-server /home/suda/opt/redis/etc/%I.conf --dbfilename %I.db --appendfilename %I.aof
+ExecStop=/home/suda/opt/redis/bin/redis-cli shutdown
+
+[Install]
+WantedBy=default.target

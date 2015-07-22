@@ -270,3 +270,19 @@ ln -sv "$DOTFILES_DIR/jshint.json" ~/.jshintrc
 echo
 
 # }}}
+
+# Redis configuration {{{
+
+echo 'Setup Redis Configuration'
+echo
+
+# Remove existing configuration
+rm ~/opt/redis/etc/default.conf 2>/dev/null
+
+ln -sv "$DOTFILES_DIR/redis/redis.conf" ~/opt/redis/etc/default.conf
+
+systemctl --user enable "$DOTFILES_DIR/redis/redis@.service"
+
+echo
+
+# }}}
