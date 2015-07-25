@@ -106,6 +106,9 @@ set mouse-=a
 " }}}
 " Key bindings {{{
 
+inoremap jj <Esc>
+inoremap kk <Esc>
+
 " Disable arrow key navigation in normal and visual modes
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
