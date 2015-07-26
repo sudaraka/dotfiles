@@ -31,6 +31,9 @@ PROMPT_COMMAND=set_cli_prompt
 export EDITOR=vim
 export TERM=xterm-256color
 
+# Github user for `hub` tool
+export GITHUB_USER=sudaraka
+
 # History
 export HISTFILESIZE=999999
 export NODE_REPL_HISTORY_FILE=$HOME/.node_history
