@@ -262,7 +262,7 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 exec --no-startup-id ibus-daemon -d
 exec --no-startup-id hotot
 exec --no-startup-id pidgin
-exec --no-startup-id tilda
+exec --no-startup-id ~/opt/tilda/bin/tilda
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
 set $exit_mode      Shutdown     Reboot     Logout
