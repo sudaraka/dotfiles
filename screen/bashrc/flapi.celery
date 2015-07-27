@@ -1,0 +1,13 @@
+# flapi.celery: Initialize Celery log window shell
+# Author: [Sudaraka Wijesinghe](http://sudaraka.org/contact)
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/flapi.celery
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+sleep 2
+supervisorctl -c etc/supervisord-dev.conf tail -f celery

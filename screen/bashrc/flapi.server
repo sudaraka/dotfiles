@@ -11,12 +11,7 @@
 
 pyve flapi
 
-pushd src/docs/_build
-python -m http.server 5001 >/tmp/flapi.doc.log 2>&1 &
-popd
+supervisord -c etc/supervisord-dev.conf
+trap 'supervisorctl -c etc/supervisord-dev.conf shutdown' EXIT SIGTERM SIGKILL
 
-pushd src/examples
-python -m http.server 5002 >/tmp/flapi.exmample.log 2>&1 &
-popd
-
-manage.py runserver
+supervisorctl -c etc/supervisord-dev.conf tail -f http_flask

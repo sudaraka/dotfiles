@@ -12,11 +12,15 @@ setenv PATH $PATH:$PROJECTSDIR/family-legacy-api/bin
 
 split
 resize 10
-screen -t server bash --rcfile $HOME/.screen/bashrc/flapi.server
+screen -t Server bash --rcfile $HOME/.screen/bashrc/flapi.server
 
 split -v
 focus right
-screen -t watch bash --rcfile $HOME/.screen/bashrc/flapi.watch
+screen -t 'Celery logs' bash --rcfile $HOME/.screen/bashrc/flapi.celery
+
+split -v
+focus right
+screen -t 'SMTP logs' bash --rcfile $HOME/.screen/bashrc/flapi.smtp
 
 focus down
-screen -t command bash --rcfile $HOME/.screen/bashrc/flapi.command
+screen -t Command bash --rcfile $HOME/.screen/bashrc/flapi.command

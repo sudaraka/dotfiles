@@ -10,6 +10,7 @@
 . ~/.bashrc
 
 alias tree="tree -C --dirsfirst -I '__pyc*|coverage*|node_modules*|_build*'"
+alias supervisorctl='supervisorctl -c etc/supervisord-dev.conf'
 
 pyve flapi
 
