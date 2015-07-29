@@ -31,9 +31,6 @@ PROMPT_COMMAND=set_cli_prompt
 export EDITOR=vim
 export TERM=xterm-256color
 
-# Github user for `hub` tool
-export GITHUB_USER=sudaraka
-
 # History
 export HISTFILESIZE=999999
 export NODE_REPL_HISTORY_FILE=$HOME/.node_history
@@ -164,17 +161,7 @@ set_cli_prompt() {
             BG=$(( BG + 2 ))
         fi
 
-        # Is git or g aliased to github client
-        GIT_ALIAS=$(alias_of 'git')
-        G_ALIAS=$(alias_of 'g')
-        GIT_SYMBOL=''
-        GIT_COLOR=208
-        if [ "hub" == "$GIT_ALIAS" -o "hub" == "$G_ALIAS" ]; then
-            GIT_SYMBOL=''
-            GIT_COLOR=31
-        fi
-
-        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;${GIT_COLOR}m\]$GIT_SYMBOL\[\e[38;5;249m\] $GIT_BRANCH$GIT_BLOCK"
+        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;208m\]\[\e[38;5;249m\] $GIT_BRANCH$GIT_BLOCK"
         BG=$(( BG + 2 ))
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
