@@ -14,6 +14,7 @@ alias g='git'
 alias gg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
+alias mycli='~/opt/virtualenv/mycli/bin/mycli'
 
 # Make GIT completion work with "g" alias
 # Based on Stackoverflow answer by chris_sutter and Ondrej Machulda

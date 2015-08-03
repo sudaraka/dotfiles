@@ -282,3 +282,23 @@ systemctl --user enable "$DOTFILES_DIR/redis/redis@.service"
 echo
 
 # }}}
+
+# MyCli configuration {{{
+
+echo 'Setup MyCli Configuration'
+echo
+
+python -m venv ~/opt/virtualenv/mycli
+. ~/opt/virtualenv/mycli/bin/activate
+pip install -U pip
+pip install -U mycli
+deactivate
+
+# Remove existing configuration
+rm -f ~/.myclirc 2>/dev/null
+
+ln -sv "$DOTFILES_DIR/myclirc" ~/.myclirc
+
+echo
+
+# }}}
