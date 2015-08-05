@@ -1,0 +1,9 @@
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/mongod --config /home/suda/opt/mongodb/etc/mongod.conf
+
+[Install]
+WantedBy=default.target
