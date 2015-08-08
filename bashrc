@@ -64,6 +64,22 @@ function scr() {
     fi;
 }
 
+# Make directory in $1 if not exists and `cd` into it
+function mcd() {
+    DIR=$1
+
+    if [ ! -d $DIR ]; then
+        mkdir -p $DIR >/dev/null 2>&1
+
+        if [ 0 -ne $? ]; then
+            echo "Unable to create $DIR"
+            exit 1
+        fi
+    fi
+
+    cd $DIR
+}
+
 # Switch to the project working directory
 function cdp() {
     DIR=$1
