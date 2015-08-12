@@ -4,7 +4,12 @@
       "cl": "console.log(|${child});",
       "rd": "${child}.reduce(function(acc, v) {\n\t|\n\treturn acc;\n}, []);",
       "mp": "${child}.map(function(v) {\n\t|\n\treturn v;\n});",
-      "fl": "${child}.filter(function(v) {\n\t|\n\treturn true;\n});"
+      "fl": "${child}.filter(function(v) {\n\t|\n\treturn true;\n});",
+      "fns": "function ${child}() {|}",
+      "fne": "${child} = function() {|}",
+      "fn": "fns",
+      "afn": "function() {|}",
+      "iife": "(function() {|}());"
     }
   }
 }
