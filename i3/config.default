@@ -265,13 +265,21 @@ exec --no-startup-id pidgin
 exec --no-startup-id ~/opt/tilda/bin/tilda
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
-set $exit_mode      Shutdown     Reboot     Logout
+set $exit_mode           Shutdown     Reboot     Logout
 mode "$exit_mode" {
   bindsym s exec --no-startup-id i3exit shutdown, mode "default"
   bindsym r exec --no-startup-id i3exit reboot, mode "default"
   bindsym l exec --no-startup-id i3exit logout, mode "default"
-  bindsym t exec --no-startup-id i3exit test, mode "default"
 
   bindsym Escape mode "default"
 }
 bindsym $mod+Shift+End mode "$exit_mode"
+
+set $server_mode           Shutdown     Reboot
+mode "$server_mode" {
+  bindsym s exec --no-startup-id ssh homesvr sudo systemctl poweroff, mode "default"
+  bindsym r exec --no-startup-id ssh homesvr sudo systemctl reboot, mode "default"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Home mode "$server_mode"
