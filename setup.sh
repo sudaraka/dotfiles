@@ -228,12 +228,12 @@ echo
 
 # }}}
 
-# iPython Notebook {{{
+# Jupyter Notebook {{{
 
-echo 'Setup iPython Notebook'
+echo 'Setup Jupyter Notebook'
 echo
 
-systemctl --user enable "$DOTFILES_DIR/ipython-notebook.service"
+systemctl --user enable "$DOTFILES_DIR/jupyter-notebook.service"
 
 echo
 

@@ -1,0 +1,13 @@
+[Unit]
+Description=Jupyter Notebook
+
+[Service]
+Type=simple
+PIDFile=/tmp/jupyter-notebook
+WorkingDirectory=%h/notes
+ExecStart=/home/suda/opt/virtualenv/ipn/bin/jupyter-notebook --no-browser --no-mathjax --ip=127.0.0.1 --port=8888 --port-retries=0 --FileContentsManager.hide_globs="['*.sh','*.localstorage']"
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=default.target
