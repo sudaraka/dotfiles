@@ -123,6 +123,29 @@ function pyve() {
     return 0;
 }
 
+# update all packages in python virtual environments
+function pyve-update() {
+    DIR_BASE=`basename $PYVEDIR`
+    VE_LIST=`find $PYVEDIR/ -maxdepth 1 -type d ! -name "$DIR_BASE" -printf '%f\n'`
+
+    for ve in $VE_LIST; do
+        echo "Switching to virtualenv $ve"
+        pyve $ve
+
+        echo 'Updating pip...'
+        pip install --disable-pip-version-check -U pip
+
+        PACKAGES=`pip --disable-pip-version-check -q freeze|cut -d'=' -f1`
+        if [ ! -z "$PACKAGES" ]; then
+            echo 'Updating packages...'
+            pip install --disable-pip-version-check -U $PACKAGES
+        fi
+
+        deactivate
+        echo ''
+    done
+}
+
 # Fetch or pull the given branch, depending on which branch is the current
 function git_pull_or_fetch_remote_branch() {
     REMOTE=$1
