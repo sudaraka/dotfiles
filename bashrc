@@ -125,6 +125,9 @@ function pyve() {
 
 # update all packages in python virtual environments
 function pyve-update() {
+    TARGET=$1
+    shift
+
     DIR_BASE=`basename $PYVEDIR`
     VE_LIST=`find $PYVEDIR/ -maxdepth 1 -type d ! -name "$DIR_BASE" -printf '%f\n'`
 
@@ -132,13 +135,20 @@ function pyve-update() {
         echo "Switching to virtualenv $ve"
         pyve $ve
 
-        echo 'Updating pip...'
-        pip install --disable-pip-version-check -U pip
+        which pip >/dev/null 2>&1
+        if [ 0 -ne $? ]; then
+            echo 'No pip!'
+        else
+            echo 'Updating pip...'
+            pip install --disable-pip-version-check -U pip
 
-        PACKAGES=`pip --disable-pip-version-check -q freeze|cut -d'=' -f1`
-        if [ ! -z "$PACKAGES" ]; then
-            echo 'Updating packages...'
-            pip install --disable-pip-version-check -U $PACKAGES
+            if [ "all" == "$TARGET" -o "$TARGET" == "$ve" ]; then
+                PACKAGES=`pip --disable-pip-version-check -q freeze|cut -d'=' -f1`
+                if [ ! -z "$PACKAGES" ]; then
+                    echo 'Updating packages...'
+                    pip install --disable-pip-version-check -U $PACKAGES
+                fi
+            fi
         fi
 
         deactivate
