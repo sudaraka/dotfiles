@@ -41,6 +41,7 @@
     st              = stash
 [push]
     default         = simple
+    followTags      = true
 [diff]
     external        = git_vimdiff.sh
 [difftool]
