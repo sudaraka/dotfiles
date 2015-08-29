@@ -5,12 +5,18 @@ case "$1" in
         i3-msg exit;
         ;;
     reboot)
-        sudo umount -a -t nfs
         systemctl reboot;
         ;;
     shutdown)
-        sudo umount -a -t nfs
         systemctl poweroff;
+        ;;
+    reboot-server)
+        sudo umount -a -t nfs
+        ssh homesvr sudo systemctl reboot
+        ;;
+    shutdown-server)
+        sudo umount -a -t nfs
+        ssh homesvr sudo systemctl poweroff
         ;;
     test)
         notify-send -i ~/scripts/archlinux-install/archicon.png 'i3wm' 'test';

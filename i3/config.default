@@ -277,8 +277,8 @@ bindsym $mod+Shift+End mode "$exit_mode"
 
 set $server_mode           Shutdown     Reboot
 mode "$server_mode" {
-  bindsym s exec --no-startup-id ssh homesvr sudo systemctl poweroff, mode "default"
-  bindsym r exec --no-startup-id ssh homesvr sudo systemctl reboot, mode "default"
+  bindsym s exec --no-startup-id i3exit shutdown-server, mode "default"
+  bindsym r exec --no-startup-id i3exit reboot-server, mode "default"
 
   bindsym Escape mode "default"
 }
