@@ -363,6 +363,13 @@ vnoremap <Space> za
 " }}}
 " Programing environments {{{
 
+" Pligin: tagbar {{{
+
+" Requires ctags installed on the system
+Bundle 'majutsushi/tagbar'
+noremap <silent> <F8> :TagbarToggle<CR>
+
+"}}}
 " Plugin: CtrlP {{{
 
 Bundle 'kien/ctrlp.vim'
