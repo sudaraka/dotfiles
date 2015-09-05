@@ -28,6 +28,6 @@ function vsuite() {
 }
 
 git fetch --all
-git_pull_or_fetch_remote_branch
+git_pull_or_fetch_remote_branch origin next
 
 vsuite
