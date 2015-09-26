@@ -29,9 +29,6 @@ function! <SID>remove_whitespace_trails()
     call cursor(l, c)
 endfunction
 
-" Resize splits when the window is resized
-autocmd VimResized * :wincmd =
-
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
     autocmd!
