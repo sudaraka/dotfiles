@@ -11,6 +11,7 @@ alias sysup='yaourt -Syua'
 alias tree='tree -C --dirsfirst -I "__pyc*|node_modules*"'
 alias truecrypt='truecrypt -t'
 alias g='git'
+alias n='npm'
 alias gg='gitk --all --date-order'
 alias cdd="pushd $DOWNLOADSDIR >/dev/null"
 alias vbm='sudo modprobe vboxdrv && sudo modprobe vboxpci && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt'
@@ -21,6 +22,10 @@ alias mycli='~/opt/virtualenv/mycli/bin/mycli'
 # https://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases
 source /usr/share/git/completion/git-completion.bash
 __git_complete g __git_main
+
+# Enable Npm completion for both `npm` an `n` alias
+source $HOME/opt/npm/etc/bash_completion
+complete -o default -F _npm_completion n
 
 # Frequently used directories
 export DOWNLOADSDIR="$HOME/downloads"
