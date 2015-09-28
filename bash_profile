@@ -6,12 +6,16 @@ PATH=$HOME/bin:$PATH
 
 OPT_DIR="$HOME/opt"
 
+# Set NODE_PATH for Node.js application to use global modules
+NPM_DIR="$OPT_DIR/npm"
+export NODE_PATH="$NPM_DIR/lib/node_modules"
+
 EXTRA_PATH=''
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/tools"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/platform-tools"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/heroku-client/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/node/bin"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/npm/bin"
+EXTRA_PATH="$EXTRA_PATH $NPM_DIR/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/redis/bin"
 
