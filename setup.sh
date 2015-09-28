@@ -253,20 +253,6 @@ echo
 
 # }}}
 
-# JSHint configuration {{{
-
-echo 'Setup JSHint Configuration'
-echo
-
-# Remove existing configuration
-rm -f ~/.jshintrc 2>/dev/null
-
-ln -sv "$DOTFILES_DIR/jshint.json" ~/.jshintrc
-
-echo
-
-# }}}
-
 # Redis configuration {{{
 
 echo 'Setup Redis Configuration'
