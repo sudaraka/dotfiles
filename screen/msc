@@ -8,6 +8,6 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/miracle-sealants
 
-screen -t grunt bash --rcfile $HOME/.screen/bashrc/msc.grunt
+screen -t 'Live Reload Server' bash --rcfile $HOME/.screen/bashrc/msc.watch
 
 screen -t command bash --rcfile $HOME/.screen/bashrc/msc.command
