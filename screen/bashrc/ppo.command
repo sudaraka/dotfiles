@@ -9,11 +9,7 @@
 
 . ~/.bashrc
 
-BUNDLE_DIR="`pwd`/src/PPO/Bundle"
-
-alias sbc="pushd $BUNDLE_DIR/CommonBundle"
-alias sbp="pushd $BUNDLE_DIR/PromoBundle"
-alias sbt="pushd $BUNDLE_DIR/TVBundle"
+alias ag="ag --ignore-dir=app/logs --ignore-dir=app/cache"
 
 launch_gvim
 g s
