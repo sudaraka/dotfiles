@@ -9,7 +9,7 @@
 
 . ~/.bashrc
 
-alias ag="ag --ignore-dir=app/logs --ignore-dir=app/cache"
+alias ag="ag --ignore-dir=app/logs --ignore-dir=app/cache --ignore-dir=vendor --ignore-dir=web"
 
 launch_gvim
 g s
