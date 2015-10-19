@@ -10,3 +10,4 @@ sign-git-tag=true
 spin=true
 tag-version-prefix=v
 unicode=true
+nodedir=/home/suda/src/node
