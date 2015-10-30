@@ -47,4 +47,5 @@
 [difftool]
     prompt          = false
 [rebase]
-	autosquash      = true
+    autosquash      = true
+    autostash       = true
