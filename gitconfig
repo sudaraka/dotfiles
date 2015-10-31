@@ -37,8 +37,11 @@
     rh              = reset --hard
     rv              = revert
     s               = status -sb
-    sl              = status
-    st              = stash
+    sa              = stash apply
+    sc              = stash clear
+    sl              = stash list --format=format:'%C(blue)%gd%C(reset) %C(white)%s%C(reset)'
+    sp              = stash pop
+    ss              = stash save
 [push]
     default         = simple
     followTags      = true
