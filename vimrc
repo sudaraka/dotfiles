@@ -220,11 +220,11 @@ noremap { {zz
 " }}}
 " File types {{{
 
-autocmd BufNewFile,BufRead,BufWritePost *.md set filetype=markdown
-autocmd BufNewFile,BufRead,BufWritePost *.json,*.webapp set filetype=json
-autocmd BufNewFile,BufRead,BufWritePost *.html.* set filetype=html
-autocmd BufNewFile,BufRead,BufWritePost *.js.* set filetype=javascript
-autocmd BufNewFile,BufRead,BufWritePost *.less set filetype=less
+autocmd BufNewFile,BufReadPost,BufWritePost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost,BufWritePost *.json,*.webapp set filetype=json
+autocmd BufNewFile,BufReadPost,BufWritePost *.html.* set filetype=html
+autocmd BufNewFile,BufReadPost,BufWritePost *.js.* set filetype=javascript
+autocmd BufNewFile,BufReadPost,BufWritePost *.less set filetype=less
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
 
 " }}}
