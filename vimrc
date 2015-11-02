@@ -225,6 +225,7 @@ autocmd BufNewFile,BufReadPost,BufWritePost *.json,*.webapp set filetype=json
 autocmd BufNewFile,BufReadPost,BufWritePost *.html.* set filetype=html
 autocmd BufNewFile,BufReadPost,BufWritePost *.js.* set filetype=javascript
 autocmd BufNewFile,BufReadPost,BufWritePost *.less set filetype=less
+autocmd BufNewFile,BufReadPost,BufWritePost *.jade set filetype=jade
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
 
 " }}}
@@ -459,6 +460,11 @@ let g:javascript_conceal = 1
 Bundle 'elzr/vim-json'
 
 let g:vim_json_syntax_conceal = 0
+
+"}}}
+" Plugin: Vim-Jade {{{
+
+Bundle 'digitaltoad/vim-jade'
 
 "}}}
 
