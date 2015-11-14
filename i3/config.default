@@ -232,6 +232,7 @@ for_window [class="Pidgin" title="Buddy List"] floating enable
 for_window [class="Pidgin" title="^Conversations with"] floating disable
 for_window [class="Thunar" title="File Operation Progress"] floating enable
 for_window [class="Vlc"] floating enable
+for_window [class="Firefox" title="Software Update|About Nightly"] floating enable
 
 # Key bindings
 bindsym Mod4+c exec --no-startup-id gnome-calculator
