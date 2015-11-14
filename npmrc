@@ -11,3 +11,5 @@ spin=true
 tag-version-prefix=v
 unicode=true
 nodedir=/home/suda/src/node
+save-exact=true
+save=true
