@@ -370,7 +370,7 @@ noremap <silent> <F8> :TagbarToggle<CR>
 "}}}
 " Plugin: CtrlP {{{
 
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 
