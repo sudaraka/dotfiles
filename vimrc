@@ -268,6 +268,10 @@ nnoremap <c-z> mzzMzvzz
 Bundle 'tomasr/molokai'
 colorscheme molokai
 
+" Adjust color theme for vim-javascript-syntax
+autocmd ColorScheme * highlight javaScriptParens guifg=#9fafb2
+autocmd ColorScheme * highlight javaScriptEndColons guifg=#ffb93f
+
 " Show whitespace
 " MUST be inserted AFTER the colors scheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -445,14 +449,10 @@ let g:user_emmet_settings = JSON_decode(join(readfile(expand('~/.emmetrc')), "\n
 " }}}
 " Language: JavaScript {{{
 
-" Plugin: Vim-JavaScript {{{
-" for JavaScript syntax highlighting
+" Plugin: Vim-JavaScript-Syntax {{{
+" for JavaScript syntax highlighting enhancement
 
-Bundle 'pangloss/vim-javascript'
-
-let javascript_enable_domhtmlcss = 1
-let b:javascript_fold = 1
-let g:javascript_conceal = 1
+Bundle 'jelera/vim-javascript-syntax'
 
 "}}}
 " Plugin: Vim-JSON {{{
