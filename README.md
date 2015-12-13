@@ -32,5 +32,5 @@ Included configuration for:
 * Qt theme
 * Aspell custom English dictionary
 
-  [url_contact]: http://sudaraka.org/contact/
+  [url_contact]: https://sudaraka.org/contact/
   [url_cc]: http://creativecommons.org/licenses/by/3.0/

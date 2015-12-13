@@ -1,5 +1,5 @@
 # flapi.command: Initialize server window shell
-# Author: [Sudaraka Wijesinghe](http://sudaraka.org/contact)
+# Author: [Sudaraka Wijesinghe](https://sudaraka.org/contact)
 # Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/flapi.command
 # License: CC-BY
 #
