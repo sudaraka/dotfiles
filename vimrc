@@ -291,42 +291,40 @@ set textwidth=80
 
 " Convert 4 space indentation to 2 spaces
 function! g:Indent4to2()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+    let s:view = winsaveview()
 
-    let _ts = &tabstop
-    let _sts = &softtabstop
+    try
+        let _ts = &tabstop
+        let _sts = &softtabstop
 
-    set tabstop=4 softtabstop=4 noexpandtab
-    retab!
-    set tabstop=2 softtabstop=2 expandtab
-    retab
+        set tabstop=4 softtabstop=4 noexpandtab
+        retab!
+        set tabstop=2 softtabstop=2 expandtab
+        retab
 
-    execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
-
-    let@/=_s
-    call cursor(l, c)
+        execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
+    finally
+        call winrestview(s:view)
+    endtry
 endfunction
 
 " Convert 2 space indentation to 4 spaces
 function! g:Indent2to4()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
+    let s:view = winsaveview()
 
-    let _ts = &tabstop
-    let _sts = &softtabstop
+    try
+        let _ts = &tabstop
+        let _sts = &softtabstop
 
-    set tabstop=2 softtabstop=2 noexpandtab
-    retab!
-    set tabstop=4 softtabstop=4 expandtab
-    retab
+        set tabstop=2 softtabstop=2 noexpandtab
+        retab!
+        set tabstop=4 softtabstop=4 expandtab
+        retab
 
-    execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
-
-    let@/=_s
-    call cursor(l, c)
+        execute 'set tabstop=' . _ts . ' softtabstop=' . _sts
+    finally
+        call winrestview(s:view)
+    endtry
 endfunction
 
 " }}}
