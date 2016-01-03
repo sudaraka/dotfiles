@@ -1,0 +1,17 @@
+# editorconfig: root level file for all projects to be placed at $HOME
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = LF
+
+insert_final_newline = false
+trim_trailing_whitespace = true
+max_line_length = 80
+
+indent_style = space
+indent_size = 4
+
+[*.{js,py,json}]
+indent_size = 2

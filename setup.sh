@@ -307,3 +307,17 @@ rm ~/.config/systemd/user/default.target.wants/mongod.service 2>/dev/null
 echo
 
 # }}}
+
+# EditorConfig {{{
+
+echo 'Setup EditorConfig'
+echo
+
+# Remove existing configuration
+sudo rm -f /.editorconfig 2>/dev/null
+
+sudo ln -sv "$DOTFILES_DIR/editorconfig" /.editorconfig
+
+echo
+
+# }}}
