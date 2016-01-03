@@ -16,19 +16,6 @@ Bundle 'gmarik/vundle'
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Remove tabs and spaces from end of the lines
-autocmd BufWritePre * :call <SID>remove_whitespace_trails()
-function! <SID>remove_whitespace_trails()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-
-    %s/\s\+$//e
-
-    let@/=_s
-    call cursor(l, c)
-endfunction
-
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
     autocmd!
@@ -92,8 +79,6 @@ set ttyfast
 
 set backspace=indent,eol,start
 set encoding=utf-8
-set fileencoding=utf-8
-set fileformat=unix
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set modelines=0
 set showbreak=↪
@@ -226,7 +211,6 @@ autocmd BufNewFile,BufReadPost,BufWritePost *.html.* set filetype=html
 autocmd BufNewFile,BufReadPost,BufWritePost *.js.* set filetype=javascript
 autocmd BufNewFile,BufReadPost,BufWritePost *.less set filetype=less
 autocmd BufNewFile,BufReadPost,BufWritePost *.jade set filetype=jade
-autocmd FileType json :setlocal sw=2 ts=2 sts=2
 
 " }}}
 " Search {{{
@@ -299,14 +283,10 @@ endif
 " }}}
 " Formatting options {{{
 
-set expandtab
 set smartindent
 
 set formatoptions=qrnlcoj
 set formatoptions-=t
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
 set textwidth=80
 
 " Convert 4 space indentation to 2 spaces
