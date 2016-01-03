@@ -365,13 +365,6 @@ vnoremap <Space> za
 " }}}
 " Plugins {{{
 
-" Pligin: tagbar {{{
-
-" Requires ctags installed on the system
-Bundle 'majutsushi/tagbar'
-noremap <silent> <F8> :TagbarToggle<CR>
-
-"}}}
 " Plugin: CtrlP {{{
 
 Bundle 'ctrlpvim/ctrlp.vim'
@@ -438,11 +431,6 @@ let g:syntastic_warning_symbol = ""
 Bundle 'mattn/emmet-vim'
 let g:user_emmet_mode = 'ni'
 let g:user_emmet_settings = JSON_decode(join(readfile(expand('~/.emmetrc')), "\n"))
-
-"}}}
-" Plugin: Vim-Less {{{
-
-"Bundle 'groenewege/vim-less'
 
 "}}}
 
