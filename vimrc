@@ -365,6 +365,14 @@ vnoremap <Space> za
 " }}}
 " Plugins {{{
 
+" Pligin: EditorConfig {{{
+
+Bundle 'editorconfig/editorconfig-vim'
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:EditorConfig_preserve_formatoptions = 1
+
+"}}}
 " Plugin: CtrlP {{{
 
 Bundle 'ctrlpvim/ctrlp.vim'
