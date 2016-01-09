@@ -1,4 +1,4 @@
-# editorconfig: root level file for all projects to be placed at $HOME
+# editorconfig: root level file for all projects to be placed at /
 
 root = true
 
