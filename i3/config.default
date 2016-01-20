@@ -269,6 +269,7 @@ exec --no-startup-id ibus-daemon -d
 exec --no-startup-id hotot
 exec --no-startup-id pidgin
 exec --no-startup-id ~/opt/tilda/bin/tilda
+exec --no-startup-id bonta
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
 set $exit_mode           Shutdown     Reboot     Logout
