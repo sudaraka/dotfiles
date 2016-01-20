@@ -61,11 +61,11 @@ set lazyredraw
 set linebreak
 set nobackup
 set nocompatible
-set norelativenumber
 set noswapfile
 set nowrap
 set nowritebackup
 set number
+set relativenumber
 set ruler
 set shiftround
 set showcmd
