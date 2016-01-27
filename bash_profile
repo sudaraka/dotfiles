@@ -10,6 +10,9 @@ OPT_DIR="$HOME/opt"
 NPM_DIR="$OPT_DIR/npm"
 export NODE_PATH="$NPM_DIR/lib/node_modules"
 
+# Go environment settings
+export GOPATH="$OPT_DIR/go"
+
 EXTRA_PATH=''
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/tools"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/platform-tools"
@@ -18,6 +21,7 @@ EXTRA_PATH="$EXTRA_PATH $OPT_DIR/node/bin"
 EXTRA_PATH="$EXTRA_PATH $NPM_DIR/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/redis/bin"
+EXTRA_PATH="$EXTRA_PATH $GOPATH/bin"
 
 for dir in $EXTRA_PATH; do
     if [ -d $dir ]; then
