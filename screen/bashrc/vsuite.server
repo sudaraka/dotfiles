@@ -1,6 +1,6 @@
-# ppo.server: Initialize server window shell
+# vsuite.server: Initialize server window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/ppo.server
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/vsuite.server
 # License: CC-BY
 #
 
@@ -9,7 +9,7 @@
 
 . ~/.bashrc
 
-function vsuite() {
+function vss() {
     # Kill any running PHP instances
     pkill php
 
@@ -30,4 +30,4 @@ function vsuite() {
 git fetch --all
 git_pull_or_fetch_remote_branch origin next
 
-vsuite
+vss

@@ -1,6 +1,6 @@
-# ppo.command: Initialize command window shell
+# vsuite.command: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/ppo.command
+# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/vsuite.command
 # License: CC-BY
 #
 
