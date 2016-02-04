@@ -388,6 +388,7 @@ Bundle 'airblade/vim-gitgutter'
 " Symlink a patched font
 "   sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
 Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'Lokaltog/powerline-fonts'
 set laststatus=2
 let g:airline#extensions#virtualenv#enabled = 1
