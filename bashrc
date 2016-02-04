@@ -58,10 +58,16 @@ export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
+# Generate aliases for screen profiles
+for profile in `find $HOME/.screen/ -maxdepth 1 -type f -printf '%f\n'`;
+do
+    alias "$profile"="_scr $profile"
+done
+
 # Invoke GNU screen using extended configuration file
 # Based on article by Joseph McCullough
 # http://vertstudios.com/blog/multiple-screenrc-configurations-gnu-screen-tutorial/
-function scr() {
+function _scr() {
     if [ ! -f $HOME/.screen/$1 ]; then
         echo "'$1' is not found in $HOME/.screen";
         return 1;
