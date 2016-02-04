@@ -1,6 +1,6 @@
-# msccalc.server: Initialize server window shell
+# serverrc: Initialize server window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/msccalc.server
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/msccalc/serverrc
 # License: CC-BY
 #
 

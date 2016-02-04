@@ -1,6 +1,6 @@
-# msc.watch: Initialize live reload server (grunt watch) window shell
+# watchrc: Initialize grunt window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/msc.watch
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rw/watchrc
 # License: CC-BY
 #
 

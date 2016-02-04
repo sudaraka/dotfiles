@@ -1,6 +1,6 @@
-# rad.watch: Initialize grunt window shell
+# watchrc: Initialize live reload server (grunt watch) window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/rad.watch
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/msc/watchrc
 # License: CC-BY
 #
 

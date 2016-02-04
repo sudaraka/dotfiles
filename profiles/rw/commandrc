@@ -1,6 +1,6 @@
-# msc.web: Initialize web server (caddy) window shell
+# commandrc: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/msc.web
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rw/commandrc
 # License: CC-BY
 #
 
@@ -9,4 +9,8 @@
 
 . ~/.bashrc
 
-caddy
+httpd
+
+launch_gvim
+
+git s

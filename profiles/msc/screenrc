@@ -1,0 +1,15 @@
+# screenrc: GNU Screen profile for MiracleSealants work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/msc/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/miracle-sealants
+
+screen -t 'Web Server' bash --rcfile $HOME/.profiles/msc/serverrc
+
+screen -t 'Live Reload Server' bash --rcfile $HOME/.profiles/msc/watchrc
+
+screen -t command bash --rcfile $HOME/.profiles/msc/commandrc

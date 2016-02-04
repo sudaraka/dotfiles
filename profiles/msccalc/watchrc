@@ -1,6 +1,6 @@
-# rad.command: Initialize command window shell
+# watchrc: Initialize server window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/rad.command
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/msccalc/watchrc
 # License: CC-BY
 #
 
@@ -9,8 +9,4 @@
 
 . ~/.bashrc
 
-httpd
-
-launch_gvim
-
-git s
+npm run watch
