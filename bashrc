@@ -59,7 +59,7 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Generate aliases for screen profiles
-for profile in `find $HOME/.screen/ -maxdepth 1 -type f -printf '%f\n'`;
+for profile in `find $HOME/.profiles/ -maxdepth 1 -type f -printf '%f\n'`;
 do
     alias "$profile"="_scr $profile"
 done
@@ -68,11 +68,11 @@ done
 # Based on article by Joseph McCullough
 # http://vertstudios.com/blog/multiple-screenrc-configurations-gnu-screen-tutorial/
 function _scr() {
-    if [ ! -f $HOME/.screen/$1 ]; then
-        echo "'$1' is not found in $HOME/.screen";
+    if [ ! -f $HOME/.profiles/$1 ]; then
+        echo "'$1' is not found in $HOME/.profiles";
         return 1;
     else
-        \screen -c $HOME/.screen/$1
+        screen -c $HOME/.profiles/$1
     fi;
 }
 

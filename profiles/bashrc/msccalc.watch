@@ -1,6 +1,6 @@
-# msc.web: Initialize web server (caddy) window shell
+# msccalc.watch: Initialize server window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/msc.web
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/msccalc.watch
 # License: CC-BY
 #
 
@@ -9,4 +9,4 @@
 
 . ~/.bashrc
 
-caddy
+npm run watch

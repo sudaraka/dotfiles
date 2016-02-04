@@ -1,6 +1,6 @@
 # rad: GNU Screen profile for Radiators Warehouse work
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/rad
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rad
 # License: CC-BY
 #
 
@@ -12,7 +12,7 @@ setenv PATH $PATH:$PROJECTSDIR/radiators-warehouse/web/bin
 
 split
 resize 10
-screen -t watch bash --rcfile $HOME/.screen/bashrc/rad.watch
+screen -t watch bash --rcfile $HOME/.profiles/bashrc/rad.watch
 
 focus down
-screen -t command bash --rcfile $HOME/.screen/bashrc/rad.command
+screen -t command bash --rcfile $HOME/.profiles/bashrc/rad.command

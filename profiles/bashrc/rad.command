@@ -1,6 +1,6 @@
 # rad.command: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/rad.command
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/rad.command
 # License: CC-BY
 #
 

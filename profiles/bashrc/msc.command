@@ -1,6 +1,6 @@
-# msccalc.watch: Initialize server window shell
+# msc.command: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/msccalc.watch
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/msc.command
 # License: CC-BY
 #
 
@@ -9,4 +9,6 @@
 
 . ~/.bashrc
 
-npm run watch
+launch_gvim
+
+git s

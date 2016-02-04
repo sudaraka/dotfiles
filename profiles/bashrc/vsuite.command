@@ -1,6 +1,6 @@
 # vsuite.command: Initialize command window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/vsuite.command
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/vsuite.command
 # License: CC-BY
 #
 

@@ -1,6 +1,6 @@
 # msccalc.command: Initialize server window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/screen/bashrc/msccalc.command
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/msccalc.command
 # License: CC-BY
 #
 
