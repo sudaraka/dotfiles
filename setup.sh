@@ -112,12 +112,9 @@ echo
 # Remove existing configuration
 rm -f ~/.screen 2>/dev/null
 rm -f ~/.screenrc 2>/dev/null
-sudo rm -f /usr/share/bash-completion/completions/scr 2>/dev/null
 
 ln -sv "$DOTFILES_DIR/screen" ~/.screen
 ln -sv "$DOTFILES_DIR/screenrc" ~/.screenrc
-
-sudo ln -sv $DOTFILES_DIR/scr-completion.bash /usr/share/bash-completion/completions/scr
 
 echo
 
