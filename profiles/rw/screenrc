@@ -6,9 +6,9 @@
 
 source $HOME/.screenrc
 
-chdir $PROJECTSDIR/radiators-warehouse/web
+chdir $PROJECTSDIR/radiators/radiators-warehouse/web
 
-setenv PATH $PATH:$PROJECTSDIR/radiators-warehouse/web/bin
+setenv PATH $PATH:$PROJECTSDIR/radiators/radiators-warehouse/web/bin
 
 split
 resize 10
