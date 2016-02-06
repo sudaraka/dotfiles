@@ -1,6 +1,6 @@
 # screenrc: GNU Screen profile for Radiators Warehouse work
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rw/screenrc
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rws/screenrc
 # License: CC-BY
 #
 
@@ -12,7 +12,7 @@ setenv PATH $PATH:$PROJECTSDIR/radiators/radiators-warehouse/web/bin
 
 split
 resize 10
-screen -t watch bash --rcfile $HOME/.profiles/rw/watchrc
+screen -t watch bash --rcfile $HOME/.profiles/rws/watchrc
 
 focus down
-screen -t command bash --rcfile $HOME/.profiles/rw/commandrc
+screen -t command bash --rcfile $HOME/.profiles/rws/commandrc
