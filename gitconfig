@@ -27,9 +27,8 @@
     l               = log --graph --decorate=short --oneline --all --date-order --format=format:'%C(green)%h%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)'
     ll              = log --graph --decorate=short --oneline --all --date-order --date=short --format=format:'%C(green)%h%C(reset) %C(yellow)%ad%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lx              = log --graph --decorate=short --stat --date-order
-    m               = merge
+    m               = merge --no-ff
     mff             = merge --ff-only
-    mnf             = merge --no-ff
     ph              = push
     pl              = pull
     r               = reset
