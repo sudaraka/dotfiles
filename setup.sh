@@ -49,11 +49,6 @@ ln -sv ~/.vim/bundle/molokai/colors/molokai.vim ~/.vim/colors/
 # Run vim command to install bundles
 vim +BundleClean +BundleUpdate +BundleInstall +qa
 
-# Symlink patched font for powerline/airline
-sudo mkdir -pv /usr/share/fonts/TTF 2>/dev/null
-sudo rm /usr/share/fonts/TTF/DejaVu\ Sans\ Mono\ for\ Powerline.ttf 2>/dev/null
-sudo ln -s ~/.vim/bundle/powerline-fonts/DejaVuSansMono/DejaVu\ Sans\ Mono\ for\ Powerline.ttf /usr/share/fonts/TTF
-
 echo
 
 # }}}
