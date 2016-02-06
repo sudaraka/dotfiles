@@ -1,5 +1,3 @@
-color=true
-git-tag-version=true
 init-author-email=sudaraka@sudaraka.org
 init-author-name=Sudaraka Wijesinghe
 init-author-url=https://sudaraka.org/
@@ -9,6 +7,4 @@ message=Version %s
 nodedir=/home/suda/src/node
 save=true
 sign-git-tag=true
-spin=true
-tag-version-prefix=v
 unicode=true
