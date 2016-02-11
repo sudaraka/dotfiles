@@ -68,12 +68,17 @@ done
 # Based on article by Joseph McCullough
 # http://vertstudios.com/blog/multiple-screenrc-configurations-gnu-screen-tutorial/
 function _scr() {
-    if [ ! -d $HOME/.profiles/$1 ]; then
-        echo "'$1' is not a valid profile";
-        return 1;
+    if [[ -z $1 || ! -d $HOME/.profiles/$1 ]]; then
+        echo "'$1' is not a valid profile"
+        return 1
     else
-        screen -c $HOME/.profiles/$1/screenrc
-    fi;
+        if [ -f $HOME/.profiles/$1/workspace.json ]; then
+            WS_DEV='4: development'
+            i3-msg "workspace $WS_DEV; append_layout $HOME/.profiles/$1/workspace.json" >/dev/null
+        fi
+
+        screen -c $HOME/.profiles/$1/screenrc >/dev/null
+    fi
 }
 
 # Make directory in $1 if not exists and `cd` into it
