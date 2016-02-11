@@ -20,16 +20,17 @@ set $font_size %FONT_SIZE%
 set $ws_chat    "1: chat"
 set $ws_mail    "2: mail"
 set $ws_twitter "3: twitter"
-set $ws_1       "4: 1"
-set $ws_2       "5: 2"
-set $ws_3       "6: 3"
-set $ws_4       "7: 4"
-set $ws_5       "8: 5"
-set $ws_6       "9: 6"
-set $ws_7       "10: 7"
-set $ws_8       "11: 8"
-set $ws_9       "12: 9"
-set $ws_0       "13: 10"
+set $ws_dev     "4: development"
+set $ws_1       "5: 1"
+set $ws_2       "6: 2"
+set $ws_3       "7: 3"
+set $ws_4       "8: 4"
+set $ws_5       "9: 5"
+set $ws_6       "10: 6"
+set $ws_7       "11: 7"
+set $ws_8       "12: 8"
+set $ws_9       "13: 9"
+set $ws_0       "14: 10"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -109,8 +110,10 @@ bindsym Mod4+0 workspace $ws_0
 bindsym Mod4+Shift+c workspace $ws_chat
 bindsym Mod4+Shift+m workspace $ws_mail
 bindsym Mod4+Shift+t workspace $ws_twitter
+bindsym Mod4+d workspace $ws_dev
 
 # move focused container to workspace
+bindsym $mod+Shift+d move container to workspace $ws_dev
 bindsym $mod+Shift+1 move container to workspace $ws_1
 bindsym $mod+Shift+2 move container to workspace $ws_2
 bindsym $mod+Shift+3 move container to workspace $ws_3
