@@ -8,10 +8,16 @@
 
 " Initialize {{{
 
+set nocompatible " Required
+filetype off
+
 " Enable vundle plugin manager
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -38,9 +44,6 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " }}}
 " Basic settings {{{
-
-filetype off
-filetype plugin indent on
 
 set autoindent
 set autoread
@@ -238,7 +241,7 @@ nnoremap <c-z> mzzMzvzz
 " }}}
 " Color theme & GUI {{{
 
-Bundle 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 colorscheme molokai
 
 " Adjust color theme for vim-javascript-syntax
@@ -334,7 +337,7 @@ vnoremap <Space> za
 
 " Plugin: EditorConfig {{{
 
-Bundle 'editorconfig/editorconfig-vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:EditorConfig_preserve_formatoptions = 1
@@ -342,7 +345,7 @@ let g:EditorConfig_preserve_formatoptions = 1
 "}}}
 " Plugin: CtrlP {{{
 
-Bundle 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 
@@ -357,25 +360,25 @@ endif
 " }}}
 " Plugin: Nerdcommenter {{{
 
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 "}}}
 " Plugin: Vim-Fugitive {{{
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 "}}}
 " Plugin: Vim-Gitgutter {{{
 
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 "}}}
 " Plugin: Vim-Airline {{{
 
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 set laststatus=2
 let g:airline#extensions#virtualenv#enabled = 1
@@ -385,7 +388,7 @@ let g:airline_powerline_fonts = 1
 "}}}
 " Plugin: Syntastic {{{
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
@@ -399,7 +402,7 @@ let g:syntastic_warning_symbol = ""
 "}}}
 " Plugin: Vim-Multiple-Cursors {{{
 
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
 "}}}
 
@@ -408,19 +411,19 @@ Bundle 'terryma/vim-multiple-cursors'
 " Plugin: Vim-JavaScript-Syntax {{{
 " for JavaScript syntax highlighting enhancement
 
-Bundle 'jelera/vim-javascript-syntax'
+Plugin 'jelera/vim-javascript-syntax'
 
 "}}}
 " Plugin: Vim-JSON {{{
 
-Bundle 'elzr/vim-json'
+Plugin 'elzr/vim-json'
 
 let g:vim_json_syntax_conceal = 0
 
 "}}}
 " Plugin: Vim-JSX {{{
 
-Bundle 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
 "}}}
@@ -430,7 +433,7 @@ let g:jsx_ext_required = 0
 
 " Plugin: Phpfolding {{{
 
-Bundle 'rayburgemeestre/phpfolding.vim'
+Plugin 'rayburgemeestre/phpfolding.vim'
 
 "}}}
 
@@ -465,7 +468,7 @@ endfunction
 
 " Plugin: Python-Mode {{{
 
-Bundle 'klen/python-mode'
+Plugin 'klen/python-mode'
 
 map <Leader>g :call RopeGotoDefinition()<CR>
 
