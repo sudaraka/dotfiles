@@ -8,62 +8,61 @@ short_units yes
 TEXT
 ,[ \
   ${if_up %WIRELESS_INTERFACE%} \
-  { "color":"\#fd971f", "full_text":" " }, \
-  { "color":"\#82b414", "full_text":"    ${downspeed %WIRELESS_INTERFACE%} " }, \
-  { "color":"\#fd971f", "full_text":"    ${upspeed %WIRELESS_INTERFACE%} " }, \
+  { "color":"\#dc9656", "full_text":" " }, \
+  { "color":"\#a1b56c", "full_text":"    ${downspeed wlp2s0} " }, \
+  { "color":"\#dc9656", "full_text":"    ${upspeed wlp2s0} " }, \
   ${else} \
     ${if_up %ETHERNET_INTERFACE%}\
-    { "color":"\#fd971f", "full_text":" " }, \
-    { "color":"\#82b414", "full_text":"   ${downspeed %ETHERNET_INTERFACE%} " }, \
-    { "color":"\#fd971f", "full_text":"   ${upspeed %ETHERNET_INTERFACE%} " }, \
+    { "color":"\#dc9656", "full_text":" " }, \
+    { "color":"\#a1b56c", "full_text":"   ${downspeed enp1s0} " }, \
+    { "color":"\#dc9656", "full_text":"   ${upspeed enp1s0} " }, \
     ${else} \
       ${if_up ppp0}\
-      { "color":"\#fd971f", "full_text":" " }, \
-      { "color":"\#82b414", "full_text":"   ${downspeed ppp0} " }, \
-      { "color":"\#fd971f", "full_text":"   ${upspeed ppp0} " }, \
+      { "color":"\#dc9656", "full_text":" " }, \
+      { "color":"\#a1b56c", "full_text":"   ${downspeed ppp0} " }, \
+      { "color":"\#dc9656", "full_text":"   ${upspeed ppp0} " }, \
       ${endif} \
     ${endif} \
   ${endif} \
-  { "color":"\#268bd2", "full_text":"    ${execi 600 bbusage-i3} " }, \
   { \
-    "color":"\#bfa0fe", \
+    "color":"\#ba8baf", \
     "full_text":"    ${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} " \
   }, \
   ${if_empty ${battery %BATTERY_ID%}} \
   ${else} \
     ${if_match ${battery_percent %BATTERY_ID%}>85} \
-    { "color":"\#82b414", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+    { "color":"\#a1b56c", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
     ${else} \
       ${if_match ${battery_percent %BATTERY_ID%}>65} \
-      { "color":"\#fd971f", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+      { "color":"\#f7ca88", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
       ${else} \
         ${if_match ${battery_percent %BATTERY_ID%}>32} \
-        { "color":"\#ff5995", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+        { "color":"\#dc9656", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
         ${else} \
           ${if_match ${battery_percent %BATTERY_ID%}>9} \
-          { "color":"\#f92672", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+          { "color":"\#ab4642", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
           ${else} \
-          { "color":"\#f92672", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
+          { "color":"\#ff0000", "full_text":"    ${battery_percent %BATTERY_ID%}% " }, \
           ${endif} \
         ${endif} \
       ${endif} \
     ${endif} \
   ${endif} \
   ${if_match ${acpitemp}<50} \
-  { "color": "\#62ade3", "full_text": "    ${acpitemp}°C " }, \
+  { "color": "\#a1b56c", "full_text": "    ${acpitemp}°C " }, \
   ${else} \
     ${if_match ${acpitemp}<65} \
-    { "color": "\#fd971f", "full_text": "    ${acpitemp}°C " }, \
+    { "color": "\#dc9656", "full_text": "    ${acpitemp}°C " }, \
     ${else} \
       ${if_match ${acpitemp}<80} \
-      { "color": "\#ff0000", "full_text": "    ${acpitemp}°C " }, \
+      { "color": "\#ab4642", "full_text": "    ${acpitemp}°C " }, \
       ${else} \
-      { "color": "\#ffffff", "full_text": "    ${acpitemp}°C " }, \
+      { "color": "\#ff0000", "full_text": "    ${acpitemp}°C " }, \
       ${endif} \
     ${endif} \
   ${endif} \
   { \
-    "color":"\#94d8e5", \
+    "color":"\#7cafc2", \
     "full_text":"     ${time %a, %b %d, %Y}   ${time %l:%M %p} " \
   } \
 ]
