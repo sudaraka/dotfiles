@@ -440,11 +440,6 @@ Bundle 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 
 "}}}
-" Plugin: Vim-Jade {{{
-
-Bundle 'digitaltoad/vim-jade'
-
-"}}}
 
 " }}}
 " Language: PHP {{{
