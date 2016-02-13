@@ -14,7 +14,6 @@ fi
 xbacklight -set 10
 xset -dpms
 xset s off
-xsetroot -solid '#181818'
 
 init-monitors
 
