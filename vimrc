@@ -408,6 +408,11 @@ let g:syntastic_error_symbol = "✘"
 let g:syntastic_warning_symbol = ""
 
 "}}}
+" Plugin: Vim-Multiple-Cursors {{{
+
+Bundle 'terryma/vim-multiple-cursors'
+
+"}}}
 
 " Language: HTML/CSS {{{
 
