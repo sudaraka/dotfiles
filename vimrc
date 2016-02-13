@@ -374,6 +374,8 @@ nnoremap <c-z> mzzMzvzz
 " Color theme & GUI {{{
 
 Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
+colorscheme molokai
 
 " Adjust color theme for vim-javascript-syntax
 autocmd ColorScheme * highlight javaScriptParens guifg=#b8b8b8
