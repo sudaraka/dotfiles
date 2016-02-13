@@ -36,17 +36,6 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
-" Convert JSON string to object
-" Used for parsing emmet snippet files
-" Extracted from:
-"   https://github.com/mattn/webapi-vim/blob/master/autoload/webapi/json.vim#L66
-function! JSON_decode(json)
-    let json = join(split(a:json, "\n"), "")
-
-    sandbox let ret = eval(json)
-
-    return ret
-endfunction
 " }}}
 " Basic settings {{{
 
@@ -414,17 +403,6 @@ Bundle 'terryma/vim-multiple-cursors'
 
 "}}}
 
-" Language: HTML/CSS {{{
-
-" Plugin: Emmet-Vim {{{
-
-Bundle 'mattn/emmet-vim'
-let g:user_emmet_mode = 'ni'
-let g:user_emmet_settings = JSON_decode(join(readfile(expand('~/.emmetrc')), "\n"))
-
-"}}}
-
-" }}}
 " Language: JavaScript {{{
 
 " Plugin: Vim-JavaScript-Syntax {{{
