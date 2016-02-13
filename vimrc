@@ -148,42 +148,6 @@ function! g:PhpPort()
 endfunction
 
 " }}}
-" Language: Python {{{
-
-" Plugin: Python-Mode {{{
-
-Plugin 'klen/python-mode'
-
-map <Leader>g :call RopeGotoDefinition()<CR>
-
-let g:pymode_lint_unmodified = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
-
-" Ignore certain errors/warnings
-"   F0401 - module import failures - when editing files in a virtual
-"   environment this show lot of errors.
-let g:pymode_lint_ignore = 'F0401'
-
-" }}}
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-       if a:action == 'j'
-            return "\<C-N>"
-       elseif a:action == 'k'
-            return "\<C-P>"
-       endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
-" }}}
 
 " }}}
 " Initialize - Stage 2 {{{
