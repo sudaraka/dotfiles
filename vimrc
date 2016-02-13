@@ -373,16 +373,17 @@ nnoremap <c-z> mzzMzvzz
 " }}}
 " Color theme & GUI {{{
 
+Plugin 'chriskempson/base16-vim'
 Plugin 'tomasr/molokai'
 colorscheme molokai
 
 " Adjust color theme for vim-javascript-syntax
-autocmd ColorScheme * highlight javaScriptParens guifg=#9fafb2
-autocmd ColorScheme * highlight javaScriptEndColons guifg=#ffb93f
+autocmd ColorScheme * highlight javaScriptParens guifg=#b8b8b8
+autocmd ColorScheme * highlight javaScriptEndColons guifg=#dc9656
 
 " Show whitespace
 " MUST be inserted AFTER the colors scheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=#ab4642
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Highlight VCS conflict markers
@@ -394,6 +395,9 @@ set colorcolumn=+0
 set t_Co=256
 
 if has('gui_running')
+    set background=dark
+    colorscheme base16-eighties
+
     set guifont=Monaco\ for\ Powerline\ 11
 
     set guioptions-=m
