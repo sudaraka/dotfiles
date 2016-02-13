@@ -369,12 +369,8 @@ noremap { {zz
 " }}}
 " File types {{{
 
-autocmd BufNewFile,BufReadPost,BufWritePost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost,BufWritePost *.json,*.webapp set filetype=json
 autocmd BufNewFile,BufReadPost,BufWritePost *.html.* set filetype=html
 autocmd BufNewFile,BufReadPost,BufWritePost *.js.* set filetype=javascript
-autocmd BufNewFile,BufReadPost,BufWritePost *.less set filetype=less
-autocmd BufNewFile,BufReadPost,BufWritePost *.jade set filetype=jade
 
 " }}}
 " Search {{{
