@@ -6,7 +6,7 @@
 " Inspired by https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
 "
 
-" Initialize {{{
+" Initialize - Stage 1 {{{
 
 set nocompatible " Required
 filetype off
@@ -15,6 +15,178 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+
+" }}}
+" Plugins {{{
+
+" Plugin: EditorConfig {{{
+
+Plugin 'editorconfig/editorconfig-vim'
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:EditorConfig_preserve_formatoptions = 1
+
+"}}}
+" Plugin: CtrlP {{{
+
+Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc
+
+" Use Silver Search CtrlP
+" Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules/*" --ignore ".tmp/*" --ignore "_build/*" --ignore="_dist/*" --ignore="vendor/*" --ignore="log/*"'
+    let g:ctrlp_use_caching = 0
+endif
+
+
+" }}}
+" Plugin: Nerdcommenter {{{
+
+Plugin 'scrooloose/nerdcommenter'
+
+"}}}
+" Plugin: Vim-Fugitive {{{
+
+Plugin 'tpope/vim-fugitive'
+
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+"}}}
+" Plugin: Vim-Gitgutter {{{
+
+Plugin 'airblade/vim-gitgutter'
+
+"}}}
+" Plugin: Vim-Airline {{{
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+set laststatus=2
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+"}}}
+" Plugin: Syntastic {{{
+
+Plugin 'scrooloose/syntastic'
+
+let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "✘"
+let g:syntastic_warning_symbol = ""
+
+"}}}
+" Plugin: Vim-Multiple-Cursors {{{
+
+Plugin 'terryma/vim-multiple-cursors'
+
+"}}}
+
+" Language: JavaScript {{{
+
+" Plugin: Vim-JavaScript-Syntax {{{
+" for JavaScript syntax highlighting enhancement
+
+Plugin 'jelera/vim-javascript-syntax'
+
+"}}}
+" Plugin: Vim-JSON {{{
+
+Plugin 'elzr/vim-json'
+
+let g:vim_json_syntax_conceal = 0
+
+"}}}
+" Plugin: Vim-JSX {{{
+
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
+"}}}
+
+" }}}
+" Language: PHP {{{
+
+" Plugin: Phpfolding {{{
+
+Plugin 'rayburgemeestre/phpfolding.vim'
+
+"}}}
+
+" Auto (Omni) complete
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+\ "\<lt>C-n>" :
+\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+
+" Convert old PHP tags (<?) or new <?php
+function! g:PhpPort()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+
+    %s/<?=/<?php echo /e
+    %s/<?\s\+/<?php /e
+    %s/<?$/<?php/e
+    %s/<?\([^p]\)/<?php \1/e
+    %s/\[\"\([^"]\+\)"]/['\1']/e
+    retab
+
+    let@/=_s
+    call cursor(l, c)
+endfunction
+
+" }}}
+" Language: Python {{{
+
+" Plugin: Python-Mode {{{
+
+Plugin 'klen/python-mode'
+
+map <Leader>g :call RopeGotoDefinition()<CR>
+
+let g:pymode_lint_unmodified = 1
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+
+" Ignore certain errors/warnings
+"   F0401 - module import failures - when editing files in a virtual
+"   environment this show lot of errors.
+let g:pymode_lint_ignore = 'F0401'
+
+" }}}
+
+" Better navigating through omnicomplete option list
+" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
+set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+       if a:action == 'j'
+            return "\<C-N>"
+       elseif a:action == 'k'
+            return "\<C-P>"
+       endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" }}}
+
+" }}}
+" Initialize - Stage 2 {{{
 
 call vundle#end()
 filetype plugin indent on
@@ -331,174 +503,5 @@ augroup END
 
 nnoremap <Space> za
 vnoremap <Space> za
-
-" }}}
-" Plugins {{{
-
-" Plugin: EditorConfig {{{
-
-Plugin 'editorconfig/editorconfig-vim'
-
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-let g:EditorConfig_preserve_formatoptions = 1
-
-"}}}
-" Plugin: CtrlP {{{
-
-Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-
-" Use Silver Search CtrlP
-" Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules/*" --ignore ".tmp/*" --ignore "_build/*" --ignore="_dist/*" --ignore="vendor/*" --ignore="log/*"'
-    let g:ctrlp_use_caching = 0
-endif
-
-
-" }}}
-" Plugin: Nerdcommenter {{{
-
-Plugin 'scrooloose/nerdcommenter'
-
-"}}}
-" Plugin: Vim-Fugitive {{{
-
-Plugin 'tpope/vim-fugitive'
-
-autocmd BufReadPost fugitive://* set bufhidden=delete
-
-"}}}
-" Plugin: Vim-Gitgutter {{{
-
-Plugin 'airblade/vim-gitgutter'
-
-"}}}
-" Plugin: Vim-Airline {{{
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-set laststatus=2
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-"}}}
-" Plugin: Syntastic {{{
-
-Plugin 'scrooloose/syntastic'
-
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✘"
-let g:syntastic_warning_symbol = ""
-
-"}}}
-" Plugin: Vim-Multiple-Cursors {{{
-
-Plugin 'terryma/vim-multiple-cursors'
-
-"}}}
-
-" Language: JavaScript {{{
-
-" Plugin: Vim-JavaScript-Syntax {{{
-" for JavaScript syntax highlighting enhancement
-
-Plugin 'jelera/vim-javascript-syntax'
-
-"}}}
-" Plugin: Vim-JSON {{{
-
-Plugin 'elzr/vim-json'
-
-let g:vim_json_syntax_conceal = 0
-
-"}}}
-" Plugin: Vim-JSX {{{
-
-Plugin 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
-
-"}}}
-
-" }}}
-" Language: PHP {{{
-
-" Plugin: Phpfolding {{{
-
-Plugin 'rayburgemeestre/phpfolding.vim'
-
-"}}}
-
-" Auto (Omni) complete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-\ "\<lt>C-n>" :
-\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-
-" Convert old PHP tags (<?) or new <?php
-function! g:PhpPort()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-
-    %s/<?=/<?php echo /e
-    %s/<?\s\+/<?php /e
-    %s/<?$/<?php/e
-    %s/<?\([^p]\)/<?php \1/e
-    %s/\[\"\([^"]\+\)"]/['\1']/e
-    retab
-
-    let@/=_s
-    call cursor(l, c)
-endfunction
-
-" }}}
-" Language: Python {{{
-
-" Plugin: Python-Mode {{{
-
-Plugin 'klen/python-mode'
-
-map <Leader>g :call RopeGotoDefinition()<CR>
-
-let g:pymode_lint_unmodified = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
-
-" Ignore certain errors/warnings
-"   F0401 - module import failures - when editing files in a virtual
-"   environment this show lot of errors.
-let g:pymode_lint_ignore = 'F0401'
-
-" }}}
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-       if a:action == 'j'
-            return "\<C-N>"
-       elseif a:action == 'k'
-            return "\<C-P>"
-       endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
-" }}}
 
 " }}}
