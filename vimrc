@@ -332,7 +332,7 @@ vnoremap <Space> za
 " }}}
 " Plugins {{{
 
-" Pligin: EditorConfig {{{
+" Plugin: EditorConfig {{{
 
 Bundle 'editorconfig/editorconfig-vim'
 
@@ -355,7 +355,7 @@ endif
 
 
 " }}}
-" Pligin: Nerdcommenter {{{
+" Plugin: Nerdcommenter {{{
 
 Bundle 'scrooloose/nerdcommenter'
 
