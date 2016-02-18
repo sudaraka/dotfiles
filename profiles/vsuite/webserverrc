@@ -1,6 +1,6 @@
-# vsuite.server: Initialize server window shell
+# webserverrc: Initialize server window shell
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/vsuite.server
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bashrc/webserverrc
 # License: CC-BY
 #
 
@@ -24,7 +24,7 @@ function vss() {
 
     # Start server
     notify-send -i `pwd`/src/PPO/Bundle/CommonBundle/Resources/public/img/VC-Square.png 'vCreative app suite' 'Starting development server...'
-    app/console server:run
+    app/console server:run 127.0.0.1:5000 -e dev -vvv
 }
 
 git fetch --all

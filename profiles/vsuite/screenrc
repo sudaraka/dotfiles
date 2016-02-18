@@ -8,9 +8,11 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/vcreative/vsuite
 
-screen -t server bash --rcfile $HOME/.profiles/vsuite/serverrc
+screen -t 'DynamoDB' bash --rcfile $HOME/.profiles/vsuite/dynamodbrc
+
+screen -t 'Web Server' bash --rcfile $HOME/.profiles/vsuite/webserverrc
 split
 resize 10
 focus down
 
-screen -t command bash --rcfile $HOME/.profiles/vsuite/commandrc
+screen -t 'Command' bash --rcfile $HOME/.profiles/vsuite/commandrc
