@@ -105,10 +105,9 @@ Plugin 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 
 "}}}
-" Plugin: Vim-JSX {{{
+" Plugin: JSX {{{
 
-Plugin 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
+Plugin 'jsx/jsx.vim'
 
 "}}}
 
