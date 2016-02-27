@@ -1,0 +1,16 @@
+# serverrc: Initialize server window shell
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rwcp/serverrc
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+# Launch web browser with demo site after 2 seconds
+(sleep 3 && firefox --devtools http://127.0.0.1:5000/ >/dev/null) &
+
+# Start the web server
+npm start

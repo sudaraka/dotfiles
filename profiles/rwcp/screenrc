@@ -1,0 +1,16 @@
+# screenrc: GNU Screen profile for Radiators Warehouse work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rwcp/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/radiators/rw-customer-portal
+
+split
+resize 10
+screen -t Server bash --rcfile $HOME/.profiles/rwcp/serverrc
+
+focus down
+screen -t Command bash --rcfile $HOME/.profiles/rwcp/commandrc
