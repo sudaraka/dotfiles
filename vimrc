@@ -203,10 +203,9 @@ set splitright
 set title
 set ttyfast
 
-
 set backspace=indent,eol,start
 set encoding=utf-8
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=space:·,tab:▸–,eol:¬,extends:❯,precedes:❮
 set modelines=0
 set showbreak=↪
 set termencoding=utf-8
