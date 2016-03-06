@@ -208,14 +208,15 @@ alias_of() {
 # Update CLI prompt
 set_cli_prompt() {
     BG=236
+    BG_INC=1
 
     # Ending
-    P="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\]\[\e[0;38;5;${BG}m\]\[\e[0m\] "
-    BG=$(( BG + 2 ))
+    P="\[\e[0;38;5;$(( BG + BG_INC ));48;5;${BG}m\]\[\e[0;38;5;${BG}m\]\[\e[0m\] "
+    BG=$(( BG + BG_INC ))
 
     # Working directory
-    P="\[\e[0;38;5;$(( BG + 2));48;5;${BG}m\]\[\e[38;5;249m\] \W $P"
-    BG=$(( BG + 2 ))
+    P="\[\e[0;38;5;$(( BG + BG_INC));48;5;${BG}m\]\[\e[38;5;249m\] \W $P"
+    BG=$(( BG + BG_INC ))
 
     # Git branch
     GIT_BRANCH=`git status 2>/dev/null|head -n1|awk '{print $(NF)}'`
@@ -224,12 +225,12 @@ set_cli_prompt() {
         GIT_TAG=`git describe --tags --abbrev=0 2>/dev/null`
 
         if [ ! -z "$GIT_TAG" ]; then
-            GIT_BLOCK=" \[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;229m\]\[\e[38;5;249m\] $GIT_TAG$GIT_BLOCK"
-            BG=$(( BG + 2 ))
+            GIT_BLOCK=" \[\e[0;38;5;$(( BG + BG_INC ));48;5;${BG}m\] \[\e[38;5;229m\]\[\e[38;5;249m\] $GIT_TAG$GIT_BLOCK"
+            BG=$(( BG + BG_INC ))
         fi
 
-        GIT_BLOCK="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\] \[\e[38;5;208m\]\[\e[38;5;249m\] $GIT_BRANCH$GIT_BLOCK"
-        BG=$(( BG + 2 ))
+        GIT_BLOCK="\[\e[0;38;5;$(( BG + BG_INC ));48;5;${BG}m\] \[\e[38;5;208m\]\[\e[38;5;249m\] $GIT_BRANCH$GIT_BLOCK"
+        BG=$(( BG + BG_INC ))
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
             GIT_BLOCK="$GIT_BLOCK\[\e[38;5;226m\] ⚡"
@@ -240,12 +241,12 @@ set_cli_prompt() {
 
     # Python virtual environment
     if [ ! -z "$VIRTUAL_ENV" ]; then
-        P="\[\e[0;38;5;$(( BG + 2 ));48;5;${BG}m\]\[\e[38;5;45m\] `basename $VIRTUAL_ENV` $P"
-        BG=$(( BG + 2 ))
+        P="\[\e[0;38;5;$(( BG + BG_INC ));48;5;${BG}m\]\[\e[38;5;45m\] `basename $VIRTUAL_ENV` $P"
+        BG=$(( BG + BG_INC ))
     fi
 
     # Starting block
-    P="\[\e[48;5;107m\] \[\e[38;5;107;48;5;${BG}m\]$P"
+    P="\[\e[38;5;108;48;5;${BG}m\]  $P"
 
     PS1=$P
 }
