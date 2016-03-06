@@ -1,1 +1,21 @@
 ! Custom Xresource
+
+! ------------------------------------------------------------------------------
+! ROFI Configuration
+! ------------------------------------------------------------------------------
+! Generated with: https://davedavenport.github.io/rofi/p11-Generator.html
+rofi.color-enabled: true
+rofi.color-window: #282828, #383838, #585858
+rofi.color-normal: argb:0000000, #a1b56c, argb:0000000, #383838, #dc9656
+rofi.color-active: argb:0000000, #7cafc2, argb:0000000, #383838, #86c1b9
+rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #383838, #ab4642
+
+rofi.width: 33
+rofi.lines: 5
+
+rofi.bw: 5
+rofi.padding: 15
+
+rofi.font: Monaco for Powerline bold 16
+
+rofi.levenshtein-sort: true
