@@ -120,6 +120,7 @@ echo
 
 # Remove existing configuration
 rm -f ~/.xinitrc 2>/dev/null
+rm -f ~/.Xresources 2>/dev/null
 rm -f ~/.gtkrc-2.0 2>/dev/null
 rm -fr ~/.config/gtk-3.0 2>/dev/null
 rm -f ~/.config/Trolltech.conf 2>/dev/null
@@ -131,6 +132,7 @@ rm -f ~/.config/tilda/config_0 2>/dev/null
 mkdir -p ~/.config/{dunst,tilda,gtk-3.0} >/dev/null 2>&1
 
 ln -sv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
+ln -sv "$DOTFILES_DIR/Xresources" ~/.Xresources
 ln -sv "$DOTFILES_DIR/gtkrc-2.0" ~/.gtkrc-2.0
 ln -sv "$DOTFILES_DIR/Trolltech.conf" ~/.config/
 ln -sv "$DOTFILES_DIR/gtkrc-3.0" ~/.config/gtk-3.0/settings.ini
