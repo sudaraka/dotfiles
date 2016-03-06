@@ -27,13 +27,12 @@ echo
 find ~/.vim/* -maxdepth 0 -name bundle -prune -o -exec rm -fr {} \; 2>/dev/null
 rm -fr ~/.vimrc 2>/dev/null
 mkdir -pv ~/.vim/bundle
-mkdir -pv ~/.vim/colors
 
 ln -sv "$DOTFILES_DIR/vimrc" ~/.vimrc
 
 # Install Vundle from github
-if [ ! -d ~/.vim/bundle/vundle ]; then
-   \git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi;
 
 # Make vim use aspell dictionary
@@ -41,11 +40,8 @@ mkdir -pv ~/.vim/spell
 rm ~/.vim/spell/en.utf-8.add
 ln -sv ../../.aspell.en.pws ~/.vim/spell/en.utf-8.add
 
-# Configure molokai color theme
-ln -sv ~/.vim/bundle/molokai/colors/molokai.vim ~/.vim/colors/
-
 # Run vim command to install bundles
-vim +BundleClean +BundleUpdate +BundleInstall +qa
+vim +PluginClean +PluginUpdate +PluginInstall +qa
 
 echo
 
