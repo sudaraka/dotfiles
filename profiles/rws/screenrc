@@ -6,13 +6,14 @@
 
 source $HOME/.screenrc
 
-chdir $PROJECTSDIR/radiators/radiators-warehouse/web
+chdir $PROJECTSDIR/radiators/radiators-warehouse
 
 setenv PATH $PATH:$PROJECTSDIR/radiators/radiators-warehouse/web/bin
 
-split
-resize 10
-screen -t watch bash --rcfile $HOME/.profiles/rws/watchrc
+screen -t CGI bash --rcfile $HOME/.profiles/rws/cgirc
+screen -t HTTP bash --rcfile $HOME/.profiles/rws/httprc
 
-focus down
-screen -t command bash --rcfile $HOME/.profiles/rws/commandrc
+chdir $PROJECTSDIR/radiators/radiators-warehouse/web
+
+screen -t Watch bash --rcfile $HOME/.profiles/rws/watchrc
+screen -t Command bash --rcfile $HOME/.profiles/rws/commandrc

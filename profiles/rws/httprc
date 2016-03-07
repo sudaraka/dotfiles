@@ -1,6 +1,6 @@
-# commandrc: Initialize command window shell
+# httprc: Initialize HTTP server window
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rws/commandrc
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rws/httprc
 # License: CC-BY
 #
 
@@ -9,6 +9,5 @@
 
 . ~/.bashrc
 
-launch_gvim
-
-git s
+pkill caddy 2>/dev/null
+caddy
