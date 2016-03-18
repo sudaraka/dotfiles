@@ -81,6 +81,22 @@ function _scr() {
     fi
 }
 
+# Start web server with current directory as web root
+function httpd () {
+    CADDYFILE="/tmp/Caddyfile-$$"
+    ROOTDIR=$(pwd)
+
+    cat > $CADDYFILE<<EOF
+127.0.0.1:5000
+
+root $ROOTDIR
+
+browse
+EOF
+
+    caddy -conf $CADDYFILE -log $CADDYFILE.log -quiet >/dev/null 2>&1
+}
+
 # Make directory in $1 if not exists and `cd` into it
 function mcd() {
     DIR=$1
