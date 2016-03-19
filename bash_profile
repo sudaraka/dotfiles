@@ -22,6 +22,7 @@ EXTRA_PATH="$EXTRA_PATH $NPM_DIR/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/redis/bin"
 EXTRA_PATH="$EXTRA_PATH $GOPATH/bin"
+EXTRA_PATH="$EXTRA_PATH $OPT_DIR/HipChat4/bin"
 
 for dir in $EXTRA_PATH; do
     if [ -d $dir ]; then
