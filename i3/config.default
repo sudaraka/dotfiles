@@ -266,6 +266,10 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86AudioRaiseVolume exec --no-startup-id playerctl volume .05+
 bindsym XF86AudioLowerVolume exec --no-startup-id playerctl volume .05-
+bindsym Shift+XF86AudioPrev exec --no-startup-id playerctl position 4-
+bindsym Shift+XF86AudioNext exec --no-startup-id playerctl position 4+
+bindsym Control+XF86AudioPrev exec --no-startup-id playerctl position 60-
+bindsym Control+XF86AudioNext exec --no-startup-id playerctl position 60+
 
 # Autostart
 exec --no-startup-id ibus-daemon -d
