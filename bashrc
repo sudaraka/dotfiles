@@ -81,6 +81,14 @@ function _scr() {
     fi
 }
 
+# Share file via transfer.sh
+function transfer() {
+    FILEPATH=$1
+    FILENAME=$(basename $FILEPATH)
+
+    curl --progress-bar --upload-file $FILEPATH https://transfer.sh/$FILENAME
+}
+
 # Start web server with current directory as web root
 function httpd () {
     CADDYFILE="/tmp/Caddyfile-$$"
