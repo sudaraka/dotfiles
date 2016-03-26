@@ -8,3 +8,5 @@ nodedir=/home/suda/src/node
 save=true
 sign-git-tag=true
 unicode=true
+username=sudaraka
+email=npm@sudaraka.org
