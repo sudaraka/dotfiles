@@ -1,3 +1,4 @@
+email=npm@sudaraka.org
 init-author-email=sudaraka@sudaraka.org
 init-author-name=Sudaraka Wijesinghe
 init-author-url=https://sudaraka.org/
@@ -9,4 +10,3 @@ save=true
 sign-git-tag=true
 unicode=true
 username=sudaraka
-email=npm@sudaraka.org
