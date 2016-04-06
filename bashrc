@@ -93,9 +93,14 @@ function transfer() {
 function httpd () {
     CADDYFILE="/tmp/Caddyfile-$$"
     ROOTDIR=$(pwd)
+    HOST=$1
+
+    if [ -z $HOST ]; then
+        HOST="127.0.0.1"
+    fi
 
     cat > $CADDYFILE<<EOF
-127.0.0.1:5000
+$HOST:5000
 
 root $ROOTDIR
 
