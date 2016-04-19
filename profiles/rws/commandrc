@@ -9,6 +9,8 @@
 
 . ~/.bashrc
 
-launch_gvim
+# Open code editor
+gvim
 
+# Show current status of git repository
 git s
