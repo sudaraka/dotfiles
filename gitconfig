@@ -21,7 +21,7 @@
     ch              = checkout
     cp              = cherry-pick -x
     d               = diff --no-ext-diff
-    ds              = diff --no-ext-diff --staged
+    di              = diff --no-ext-diff --staged
     f               = fetch
     fa              = fetch --all
     fom             = fetch origin master
