@@ -22,6 +22,8 @@
     cp              = cherry-pick -x
     d               = diff --no-ext-diff
     di              = diff --no-ext-diff --staged
+    ds              = diff --no-ext-diff --stat
+    dsi             = diff --no-ext-diff --staged --stat
     f               = fetch
     fa              = fetch --all
     fom             = fetch origin master
