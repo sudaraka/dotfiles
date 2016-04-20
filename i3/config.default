@@ -17,20 +17,21 @@ set $display1 %SECONDARY_DISPLAY%
 set $font_size %FONT_SIZE%
 
 # Workspace names
-set $ws_chat    "1: chat"
-set $ws_mail    "2: mail"
-set $ws_twitter "3: twitter"
-set $ws_dev     "4: development"
-set $ws_1       "5: 1"
-set $ws_2       "6: 2"
-set $ws_3       "7: 3"
-set $ws_4       "8: 4"
-set $ws_5       "9: 5"
-set $ws_6       "10: 6"
-set $ws_7       "11: 7"
-set $ws_8       "12: 8"
-set $ws_9       "13: 9"
-set $ws_0       "14: 10"
+set $ws_chat        "1: chat"
+set $ws_telegram    "2: telegram"
+set $ws_mail        "3: mail"
+set $ws_twitter     "4: twitter"
+set $ws_dev         "5: development"
+set $ws_1           "6: 1"
+set $ws_2           "7: 2"
+set $ws_3           "8: 3"
+set $ws_4           "9: 4"
+set $ws_5           "10: 5"
+set $ws_6           "11: 6"
+set $ws_7           "12: 7"
+set $ws_8           "13: 8"
+set $ws_9           "14: 9"
+set $ws_0           "15: 10"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -111,6 +112,7 @@ bindsym Mod4+Shift+c workspace $ws_chat
 bindsym Mod4+Shift+m workspace $ws_mail
 bindsym Mod4+Shift+t workspace $ws_twitter
 bindsym Mod4+d workspace $ws_dev
+bindsym Mod4+t workspace $ws_telegram
 
 # move focused container to workspace
 bindsym $mod+Shift+d move container to workspace $ws_dev
@@ -204,6 +206,8 @@ bar {
 workspace $ws_chat output $display0
 workspace $ws_mail output $display0
 workspace $ws_twitter output $display0
+workspace $ws_dev output $display0
+workspace $ws_telegram output $display0
 workspace $ws_1 output $display0
 workspace $ws_2 output $display0
 workspace $ws_3 output $display0
@@ -226,6 +230,7 @@ hide_edge_borders both
 # Window specific settings
 assign [class="HipChat"] $ws_chat
 assign [class="Hotot"] $ws_twitter
+assign [class="Telegram"] $ws_telegram
 assign [class="Pidgin"] $ws_chat
 assign [class="Thunderbird"] $ws_mail
 assign [class="Claws-mail"] $ws_mail
@@ -277,6 +282,7 @@ exec --no-startup-id hotot
 exec --no-startup-id pidgin
 exec --no-startup-id ~/opt/tilda/bin/tilda
 exec --no-startup-id bonta
+exec --no-startup-id Telegram
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
 set $exit_mode           Shutdown     Reboot     Logout
