@@ -73,7 +73,7 @@ function _scr() {
         return 1
     else
         if [ -f $HOME/.profiles/$1/workspace.json ]; then
-            WS_DEV='4: development'
+            WS_DEV='5: development'
             i3-msg "workspace $WS_DEV; append_layout $HOME/.profiles/$1/workspace.json" >/dev/null
         fi
 
