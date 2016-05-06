@@ -22,6 +22,9 @@ function vss() {
     # Clear cache
     rm -fr app/cache/dev
 
+    # Fix session handler incompatibility with PHP 7
+    sed -i 's/return \($this->handler->open.\+\)/\1\n\t\treturn true;/' vendor/gwk/dynamo-session-bundle/GWK/DynamoSessionBundle/Handler/SessionHandler.php
+
     # Start server
     notify-send -i `pwd`/src/PPO/Bundle/CommonBundle/Resources/public/img/VC-Square.png 'vCreative app suite' 'Starting development server...'
     app/console server:run 127.0.0.1:5000 -e dev -vvv
