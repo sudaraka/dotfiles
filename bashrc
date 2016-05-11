@@ -41,6 +41,7 @@ export TERM=xterm-256color
 
 # History
 export HISTFILESIZE=999999
+export HISTSIZE=999999
 export NODE_REPL_HISTORY_FILE=$HOME/.node_history
 export NODE_REPL_HISTORY_SIZE=999999
 
