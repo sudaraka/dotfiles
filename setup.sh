@@ -289,7 +289,7 @@ rm ~/opt/mongodb/etc/mongod.conf 2>/dev/null
 
 mkdir -pv ~/opt/mongodb/{etc,db}
 
-ln -sv "$DOTFILES_DIR/mondodb/mongodb.conf" ~/opt/mongodb/etc/mongod.conf
+ln -sv "$DOTFILES_DIR/mongodb/mongod.conf" ~/opt/mongodb/etc/mongod.conf
 
 systemctl --user enable "$DOTFILES_DIR/mongodb/mongod.service"
 rm ~/.config/systemd/user/default.target.wants/mongod.service 2>/dev/null
