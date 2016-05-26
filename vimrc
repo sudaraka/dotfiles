@@ -46,17 +46,8 @@ endif
 
 Plugin 'scrooloose/nerdcommenter'
 
-let g:NERDCustomDelimiters = {
-    \ 'gitcommit': { 'left': '# ' },
-    \ 'gitconfig': { 'left': '; ' },
-    \ 'gitrebase': { 'left': '# ' },
-    \ 'javascript': { 'left': '// ', 'leftAlt': '/* ', 'rightAlt': ' */' },
-    \ 'javascript.jquery': { 'left': '// ', 'leftAlt': '/* ', 'rightAlt': ' */' },
-    \ 'markdown': { 'left': '<!-- ', 'right': ' -->' },
-    \ 'php': { 'left': '// ', 'leftAlt': '/* ', 'rightAlt': ' */' },
-    \ 'sass': { 'left': '// ', 'leftAlt': '/* ' },
-    \ 'scss': { 'left': '/* ', 'right': ' */', 'leftAlt': '// ' },
-    \ }
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 
 "}}}
 " Plugin: Vim-Fugitive {{{
