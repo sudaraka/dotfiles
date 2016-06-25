@@ -18,20 +18,21 @@ set $font_size %FONT_SIZE%
 
 # Workspace names
 set $ws_chat        "1: chat"
-set $ws_telegram    "2: telegram"
-set $ws_mail        "3: mail"
-set $ws_twitter     "4: twitter"
-set $ws_dev         "5: development"
-set $ws_1           "6: 1"
-set $ws_2           "7: 2"
-set $ws_3           "8: 3"
-set $ws_4           "9: 4"
-set $ws_5           "10: 5"
-set $ws_6           "11: 6"
-set $ws_7           "12: 7"
-set $ws_8           "13: 8"
-set $ws_9           "14: 9"
-set $ws_0           "15: 10"
+set $ws_hipchat     "2: hipchat"
+set $ws_telegram    "3: telegram"
+set $ws_mail        "4: mail"
+set $ws_twitter     "5: twitter"
+set $ws_dev         "6: development"
+set $ws_1           "7: 1"
+set $ws_2           "8: 2"
+set $ws_3           "9: 3"
+set $ws_4           "10: 4"
+set $ws_5           "11: 5"
+set $ws_6           "12: 6"
+set $ws_7           "13: 7"
+set $ws_8           "14: 8"
+set $ws_9           "15: 9"
+set $ws_0           "16: 10"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -109,6 +110,7 @@ bindsym Mod4+9 workspace $ws_9
 bindsym Mod4+0 workspace $ws_0
 
 bindsym Mod4+Shift+c workspace $ws_chat
+bindsym Mod4+Shift+h workspace $ws_hipchat
 bindsym Mod4+Shift+m workspace $ws_mail
 bindsym Mod4+Shift+t workspace $ws_twitter
 bindsym Mod4+d workspace $ws_dev
@@ -204,6 +206,7 @@ bar {
 
 # Workspaces
 workspace $ws_chat output $display0
+workspace $ws_hipchat output $display0
 workspace $ws_mail output $display0
 workspace $ws_twitter output $display0
 workspace $ws_dev output $display0
@@ -228,7 +231,7 @@ new_float 1pixel
 hide_edge_borders both
 
 # Window specific settings
-assign [class="HipChat"] $ws_chat
+assign [class="HipChat"] $ws_hipchat
 assign [class="Hotot"] $ws_twitter
 assign [class="Telegram"] $ws_telegram
 assign [class="Pidgin"] $ws_chat
