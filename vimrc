@@ -399,7 +399,7 @@ set t_Co=256
 
 if has('gui_running')
     set background=dark
-    colorscheme base16-default
+    colorscheme base16-default-dark
 
     set guifont=Monaco\ for\ Powerline\ 11
 
