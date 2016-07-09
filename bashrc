@@ -76,7 +76,7 @@ function _scr() {
     else
         if [ -f $HOME/.profiles/$1/workspace.json ]; then
             WS_DEV='6: development'
-            i3-msg "workspace $WS_DEV; append_layout $HOME/.profiles/$1/workspace.json" >/dev/null
+            i3-msg "move container to workspace $WS_DEV; workspace $WS_DEV; append_layout $HOME/.profiles/$1/workspace.json;" >/dev/null
         fi
 
         screen -c $HOME/.profiles/$1/screenrc >/dev/null
