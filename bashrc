@@ -265,7 +265,7 @@ set_cli_prompt() {
         BG=$(( BG + BG_INC ))
 
         if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
-            GIT_BLOCK="$GIT_BLOCK\[\e[38;5;226m\] ⚡"
+            GIT_BLOCK="$GIT_BLOCK\[\e[38;5;9m\] ⋄"
         fi
 
         P="$GIT_BLOCK $P"
