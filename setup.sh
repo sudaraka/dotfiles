@@ -330,3 +330,24 @@ sudo ln -sv "$DOTFILES_DIR/editorconfig" /.editorconfig
 echo
 
 # }}}
+
+# rtv (reddit client) configuration {{{
+
+echo 'Setup rtv (reddit client) Configuration'
+echo
+
+python -m venv ~/opt/virtualenv/rtv
+. ~/opt/virtualenv/rtv/bin/activate
+pip install -U pip
+pip install -U rtv
+deactivate
+
+# Remove existing configuration
+rm -f ~/.config/rtv/rtv.cfg 2>/dev/null
+
+mkdir -p ~/.config/rtv >/dev/null 2>&1
+ln -sv "$DOTFILES_DIR/rtv.cfg" ~/.config/rtv/rtv.cfg
+
+echo
+
+# }}}
