@@ -13,5 +13,4 @@
 (sleep 3 && firefox --devtools http://127.0.0.1:5000/ >/dev/null) &
 
 # Start the web server
-pkill caddy 2>/dev/null
-caddy
+npm start
