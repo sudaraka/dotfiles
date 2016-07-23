@@ -95,6 +95,15 @@ Plugin 'terryma/vim-multiple-cursors'
 
 "}}}
 
+" Language: HTML (Including Templates) {{{
+
+" Plugin: vim-mustache-handlebars {{{
+
+Plugin 'mustache/vim-mustache-handlebars'
+
+"}}}
+
+" }}}
 " Language: JavaScript {{{
 
 " Plugin: Vim-JavaScript-Syntax {{{
