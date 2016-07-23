@@ -1,0 +1,17 @@
+# commandrc: Initialize command window shell
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/ppo2/commandrc
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+gvim
+
+git fetch --all
+git_pull_or_fetch_remote_branch origin master
+
+g s
