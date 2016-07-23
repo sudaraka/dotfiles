@@ -304,11 +304,12 @@ echo 'Setup CouchDB Configuration'
 echo
 
 # Remove existing configuration
-rm ~/opt/couchdb/etc/couchdb/local.ini 2>/dev/null
+rm ~/opt/couchdb/etc/*.ini 2>/dev/null
 
-mkdir -pv ~/opt/couchdb/db
+mkdir -pv ~/opt/couchdb/{etc,db,var}
 
-ln -sv "$DOTFILES_DIR/couchdb/local.ini" ~/opt/couchdb/etc/couchdb/local.ini
+ln -sv "$DOTFILES_DIR/couchdb/local.ini" ~/opt/couchdb/etc/local.ini
+ln -sv /etc/couchdb/default.ini ~/opt/couchdb/etc/default.ini
 
 systemctl --user enable "$DOTFILES_DIR/couchdb/couchdb.service"
 rm ~/.config/systemd/user/default.target.wants/couchdb.service 2>/dev/null

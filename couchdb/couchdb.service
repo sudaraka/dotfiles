@@ -4,8 +4,8 @@ Description=CouchDB Server
 [Service]
 Type=forking
 PermissionsStartOnly=true
-ExecStart=/home/suda/opt/couchdb/bin/couchdb -b -o /dev/null -e /dev/null -p /tmp/couch.pid -A /home/suda/opt/couchdb/etc/couchdb/
-ExecStop=/home/suda/opt/couchdb/bin/couchdb -d
+ExecStart=/usr/bin/couchdb -b -o /dev/null -e /dev/null -p /tmp/couch.pid -A /home/suda/opt/couchdb/etc/
+ExecStop=/usr/bin/couchdb -d
 
 [Install]
 WantedBy=default.target
