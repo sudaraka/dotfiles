@@ -265,11 +265,52 @@ set_cli_prompt() {
         GIT_BLOCK="\[\e[0;38;5;$(( BG + BG_INC ));48;5;${BG}m\] \[\e[38;5;208m\]\[\e[38;5;249m\] $GIT_BRANCH$GIT_BLOCK"
         BG=$(( BG + BG_INC ))
 
-        if [ -z "`git status 2> /dev/null | grep 'working directory clean'`" ]; then
-            GIT_BLOCK="$GIT_BLOCK\[\e[38;5;9m\] ⋄"
+        # Working tree status
+        GSW=$(git status -s 2>/dev/null | cut -c2 | uniq)
+
+        # Index status
+        GSI=$(git status -s 2>/dev/null | cut -c1 | uniq)
+
+        STATUS_INDICATOR=''
+        ICON_W='⚪'  # U+26AA
+        ICON_I='⚫'  # U+26AB
+        ICON_C='⋄'   # U+22C4
+
+        if [ ! -z "$GSW$GSI"  ]; then
+            # Modified in or Added to index
+            if [[ $GSI =~ .*[AM].* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_I"
+            fi
+
+            # Renamed in index
+            if [[ $GSI =~ .*R.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;11m\]$ICON_I"
+            fi
+
+            # Deleted in index
+            if [[ $GSI =~ .*D.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;9m\]$ICON_I"
+            fi
+
+            # Deleted from working tree
+            if [[ $GSW =~ .*D.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_W"
+            fi
+
+            # Modified in working tree
+            if [[ $GSW =~ .*M.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_W"
+            fi
+
+            # Untracked file
+            if [[ $GSW =~ .*\?.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;$(( BG + BG_INC + BG_INC + BG_INC + BG_INC ))m\]$ICON_W"
+            fi
+        else
+            STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_C"
         fi
 
-        P="$GIT_BLOCK $P"
+        P="$GIT_BLOCK $STATUS_INDICATOR $P"
     fi
 
     # Python virtual environment
