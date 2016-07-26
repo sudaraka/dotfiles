@@ -294,7 +294,7 @@ set_cli_prompt() {
 
             # Deleted from working tree
             if [[ $GSW =~ .*D.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_W"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_W"
             fi
 
             # Modified in working tree
