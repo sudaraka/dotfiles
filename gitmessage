@@ -1,0 +1,32 @@
+type: [scope] subject
+
+# commit message body
+# IMPORTANT: above blank line is mandatory
+
+
+# footer
+
+
+################################################################################
+# Subject types
+#
+#
+#   Feat     (new feature for the user, not a new feature for build script)
+#   Fix      (bug fix for the user, not a fix to a build script)
+#   Docs     (changes to the documentation)
+#   Style    (formatting, missing semi colons, etc; no production code change)
+#   Refactor (refactoring production code, eg. renaming a variable)
+#   Test     (adding missing tests, refactoring tests; no production code change)
+#
+# Subject line should be softly limited to 50 characters. Consider 69 as a hard
+# limit as Github UI truncates at that limit.
+#
+# A properly formed git commit subject line should always be able to complete
+# the following sentence:
+#
+#   "If applied, this commit will <your subject line here>"
+#
+# References:
+#   - http://chris.beams.io/posts/git-commit/
+#   - https://karma-runner.github.io/1.0/dev/git-commit-msg.html
+################################################################################

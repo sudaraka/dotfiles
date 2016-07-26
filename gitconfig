@@ -55,3 +55,4 @@
     autostash       = true
 [commit]
     gpgsign         = true
+    template        = ~/.gitmessage
