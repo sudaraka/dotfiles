@@ -10,13 +10,13 @@ type: [scope] subject
 ################################################################################
 # Subject types
 #
-#
-#   Feat     (new feature for the user, not a new feature for build script)
-#   Fix      (bug fix for the user, not a fix to a build script)
-#   Docs     (changes to the documentation)
-#   Style    (formatting, missing semi colons, etc; no production code change)
-#   Refactor (refactoring production code, eg. renaming a variable)
-#   Test     (adding missing tests, refactoring tests; no production code change)
+#   Dev     : changes to development environment (build script, configs, etc.)
+#   Docs    : changes to the documentation
+#   Feat    : new feature for the user, not a new feature for build script
+#   Fix     : bug fix for the user, not a fix to a build script
+#   Refactor: refactoring production code, eg. renaming a variable
+#   Style   : formatting, missing semi colons, etc; no production code change
+#   Test    : adding missing tests, refactoring tests; no production code change
 #
 # Subject line should be softly limited to 50 characters. Consider 69 as a hard
 # limit as Github UI truncates at that limit.
