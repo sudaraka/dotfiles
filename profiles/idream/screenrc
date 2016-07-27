@@ -8,5 +8,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/impossible-dreamers
 
-screen -t 'HTTP Server' bash --rcfile $HOME/.profiles/idream/httprc
+screen -t CGI bash --rcfile $HOME/.profiles/idream/cgirc
+screen -t 'API Server' bash --rcfile $HOME/.profiles/idream/httprc
+
+screen -t 'Webpack Server' bash --rcfile $HOME/.profiles/idream/webpackrc
 screen -t Command bash --rcfile $HOME/.profiles/idream/commandrc

@@ -9,8 +9,6 @@
 
 . ~/.bashrc
 
-# Launch web browser with demo site after 3 seconds
-(sleep 3 && firefox --devtools http://127.0.0.1:5000/ >/dev/null) &
-
 # Start the web server
-npm start
+pkill caddy 2>/dev/null
+caddy
