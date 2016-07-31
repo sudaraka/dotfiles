@@ -6,8 +6,6 @@ PATH=$HOME/bin:$PATH
 
 OPT_DIR="$HOME/opt"
 
-# Go environment settings
-export GOPATH="$OPT_DIR/go"
 
 EXTRA_PATH=''
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/tools"
@@ -17,7 +15,6 @@ EXTRA_PATH="$EXTRA_PATH $OPT_DIR/node/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/npm/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/redis/bin"
-EXTRA_PATH="$EXTRA_PATH $GOPATH/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/HipChat4/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/GraphiQL"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/Telegram"
