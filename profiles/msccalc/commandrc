@@ -13,6 +13,7 @@ alias tree='tree -C --dirsfirst -I "__pyc*|node_modules*|coverage*"'
 
 pyve msc-calc
 
-launch_gvim
+# Open code editor
+gvim
 
 g s

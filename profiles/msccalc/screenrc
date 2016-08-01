@@ -9,13 +9,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/msc-calc/src
 
-split
-resize 10
 screen -t server bash --rcfile $HOME/.profiles/msccalc/serverrc
 
-split -v
-focus right
 screen -t watch bash --rcfile $HOME/.profiles/msccalc/watchrc
 
-focus down
 screen -t command bash --rcfile $HOME/.profiles/msccalc/commandrc
