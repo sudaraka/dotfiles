@@ -102,6 +102,11 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mustache/vim-mustache-handlebars'
 
 "}}}
+" Plugin: html5 {{{
+
+Plugin 'othree/html5.vim'
+
+"}}}
 
 " }}}
 " Language: JavaScript {{{
@@ -110,6 +115,16 @@ Plugin 'mustache/vim-mustache-handlebars'
 " for JavaScript syntax highlighting enhancement
 
 Plugin 'jelera/vim-javascript-syntax'
+
+"}}}
+" Plugin: yajs {{{
+
+Plugin 'othree/yajs.vim'
+
+"}}}
+" Plugin: JavaScript Libraries Syntax {{{
+
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 "}}}
 " Plugin: Vim-JSON {{{
@@ -121,7 +136,7 @@ let g:vim_json_syntax_conceal = 0
 "}}}
 " Plugin: JSX {{{
 
-Plugin 'jsx/jsx.vim'
+Plugin 'mxw/vim-jsx'
 
 "}}}
 
