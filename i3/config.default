@@ -17,22 +17,23 @@ set $display1 %SECONDARY_DISPLAY%
 set $font_size %FONT_SIZE%
 
 # Workspace names
-set $ws_chat        "1: chat"
-set $ws_hipchat     "2: hipchat"
-set $ws_telegram    "3: telegram"
-set $ws_mail        "4: mail"
-set $ws_twitter     "5: twitter"
-set $ws_dev         "6: development"
-set $ws_1           "7: 1"
-set $ws_2           "8: 2"
-set $ws_3           "9: 3"
-set $ws_4           "10: 4"
-set $ws_5           "11: 5"
-set $ws_6           "12: 6"
-set $ws_7           "13: 7"
-set $ws_8           "14: 8"
-set $ws_9           "15: 9"
-set $ws_0           "16: 10"
+set $ws_slack       "1: slack"
+set $ws_chat        "2: chat"
+set $ws_hipchat     "3: hipchat"
+set $ws_telegram    "4: telegram"
+set $ws_mail        "5: mail"
+set $ws_twitter     "6: twitter"
+set $ws_dev         "7: development"
+set $ws_1           "8: 1"
+set $ws_2           "9: 2"
+set $ws_3           "10: 3"
+set $ws_4           "11: 4"
+set $ws_5           "12: 5"
+set $ws_6           "13: 6"
+set $ws_7           "14: 7"
+set $ws_8           "15: 8"
+set $ws_9           "16: 9"
+set $ws_0           "17: 10"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -115,6 +116,7 @@ bindsym Mod4+Shift+m workspace $ws_mail
 bindsym Mod4+Shift+t workspace $ws_twitter
 bindsym Mod4+d workspace $ws_dev
 bindsym Mod4+t workspace $ws_telegram
+bindsym Mod4+s workspace $ws_slack
 
 # move focused container to workspace
 bindsym $mod+Shift+d move container to workspace $ws_dev
@@ -237,6 +239,7 @@ assign [class="Telegram"] $ws_telegram
 assign [class="Pidgin"] $ws_chat
 assign [class="Thunderbird"] $ws_mail
 assign [class="Claws-mail"] $ws_mail
+assign [class="Slack"] $ws_slack
 
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Pidgin" title="Buddy List"] floating enable
@@ -285,7 +288,8 @@ exec --no-startup-id hotot
 exec --no-startup-id pidgin
 exec --no-startup-id ~/opt/tilda/bin/tilda
 exec --no-startup-id bonta
-exec --no-startup-id Telegram
+exec --no-startup-id ~/opt/Telegram/Telegram
+exec --no-startup-id ~/opt/slack/slack
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
 set $exit_mode           Shutdown     Reboot     Logout
