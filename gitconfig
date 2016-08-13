@@ -32,6 +32,7 @@
     r               = reset
     rb              = rebase
     rh              = reset --hard
+    rs              = reset --soft
     rv              = revert
     s               = status -sb
     sa              = stash apply
