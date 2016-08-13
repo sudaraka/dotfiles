@@ -52,3 +52,4 @@
 [commit]
     gpgsign         = true
     template        = ~/.gitmessage
+    verbose         = 2
