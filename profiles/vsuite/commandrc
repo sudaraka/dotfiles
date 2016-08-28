@@ -12,5 +12,6 @@
 alias ag="ag --ignore-dir=app/logs --ignore-dir=app/cache --ignore-dir=vendor --ignore-dir=web"
 alias ddb="$HOME/opt/virtualenv/aws/bin/aws --endpoint-url http://127.0.0.1:8000 dynamodb"
 
-launch_gvim
+gvim
+
 g s
