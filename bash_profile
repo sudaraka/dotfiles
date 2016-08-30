@@ -6,6 +6,10 @@ PATH=$HOME/bin:$PATH
 
 OPT_DIR="$HOME/opt"
 
+# Node.js and npm paths
+NPM_PREFIX="$HOME/.node_modules"
+export NODE_PATH="$NPM_PREFIX/lib/node_modules"
+
 # Composer (PHP) settings
 export COMPOSER_HOME="$OPT_DIR/composer"
 export COMPOSER_CACHE_DIR="$HOME/.cache/composer"
@@ -14,7 +18,7 @@ EXTRA_PATH=''
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/tools"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/platform-tools"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/heroku-client/bin"
-EXTRA_PATH="$EXTRA_PATH $HOME/.node_modules/bin"
+EXTRA_PATH="$EXTRA_PATH $NPM_PREFIX/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/redis/bin"
 EXTRA_PATH="$EXTRA_PATH $OPT_DIR/HipChat4/bin"
