@@ -11,8 +11,8 @@
     status          = auto
     ui              = true
 [alias]
-    a               = add
-    ap              = add -p
+    a               = add -p
+    ad              = add
     b               = branch
     bl              = branch -vv
     c               = commit -e
