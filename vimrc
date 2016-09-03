@@ -94,6 +94,11 @@ let g:syntastic_warning_symbol = ""
 Plugin 'terryma/vim-multiple-cursors'
 
 "}}}
+" Plugin: Vim-Surround {{{
+
+Plugin 'tpope/vim-surround'
+
+"}}}
 
 " Language: HTML (Including Templates) {{{
 
