@@ -7,9 +7,13 @@
 [color]
     branch          = auto
     diff            = auto
+    grep            = auto
+    interactive     = auto
     sh              = auto
     status          = auto
-    ui              = true
+    ui              = auto
+[column]
+    ui              = auto
 [alias]
     a               = add -p
     ad              = add
