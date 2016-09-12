@@ -9,6 +9,6 @@
 
 . ~/.bashrc
 
-launch_gvim
+gvim
 
 git s

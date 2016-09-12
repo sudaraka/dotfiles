@@ -8,7 +8,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/miracle-sealants
 
-screen -t 'Web Server' bash --rcfile $HOME/.profiles/msc/serverrc
+screen -t CGI bash --rcfile $HOME/.profiles/msc/cgirc
+screen -t HTTP bash --rcfile $HOME/.profiles/msc/serverrc
 
 screen -t 'Live Reload Server' bash --rcfile $HOME/.profiles/msc/watchrc
 
