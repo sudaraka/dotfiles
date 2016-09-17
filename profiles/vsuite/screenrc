@@ -8,8 +8,6 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/vcreative/vsuite
 
-screen -t 'DynamoDB' bash --rcfile $HOME/.profiles/vsuite/dynamodbrc
-
 screen -t 'Web Server' bash --rcfile $HOME/.profiles/vsuite/webserverrc
 split
 resize 10
