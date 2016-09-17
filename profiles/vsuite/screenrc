@@ -9,8 +9,5 @@ source $HOME/.screenrc
 chdir $PROJECTSDIR/vcreative/vsuite
 
 screen -t 'Web Server' bash --rcfile $HOME/.profiles/vsuite/webserverrc
-split
-resize 10
-focus down
 
 screen -t 'Command' bash --rcfile $HOME/.profiles/vsuite/commandrc

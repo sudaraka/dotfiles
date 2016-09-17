@@ -33,4 +33,6 @@ function vss() {
 git fetch --all
 git_pull_or_fetch_remote_branch origin next
 
+(sleep 3 && firefox --devtools http://127.0.0.1:5000/app_dev.php/promo >/dev/null) &
+
 vss
