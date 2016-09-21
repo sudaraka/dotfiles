@@ -264,6 +264,10 @@ bindsym Mod4+Shift+w exec --no-startup-id chromium --incognito
 bindsym Print exec --no-startup-id xfce4-screenshooter -f
 bindsym Mod4+Pause sticky toggle
 
+# Dual/Single monitor switch
+bindsym $mod+Control+1 exec --no-startup-id xrandr --output HDMI1 --auto --primary --output eDP1 --off
+bindsym $mod+Control+2 exec --no-startup-id xrandr --output HDMI1 --auto --primary --output eDP1 --auto --below HDMI1
+
 # Volume control buttons
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
