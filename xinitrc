@@ -12,7 +12,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-[[ -f ~/.xmodmap ]] && xmodmap ~/.xmodmap
 
 xbacklight -set 10
 xset -dpms
