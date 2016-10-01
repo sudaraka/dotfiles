@@ -1,0 +1,14 @@
+# screenrc: GNU Screen profile for Impossible Dreamers work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/webpay/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/fit-webpay
+
+screen -t CGI bash --rcfile $HOME/.profiles/webpay/cgirc
+screen -t 'Web Server' bash --rcfile $HOME/.profiles/webpay/httprc
+
+screen -t Command bash --rcfile $HOME/.profiles/webpay/commandrc

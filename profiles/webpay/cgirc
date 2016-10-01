@@ -1,0 +1,13 @@
+# cgirc: Initialize cgi server window
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: cgis://github.com/sudaraka/dotfiles/blob/master/profiles/webpay/cgirc
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+rm /tmp/webpay.sock 2>/dev/null
+php-fpm -y php-fpm.conf
