@@ -22,10 +22,12 @@
     c                   = commit -e
     ca                  = commit -ae
     ch                  = checkout
+    cm                  = commit --amend --no-edit
     cp                  = cherry-pick -x
     d                   = diff --no-ext-diff
     di                  = diff --no-ext-diff --staged
     f                   = fetch
+    fa                  = fetch --all
     l                   = log --graph --decorate=short --oneline --all --date-order --format=format:'%C(green)%h%C(dim green) %G?%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)'
     ll                  = log --graph --decorate=short --oneline --all --date-order --date=short --format=format:'%C(green)%h%C(dim green) %G?%C(reset) %C(yellow)%ad%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lx                  = log --graph --decorate=short --stat --date-order --show-signature
