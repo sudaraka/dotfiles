@@ -27,6 +27,10 @@ alias sudo='sudo '
 source /usr/share/git/completion/git-completion.bash
 __git_complete g __git_main
 
+# Enable Npm completion for both `npm` an `n` alias
+source $HOME/opt/npm/etc/bash_completion
+complete -o default -F _npm_completion n
+
 # Frequently used directories
 export DOWNLOADSDIR="$HOME/downloads"
 export PROJECTSDIR="$HOME/projects"
