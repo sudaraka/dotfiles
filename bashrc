@@ -109,6 +109,10 @@ $HOST:5000
 root $ROOTDIR
 
 browse
+
+header / {
+  Cache-Control "no-store"
+}
 EOF
 
     caddy -conf $CADDYFILE -log $CADDYFILE.log -quiet >/dev/null 2>&1
