@@ -1,0 +1,16 @@
+# httprc: Initialize HTTP server window
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/aecli/httprc
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+cd ../ecommerce-api
+
+# Build and  Start the API server
+npm run build
+npm start -- -c ../ecommerce-client/config.json

@@ -1,0 +1,13 @@
+# webpackrc: Initialize HTTP server window
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/aeapi/webpackrc
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+# Start the webpack in watch mode
+npm run build -- -w

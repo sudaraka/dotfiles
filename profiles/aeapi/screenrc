@@ -1,0 +1,14 @@
+# screenrc: GNU Screen profile for Impossible Dreamers work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/aeapi/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/adhesion/ecommerce-api
+
+screen -t 'Webpack Builder' bash --rcfile $HOME/.profiles/aeapi/webpackrc
+screen -t 'Web Server' bash --rcfile $HOME/.profiles/aeapi/httprc
+
+screen -t Command bash --rcfile $HOME/.profiles/aeapi/commandrc
