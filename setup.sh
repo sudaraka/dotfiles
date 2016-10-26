@@ -220,14 +220,18 @@ echo
 
 # }}}
 
-# Jupyter Notebook {{{
+# Enable startup system services {{{
 
-echo 'Setup Jupyter Notebook'
+echo 'Enable Startup system Services'
 echo
 
-systemctl --user enable "$DOTFILES_DIR/jupyter-notebook.service"
+for service in $DOTFILES_DIR/startup/*.service; do
+  echo " - `basename "${service%.*}"`"
 
-echo
+  systemctl --user enable $service >/dev/null 2>&1
+done
+
+systemctl --user daemon-reload >/dev/null
 
 # }}}
 

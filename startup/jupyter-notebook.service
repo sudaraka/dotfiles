@@ -3,7 +3,7 @@ Description=Jupyter Notebook
 
 [Service]
 Type=simple
-PIDFile=/tmp/jupyter-notebook
+PIDFile=/tmp/jupyter-notebook.pid
 WorkingDirectory=%h/notes
 ExecStart=/home/suda/opt/virtualenv/jupyter/bin/jupyter-notebook --no-browser --no-mathjax --ip=127.0.0.1 --port=8888 --port-retries=0 --FileContentsManager.hide_globs="['*.sh','*.localstorage']"
 ExecReload=/bin/kill -s HUP $MAINPID
