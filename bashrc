@@ -29,7 +29,7 @@ source /usr/share/git/completion/git-completion.bash
 __git_complete g __git_main
 
 # Enable Npm completion for both `npm` an `n` alias
-source /usr/share/bash-completion/completions/npm
+source $HOME/.local/share/bash-completion/completions/npm
 complete -o default -F _npm_completion n
 
 # Enable Docker completion for both `docker` an `d` alias
