@@ -15,6 +15,5 @@ screen -t HTTP bash --rcfile $HOME/.profiles/rws/httprc
 
 chdir $PROJECTSDIR/radiators/radiators-warehouse/web
 
-screen -t 'Live Reload' bash --rcfile $HOME/.profiles/rws/livereloadrc
 screen -t Webpack bash --rcfile $HOME/.profiles/rws/webpackrc
 screen -t Command bash --rcfile $HOME/.profiles/rws/commandrc
