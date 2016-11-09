@@ -291,7 +291,6 @@ exec --no-startup-id hotot
 exec --no-startup-id tilda
 exec --no-startup-id bonta
 exec --no-startup-id ~/opt/Telegram/Telegram
-exec --no-startup-id ~/opt/slack/slack
 
 # Map $Mod+Shift+End to trigget Shutdown, Reeboot, Logout prompt
 set $exit_mode           Shutdown     Reboot     Logout
