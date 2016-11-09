@@ -15,23 +15,30 @@ export COMPOSER_HOME="$OPT_DIR/composer"
 export COMPOSER_CACHE_DIR="$HOME/.cache/composer"
 
 EXTRA_PATH=''
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/tools"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/android-sdk-linux/platform-tools"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/heroku-client/bin"
 EXTRA_PATH="$EXTRA_PATH $NPM_PREFIX/bin"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/node/bin"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/firefox"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/redis/bin"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/HipChat4/bin"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/GraphiQL"
-EXTRA_PATH="$EXTRA_PATH $OPT_DIR/Gitter"
-EXTRA_PATH="$EXTRA_PATH $COMPOSER_HOME"
 
+# Explicitly defined paths
 for dir in $EXTRA_PATH; do
     if [ -d $dir ]; then
         PATH=$PATH:$dir
     fi;
 done;
+
+# Find all direct subdirectories of OPT_DIR
+for dir in $(find $OPT_DIR/* -maxdepth 0 -type d); do
+  # If there is ./bin subdirectory, use it
+  if [ -d $dir/bin ]; then
+    dir=$dir/bin
+  fi
+
+  # Make sure there are executables in the chosen directory
+  if [ ! -z "$(find $dir/* -maxdepth 0 -type f -executable)" ]; then
+    # Make sure it's not already in $PATH
+    if [ "${PATH#*$dir}" == "$PATH" ]; then
+      PATH=$PATH:$dir
+    fi
+  fi
+done
 
 export PATH
 
