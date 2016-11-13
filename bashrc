@@ -281,9 +281,9 @@ set_cli_prompt() {
         GSI=$(git status -s 2>/dev/null | cut -c1 | uniq)
 
         STATUS_INDICATOR=''
-        ICON_W='⚪'  # U+26AA
-        ICON_I='⚫'  # U+26AB
-        ICON_C='⋄'   # U+22C4
+        ICON_W='⬦'  # U+2B26
+        ICON_I='⬥'  # U+2B25
+        ICON_C='⬥'  # U+2B25
 
         if [ ! -z "$GSW$GSI"  ]; then
             # Modified in or Added to index
