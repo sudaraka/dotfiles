@@ -8,7 +8,8 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/adhesion/ecommerce-client
 
-screen -t 'Webpack Server' bash --rcfile $HOME/.profiles/aecli/webpackrc
+screen -t 'Webpack Builder' bash --rcfile $HOME/.profiles/aecli/buildrc
+screen -t 'Web Server' bash --rcfile $HOME/.profiles/aecli/webrc
 screen -t 'API Server' bash --rcfile $HOME/.profiles/aecli/apirc
 
 screen -t Command bash --rcfile $HOME/.profiles/aecli/commandrc
