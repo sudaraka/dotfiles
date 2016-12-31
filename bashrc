@@ -35,8 +35,10 @@ source $HOME/.local/share/bash-completion/completions/npm
 complete -o default -F _npm_completion n
 
 # Enable Docker completion for both `docker` an `d` alias
-source /usr/share/bash-completion/completions/docker
-complete -o default -F _docker d
+if [ -f /usr/share/bash-completion/completions/docker ]; then
+  source /usr/share/bash-completion/completions/docker
+  complete -o default -F _docker d
+fi
 
 # Frequently used directories
 export DOWNLOADSDIR="$HOME/downloads"
