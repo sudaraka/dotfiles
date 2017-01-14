@@ -9,5 +9,7 @@
 
 . ~/.bashrc
 
+launch-database.sh
+
 rm /tmp/rws.sock 2>/dev/null
 php-fpm -y php-fpm.conf
