@@ -19,7 +19,6 @@ set $font_size %FONT_SIZE%
 # Workspace names
 set $ws_slack       "1: slack"
 set $ws_chat        "2: chat"
-set $ws_hipchat     "3: hipchat"
 set $ws_telegram    "4: telegram"
 set $ws_mail        "5: mail"
 set $ws_twitter     "6: twitter"
@@ -111,7 +110,6 @@ bindsym Mod4+9 workspace $ws_9
 bindsym Mod4+0 workspace $ws_0
 
 bindsym Mod4+Shift+c workspace $ws_chat
-bindsym Mod4+Shift+h workspace $ws_hipchat
 bindsym Mod4+Shift+m workspace $ws_mail
 bindsym Mod4+Shift+t workspace $ws_twitter
 bindsym Mod4+d workspace $ws_dev
@@ -208,7 +206,6 @@ bar {
 
 # Workspaces
 workspace $ws_chat output $display0
-workspace $ws_hipchat output $display0
 workspace $ws_mail output $display0
 workspace $ws_twitter output $display0
 workspace $ws_dev output $display0
@@ -233,7 +230,6 @@ new_float 1pixel
 hide_edge_borders both
 
 # Window specific settings
-assign [class="HipChat"] $ws_hipchat
 assign [class="Hotot"] $ws_twitter
 assign [class="Telegram"] $ws_telegram
 assign [class="Pidgin"] $ws_chat
