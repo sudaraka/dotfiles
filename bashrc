@@ -285,42 +285,48 @@ set_cli_prompt() {
         GSI=$(git status -s 2>/dev/null | cut -c1 | uniq)
 
         STATUS_INDICATOR=''
-        ICON_W='⬦'  # U+2B26
-        ICON_I='⬥'  # U+2B25
-        ICON_C='⬥'  # U+2B25
+        ICON_WORKING_DIR='⬦'  # U+2B26
+        ICON_INDEX='⬥'        # U+2B25
+        ICON_CLEAN='⬥'        # U+2B25
+        ICON_CONFLICT='⚔'     # U+2694
 
         if [ ! -z "$GSW$GSI"  ]; then
             # Modified in or Added to index
             if [[ $GSI =~ .*[AM].* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_I"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_INDEX"
             fi
 
             # Renamed in index
             if [[ $GSI =~ .*R.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;11m\]$ICON_I"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;11m\]$ICON_INDEX"
             fi
 
             # Deleted in index
             if [[ $GSI =~ .*D.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;9m\]$ICON_I"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;9m\]$ICON_INDEX"
             fi
 
             # Deleted from working tree
             if [[ $GSW =~ .*D.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_W"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_WORKING_DIR"
             fi
 
             # Modified in working tree
             if [[ $GSW =~ .*M.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_W"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_WORKING_DIR"
             fi
 
             # Untracked file
             if [[ $GSW =~ .*\?.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;$(( BG + BG_INC + BG_INC + BG_INC + BG_INC ))m\]$ICON_W"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;$(( BG + BG_INC + BG_INC + BG_INC + BG_INC ))m\]$ICON_WORKING_DIR"
+            fi
+
+            # Merge conflicts in index or working tree
+            if [[ "$GSW$GSI" =~ .*UU.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_CONFLICT"
             fi
         else
-            STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_C"
+            STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_CLEAN"
         fi
 
         P="$GIT_BLOCK $STATUS_INDICATOR $P"
