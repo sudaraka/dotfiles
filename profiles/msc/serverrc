@@ -9,6 +9,26 @@
 
 . ~/.bashrc
 
+# Start CGI (php-fpm) server in docker
+CONTAINER_NAME=msc-php-fpm
+PHP_VER=5.4
+PWD=$(pwd)
+
+rm /tmp/msc.sock 2>/dev/null
+
+docker kill $CONTAINER_NAME
+docker rm -f $CONTAINER_NAME
+
+docker run \
+  -d \
+  --name=$CONTAINER_NAME \
+  -v $PWD:$PWD \
+  -v /tmp:/tmp \
+  -w $PWD \
+  php:$PHP_VER-fpm \
+    php-fpm \
+      -y $PWD/php-fpm.conf
+
 # Launch web browser with demo site after 3 seconds
 (sleep 3 && firefox --devtools http://127.0.0.1:5000/ >/dev/null) &
 
