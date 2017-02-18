@@ -1,6 +1,6 @@
-# httprc: Initialize HTTP server window
+# serverrc: start database and web servers
 # Author: Sudaraka Wijesinghe <sudaraka.org/contact>
-# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rws/httprc
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/rws/serverrc
 # License: CC-BY
 #
 
@@ -8,6 +8,12 @@
 [[ $- != *i* ]] && return
 
 . ~/.bashrc
+
+# Start Database
+launch-database.sh
+
+# Start CGI server
+launch-cgi.sh
 
 # Launch web browser with demo site after 3 seconds
 (sleep 3 && firefox --devtools http://127.0.0.1:5000/ >/dev/null) &
