@@ -1,0 +1,15 @@
+# screenrc: GNU Screen profile for OP1 client API work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/op1capi/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/radiators/op1-client-api
+
+setenv PATH $PATH:$PROJECTSDIR/radiators/op1-client-api/scripts
+
+screen -t Server bash --rcfile $HOME/.profiles/op1capi/serverrc
+
+screen -t Command bash --rcfile $HOME/.profiles/op1capi/commandrc
