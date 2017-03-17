@@ -17,4 +17,4 @@ launch-cgi.sh
 
 # Start the web server
 pkill caddy 2>/dev/null
-caddy
+caddy -port 5000
