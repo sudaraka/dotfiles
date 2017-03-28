@@ -29,6 +29,7 @@
     f                   = fetch
     fa                  = fetch --all
     l                   = log --graph --decorate=short --oneline --all --date-order --format=format:'%C(green)%h%C(dim green) %G?%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)' --
+    l1                  = log -1 --stat --decorate=short
     ll                  = log --graph --decorate=short --oneline --all --date-order --date=short --format=format:'%C(green)%h%C(dim green) %G?%C(reset) %C(yellow)%ad%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --
     lx                  = log --graph --decorate=short --stat --date-order --show-signature --
     m                   = merge --no-ff
