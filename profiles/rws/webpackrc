@@ -9,4 +9,5 @@
 
 . ~/.bashrc
 
-npm run build -- --watch
+npm run build:composer
+npm run build:webpack -- --watch
