@@ -285,48 +285,57 @@ set_cli_prompt() {
         GSI=$(git status -s 2>/dev/null | cut -c1 | uniq)
 
         STATUS_INDICATOR=''
-        ICON_WORKING_DIR='⬦'  # U+2B26
-        ICON_INDEX='⬥'        # U+2B25
-        ICON_CLEAN='⬥'        # U+2B25
+        ICON_NEW=' '         # U+f0fe
+        ICON_CHANGED_WD=' '  # U+f040
+        ICON_CHANGED_IDX=' ' # U+f14b
+        ICON_DELETED_WD=' '  # U+f00d
+        ICON_DELETED_IDX=' ' # U+f2d3
+        ICON_CLEAN=''        # U+F164
+        ICON_UNTRACKED=' '   # U+f128
+        ICON_MOVE=' '        # U+f079
         ICON_CONFLICT='⚔'     # U+2694
 
         if [ ! -z "$GSW$GSI"  ]; then
             # Modified in or Added to index
-            if [[ $GSI =~ .*[AM].* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_INDEX"
+            if [[ $GSI =~ .*A.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_NEW"
             fi
 
-            # Renamed in index
-            if [[ $GSI =~ .*R.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;11m\]$ICON_INDEX"
-            fi
-
-            # Deleted in index
-            if [[ $GSI =~ .*D.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;9m\]$ICON_INDEX"
-            fi
-
-            # Deleted from working tree
-            if [[ $GSW =~ .*D.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_WORKING_DIR"
+            if [[ $GSI =~ .*M.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_CHANGED_IDX"
             fi
 
             # Modified in working tree
             if [[ $GSW =~ .*M.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_WORKING_DIR"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;3m\]$ICON_CHANGED_WD"
+            fi
+
+            # Deleted in index
+            if [[ $GSI =~ .*D.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;9m\]$ICON_DELETED_IDX"
+            fi
+
+            # Deleted from working tree
+            if [[ $GSW =~ .*D.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_DELETED_WD"
+            fi
+
+            # Renamed in index
+            if [[ $GSI =~ .*R.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;13m\]$ICON_MOVE"
             fi
 
             # Untracked file
             if [[ $GSW =~ .*\?.* ]]; then
-                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;$(( BG + BG_INC + BG_INC + BG_INC + BG_INC ))m\]$ICON_WORKING_DIR"
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;$(( BG + BG_INC + BG_INC + BG_INC + BG_INC ))m\]$ICON_UNTRACKED"
             fi
 
             # Merge conflicts in index or working tree
-            if [[ "$GSW$GSI" =~ .*UU.* ]]; then
+            if [[ "$GSW$GSI" =~ .*U.* ]]; then
                 STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;1m\]$ICON_CONFLICT"
             fi
         else
-            STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_CLEAN"
+            STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;10m\]$ICON_CLEAN"
         fi
 
         P="$GIT_BLOCK $STATUS_INDICATOR $P"
