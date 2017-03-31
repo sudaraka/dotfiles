@@ -28,19 +28,17 @@
     di                  = diff --no-ext-diff --staged
     f                   = fetch
     fa                  = fetch --all
-    l                   = log --graph --decorate=short --oneline --all --date-order --format=format:'%C(green)%h%C(dim green) %G?%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)' --
+    l                   = log --graph --decorate=short --oneline --all --date-order --format=format:'%C(green)%h%C(dim green) %G?%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)'
     l1                  = log -1 --stat --decorate=short
-    ll                  = log --graph --decorate=short --oneline --all --date-order --date=short --format=format:'%C(green)%h%C(dim green) %G?%C(reset) %C(yellow)%ad%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --
-    lx                  = log --graph --decorate=short --stat --date-order --show-signature --
+    ll                  = log --graph --decorate=short --oneline --all --date-order --date=short --format=format:'%C(green)%h%C(dim green) %G?%C(reset) %C(yellow)%ad%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lx                  = log --graph --decorate=short --stat --date-order --show-signature
     m                   = merge --no-ff
     mff                 = merge --ff-only
     ph                  = push
     pl                  = pull
     r                   = reset
     rb                  = rebase
-    rbc                 = rebase --continue
     rbhm                = rebase HEAD master
-    rbi                 = rebase --interactive
     rbs                 = rebase --skip
     rh                  = reset --hard
     rs                  = reset --soft
