@@ -3,13 +3,14 @@
     startup_notification = no
 
     font = "Monaco for Powerline 10"
-    allow_markup = yes
+    line_height = 0
+    markup = full
     plain_text = no
     format = <span color="#62abe3"><b>%s %p</b></span>\n%b
     alignment = left
     icon_position = left
     max_icon_size = 48
-    separator_color = #20292a
+    separator_color = "#20292a"
     indicate_hidden = yes
     word_wrap = yes
     bounce_freq = 0
@@ -18,11 +19,14 @@
     ignore_newline = no
 
     geometry = "400x5-10+10"
+    title = Dunst
+    class = Dunst
     padding = 8
     horizontal_padding = 10
     separator_height = 2
     shrink = yes
     sticky_history = yes
+    history_length = 20
     sort = no
     idle_threshold = 30
     transparency = 0
@@ -34,16 +38,16 @@
 
 [frame]
     width = 1
-    color = #293739
+    color = "#293739"
 
 [urgency_normal]
-    background = #1b1d1e
-    foreground = #d0d0d0
+    background = "#1b1d1e"
+    foreground = "#d0d0d0"
     timeout = 30
 
 [urgency_critical]
-    background = #1b1d1e
-    foreground = #ff5595
+    background = "#1b1d1e"
+    foreground = "#ff5595"
     timeout = 0
 
 [pidgin_message]
