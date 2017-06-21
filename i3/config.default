@@ -13,13 +13,14 @@ set $mod Mod1
 
 set $display0 %PRIMARY_DISPLAY%
 set $display1 %SECONDARY_DISPLAY%
+set $display2 %VERTICAL_DISPLAY%
 
 set $font_size %FONT_SIZE%
 
 # Workspace names
 set $ws_slack       "1: slack"
 set $ws_chat        "2: chat"
-set $ws_telegram    "4: telegram"
+set $ws_telegram    "4: telegram"
 set $ws_mail        "5: mail"
 set $ws_twitter     "6: twitter"
 set $ws_dev         "7: development"
