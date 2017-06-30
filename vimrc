@@ -94,6 +94,16 @@ let g:syntastic_warning_symbol = ""
 Plugin 'tpope/vim-surround'
 
 "}}}
+" Plugin: YouCompleteMe {{{
+" NOTE: run following after install
+"
+"   cd ~/.vim/bundle/YouCompleteMe
+"   ./install.py --racer-completer --tern-completer
+"
+
+Plugin 'Valloric/YouCompleteMe'
+
+"}}}
 
 " Language: HTML (Including Templates) {{{
 
@@ -150,13 +160,7 @@ Plugin 'rayburgemeestre/phpfolding.vim'
 "}}}
 
 " Auto (Omni) complete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-\ "\<lt>C-n>" :
-\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Convert old PHP tags (<?) or new <?php
 function! g:PhpPort()
