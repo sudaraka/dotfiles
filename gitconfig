@@ -21,6 +21,7 @@
     bl                  = branch -vv
     c                   = commit -e
     ca                  = commit -ae
+    cf                  = commit --fixup
     ch                  = checkout
     cm                  = commit --amend --no-edit
     cp                  = cherry-pick -x
