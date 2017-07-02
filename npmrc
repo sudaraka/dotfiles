@@ -7,7 +7,6 @@ init-version=0.0.0
 message=Version %s
 prefix=~/.node_modules
 save=true
-package-lock=false
 sign-git-tag=true
 unicode=true
 username=sudaraka
