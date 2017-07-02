@@ -40,6 +40,7 @@
     rb                  = rebase
     rbhm                = rebase HEAD master
     rbc                 = rebase --continue
+    rbi                 = rebase --interactive
     rbs                 = rebase --skip
     rh                  = reset --hard
     rs                  = reset --soft
