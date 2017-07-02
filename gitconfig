@@ -38,8 +38,8 @@
     pl                  = pull
     r                   = reset
     rb                  = rebase
-    rbhm                = rebase HEAD master
     rbc                 = rebase --continue
+    rbhm                = rebase HEAD master
     rbi                 = rebase --interactive
     rbs                 = rebase --skip
     rh                  = reset --hard
