@@ -23,7 +23,6 @@
     ca                  = commit -ae
     cf                  = commit --fixup
     ch                  = checkout
-    cm                  = commit --amend --no-edit
     cp                  = cherry-pick -x
     d                   = diff --no-ext-diff
     di                  = diff --no-ext-diff --staged
