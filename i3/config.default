@@ -206,11 +206,26 @@ bar {
   }
 }
 
+bar {
+  id bar-3
+  output $display2
+  tray_output none
+  font pango:Font Awsome 10
+  font pango:Monaco for Powerline 10
+  strip_workspace_numbers yes
+
+  colors {
+    focused_workspace #b7eb46 #b7eb46 #101010
+    inactive_workspace  #101010 #101010 #b7eb46
+    active_workspace  #32322f #32322f #feed6c
+    urgent_workspace  #101010 #101010 #ff5995
+  }
+}
+
 # Workspaces
 workspace $ws_chat output $display0
 workspace $ws_mail output $display0
 workspace $ws_twitter output $display0
-workspace $ws_dev output $display0
 workspace $ws_telegram output $display0
 workspace $ws_1 output $display0
 workspace $ws_2 output $display0
@@ -220,8 +235,11 @@ workspace $ws_5 output $display0
 workspace $ws_6 output $display0
 workspace $ws_7 output $display0
 workspace $ws_8 output $display0
+
 workspace $ws_9 output $display1
 workspace $ws_0 output $display1
+
+workspace $ws_dev output $display2
 
 # Switch to workspace 1
 exec i3-msg workspace $ws_1
@@ -262,9 +280,10 @@ bindsym Mod4+Shift+w exec --no-startup-id chromium --incognito
 bindsym Print exec --no-startup-id xfce4-screenshooter -f
 bindsym Mod4+Pause sticky toggle
 
-# Dual/Single monitor switch
-bindsym $mod+Control+1 exec --no-startup-id xrandr --output HDMI1 --auto --primary --output eDP1 --off
-bindsym $mod+Control+2 exec --no-startup-id xrandr --output HDMI1 --auto --primary --output eDP1 --auto --below HDMI1
+# monitor switching shortcuts
+bindsym $mod+Control+0 exec --no-startup-id xrandr --output $display0 --auto --primary --output $display2 --off --output $display1 --off
+bindsym $mod+Control+1 exec --no-startup-id xrandr --output $display1 --auto --below $display0
+bindsym $mod+Control+2 exec --no-startup-id xrandr --output $display2 --auto --rotate left --right-of $display0
 
 # Volume control buttons
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
