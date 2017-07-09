@@ -121,10 +121,10 @@ Plugin 'othree/html5.vim'
 " }}}
 " Language: JavaScript {{{
 
-" Plugin: Vim-JavaScript-Syntax {{{
+" Plugin: Vim-JavaScript {{{
 " for JavaScript syntax highlighting enhancement
 
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
 
 "}}}
 " Plugin: yajs {{{
@@ -135,6 +135,7 @@ Plugin 'othree/yajs.vim'
 " Plugin: JavaScript Libraries Syntax {{{
 
 Plugin 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'jquery,react'
 
 "}}}
 " Plugin: Vim-JSON {{{
