@@ -119,6 +119,7 @@ bindsym Mod4+s workspace $ws_slack
 
 # move focused container to workspace
 bindsym $mod+Shift+d move container to workspace $ws_dev
+bindsym $mod+Shift+t move container to workspace $ws_twitter
 bindsym $mod+Shift+1 move container to workspace $ws_1
 bindsym $mod+Shift+2 move container to workspace $ws_2
 bindsym $mod+Shift+3 move container to workspace $ws_3
