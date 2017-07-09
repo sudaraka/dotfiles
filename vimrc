@@ -405,9 +405,10 @@ nnoremap <c-z> mzzMzvzz
 " }}}
 " Color theme & GUI {{{
 
-Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
-colorscheme molokai
+Plugin 'crusoexia/vim-monokai'
+let g:monokai_gui_italic = 1
+let g:monokai_term_italic = 1
+colorscheme monokai
 
 " Adjust color theme for vim-javascript-syntax
 autocmd ColorScheme * highlight javaScriptParens guifg=#b8b8b8
@@ -428,9 +429,8 @@ set t_Co=256
 
 if has('gui_running')
     set background=dark
-    colorscheme base16-default-dark
 
-    set guifont=Monaco\ for\ Powerline\ 11
+    set guifont=Monaco\ for\ Powerline\ 12
 
     set guioptions-=m
     set guioptions-=T
