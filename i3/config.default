@@ -286,7 +286,6 @@ bindsym Control+XF86AudioNext exec --no-startup-id playerctl position 60+
 
 # Autostart
 exec --no-startup-id ibus-daemon -d
-exec --no-startup-id hotot
 exec --no-startup-id tilda
 exec --no-startup-id bonta
 exec --no-startup-id ~/opt/Telegram/Telegram
