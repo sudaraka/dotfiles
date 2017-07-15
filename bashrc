@@ -290,7 +290,7 @@ set_cli_prompt() {
         ICON_CHANGED_IDX=' ' # U+f14b
         ICON_DELETED_WD=' '  # U+f00d
         ICON_DELETED_IDX=' ' # U+f2d3
-        ICON_CLEAN=''        # U+F164
+        ICON_CLEAN=' '        # U+F164
         ICON_UNTRACKED=' '   # U+f128
         ICON_MOVE=' '        # U+f079
         ICON_CONFLICT='⚔'     # U+2694
@@ -338,7 +338,7 @@ set_cli_prompt() {
             STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;10m\]$ICON_CLEAN"
         fi
 
-        P="$GIT_BLOCK $STATUS_INDICATOR $P"
+        P="$GIT_BLOCK $STATUS_INDICATOR$P"
     fi
 
     # Python virtual environment
