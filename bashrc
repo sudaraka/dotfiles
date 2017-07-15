@@ -293,6 +293,7 @@ set_cli_prompt() {
         ICON_CLEAN=' '        # U+F164
         ICON_UNTRACKED=' '   # U+f128
         ICON_MOVE=' '        # U+f079
+        ICON_COPY=' '        # U+f0c5
         ICON_CONFLICT='⚔'     # U+2694
 
         if [ ! -z "$GSW$GSI"  ]; then
@@ -323,6 +324,11 @@ set_cli_prompt() {
             # Renamed in index
             if [[ $GSI =~ .*R.* ]]; then
                 STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;13m\]$ICON_MOVE"
+            fi
+
+            # Copied in index
+            if [[ $GSI =~ .*C.* ]]; then
+                STATUS_INDICATOR="$STATUS_INDICATOR\[\e[38;5;2m\]$ICON_COPY"
             fi
 
             # Untracked file
