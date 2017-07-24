@@ -81,15 +81,13 @@ echo 'Setup Git Configuration'
 echo
 
 # Remove existing configuration
-rm -f ~/.gitconfig 2>/dev/null
-rm -f ~/.gitmessage 2>/dev/null
+if [ -L ~/.config/git ]; then
+  rm -f ~/.config/git 2>/dev/null
+else
+  rm -fr ~/.config/git/ 2>/dev/null
+fi
 
-ln -sv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
-ln -sv "$DOTFILES_DIR/gitmessage" ~/.gitmessage
-
-mkdir -p ~/bin >/dev/null 2>&1
-rm ~/bin/git_vimdiff.sh >/dev/null 2>&1
-ln -sv "$DOTFILES_DIR/git_vimdiff.sh" ~/bin/git_vimdiff.sh
+ln -sv "$DOTFILES_DIR/git" ~/.config/git
 
 echo
 

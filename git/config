@@ -56,7 +56,6 @@
     default             = simple
     followTags          = true
 [diff]
-    external            = git_vimdiff.sh
     compactionheuristic = true
 [difftool]
     prompt              = false
@@ -65,5 +64,5 @@
     autostash           = true
 [commit]
     gpgsign             = true
-    template            = ~/.gitmessage
+    template            = ~/.config/git/message
     verbose             = 2
