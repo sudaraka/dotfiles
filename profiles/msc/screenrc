@@ -8,8 +8,6 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/miracle-sealants
 
-screen -t HTTP bash --rcfile $HOME/.profiles/msc/serverrc
+screen -t Server bash --rcfile $HOME/.profiles/msc/serverrc
 
-screen -t 'Live Reload Server' bash --rcfile $HOME/.profiles/msc/watchrc
-
-screen -t command bash --rcfile $HOME/.profiles/msc/commandrc
+screen -t Command bash --rcfile $HOME/.profiles/msc/commandrc
