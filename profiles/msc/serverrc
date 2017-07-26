@@ -11,7 +11,7 @@
 
 # Start CGI (php-fpm) server in docker
 CONTAINER_NAME=msc-php-fpm
-PHP_VER=5.4
+PHP_VER=5.6
 PWD=$(pwd)
 
 rm /tmp/msc.sock 2>/dev/null
