@@ -66,3 +66,6 @@
     gpgsign             = true
     template            = ~/.config/git/message
     verbose             = 2
+[rerere]
+    enabled             = true
+    autoupdate          = false
