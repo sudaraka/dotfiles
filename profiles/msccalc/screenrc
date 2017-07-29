@@ -9,8 +9,6 @@ source $HOME/.screenrc
 
 chdir $PROJECTSDIR/msc-calc/src
 
-screen -t server bash --rcfile $HOME/.profiles/msccalc/serverrc
+screen -t Server bash --rcfile $HOME/.profiles/msccalc/serverrc
 
-screen -t watch bash --rcfile $HOME/.profiles/msccalc/watchrc
-
-screen -t command bash --rcfile $HOME/.profiles/msccalc/commandrc
+screen -t Command bash --rcfile $HOME/.profiles/msccalc/commandrc
