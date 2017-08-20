@@ -69,4 +69,4 @@
     verbose             = 2
 [rerere]
     enabled             = true
-    autoupdate          = false
+    autoupdate          = true
