@@ -23,6 +23,7 @@ alias mycli='~/opt/virtualenv/mycli/bin/mycli'
 alias rtv='~/opt/virtualenv/rtv/bin/rtv'
 alias moe='~/opt/moeditor/Moeditor'
 alias sudo='sudo '
+alias x='npx'
 
 # Make GIT completion work with "g" alias
 # Based on Stackoverflow answer by chris_sutter and Ondrej Machulda
