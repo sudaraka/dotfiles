@@ -1,0 +1,15 @@
+# screenrc: GNU Screen profile for Impossible Dreamers work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/idream/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/impossible-dreamers
+
+screen -t CGI bash --rcfile $HOME/.profiles/idream/cgirc
+screen -t 'API Server' bash --rcfile $HOME/.profiles/idream/httprc
+
+screen -t 'Webpack Server' bash --rcfile $HOME/.profiles/idream/webpackrc
+screen -t Command bash --rcfile $HOME/.profiles/idream/commandrc
