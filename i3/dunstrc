@@ -36,9 +36,8 @@
 
     browser = /home/suda/opt/firefox/firefox -new-tab
 
-[frame]
-    width = 1
-    color = "#293739"
+    frame_width = 1
+    frame_color = "#293739"
 
 [urgency_normal]
     background = "#1b1d1e"
