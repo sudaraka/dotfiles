@@ -250,15 +250,12 @@ new_float 1pixel
 hide_edge_borders both
 
 # Window specific settings
-assign [class="Hotot"] $ws_twitter
 assign [class="Telegram"] $ws_telegram
-assign [class="Pidgin"] $ws_chat
 assign [class="Thunderbird"] $ws_mail
 assign [class="Claws-mail"] $ws_mail
 assign [class="Slack"] $ws_slack
 
 for_window [class="Gnome-calculator"] floating enable
-for_window [class="Pidgin" title="^Conversations with"] floating disable
 for_window [class="Thunar" title="File Operation Progress"] floating enable
 for_window [class="Vlc"] floating enable, sticky enable
 for_window [class="Firefox" title="Software Update|About Nightly"] floating enable
