@@ -268,7 +268,7 @@ bindsym Mod4+c exec --no-startup-id gnome-calculator
 bindsym Mod4+e exec --no-startup-id thunar
 bindsym Mod4+f exec --no-startup-id filezilla
 bindsym Mod4+g exec --no-startup-id gpodder
-bindsym Mod4+k exec --no-startup-id keepassx
+bindsym Mod4+k exec --no-startup-id keepassxc
 bindsym Mod4+m exec --no-startup-id claws-mail
 bindsym Mod4+n exec --no-startup-id ~/opt/Boostnote/Boostnote
 bindsym Mod4+p exec --no-startup-id vlc -ZLq "/home/suda/music/"
