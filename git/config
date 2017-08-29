@@ -18,6 +18,7 @@
     a                   = add -p
     ad                  = add
     b                   = branch
+    base                = "!git commit --allow-empty --no-edit -m\"Create repository for \\\"$(basename $(pwd))\\\"\""
     bl                  = branch -vv
     c                   = commit -e
     ca                  = commit -ae
