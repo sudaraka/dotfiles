@@ -16,6 +16,7 @@
     ui                  = auto
 [alias]
     a                   = add -p
+    aa                  = add -A
     ad                  = add
     b                   = branch
     base                = "!git commit --allow-empty --no-edit -m\"Create repository for \\\"$(basename $(pwd))\\\"\""
