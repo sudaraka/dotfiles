@@ -24,8 +24,8 @@
     ca                  = commit -ae
     cf                  = commit --fixup
     ch                  = checkout
-    cne                 = commit --no-edit
     cp                  = cherry-pick -x
+    cq                  = commit --no-edit -m
     d                   = diff --no-ext-diff
     di                  = diff --no-ext-diff --staged
     f                   = fetch
