@@ -36,7 +36,7 @@ set wildignore+=*.pyc
 " Use Silver Search CtrlP
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules/*" --ignore ".tmp/*" --ignore "_build/*" --ignore="dist/*" --ignore="vendor/*" --ignore="log/*"'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules/*" --ignore "elm-stuff/*" --ignore ".tmp/*" --ignore "_build/*" --ignore="dist/*" --ignore="vendor/*" --ignore="log/*"'
     let g:ctrlp_use_caching = 0
 endif
 
@@ -102,6 +102,10 @@ Plugin 'tpope/vim-surround'
 "
 
 Plugin 'Valloric/YouCompleteMe'
+
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}
 
 "}}}
 
@@ -179,6 +183,17 @@ function! g:PhpPort()
     let@/=_s
     call cursor(l, c)
 endfunction
+
+" }}}
+" Language: Elm {{{
+
+" Plugin: Elm-Vim {{{
+
+Plugin 'ElmCast/elm-vim'
+
+let g:elm_syntastic_show_warnings = 1
+
+"}}}
 
 " }}}
 
