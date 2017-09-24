@@ -8,7 +8,7 @@
 alias grep='grep --color=auto'
 alias ls='ls -alh --color=auto --group-directories-first'
 alias sysup='yaourt -Syua'
-alias tree='tree -C -a --dirsfirst -I "__pyc*|node_modules|.git"'
+alias tree='tree -C -a --dirsfirst -I "__pyc*|node_modules|elm-stuff|.git"'
 alias veracrypt='veracrypt -t'
 alias ffmpeg='ffmpeg -hide_banner'
 alias d='docker'
