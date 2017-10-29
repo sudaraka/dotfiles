@@ -105,7 +105,7 @@ Plugin 'tpope/vim-surround'
 " NOTE: run following after install
 "
 "   cd ~/.vim/bundle/YouCompleteMe
-"   ./install.py --racer-completer --tern-completer
+"   ./install.py --js-completer
 "
 
 Plugin 'Valloric/YouCompleteMe'
