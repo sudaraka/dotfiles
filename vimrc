@@ -529,6 +529,14 @@ endfunction
 " }}}
 " Folding {{{
 
+" Based on: https://www.reddit.com/r/vim/comments/7boh5s/dyk_folds_can_automatically_open_and_close/
+set foldclose=all     " Close folds if you leave them in any way
+set foldenable        " Turn on folding
+set foldlevel=0       " Autofold everything by default
+set foldmethod=marker " Fold on the syntax
+set foldnestmax=1     " I only like to fold outer functions
+set foldopen=all      " Open folds if you touch them in any way
+
 " default marker based folding
 augroup ft_marker
     autocmd!
