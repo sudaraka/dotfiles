@@ -26,6 +26,8 @@
     cf                  = commit --fixup
     ch                  = checkout
     cp                  = cherry-pick -x
+    cpa                 = cherry-pick --abort
+    cpc                 = cherry-pick --continue
     cq                  = commit --no-edit -m
     d                   = diff --no-ext-diff
     di                  = diff --no-ext-diff --staged
