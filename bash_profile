@@ -16,6 +16,7 @@ export COMPOSER_CACHE_DIR="$HOME/.cache/composer"
 
 EXTRA_PATH=''
 EXTRA_PATH="$EXTRA_PATH $NPM_PREFIX/bin"
+EXTRA_PATH="$EXTRA_PATH $HOME/.cargo/bin"
 
 # Explicitly defined paths
 for dir in $EXTRA_PATH; do

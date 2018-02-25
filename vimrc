@@ -36,7 +36,7 @@ set wildignore+=*.pyc
 " Use Silver Search CtrlP
 " Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules/*" --ignore "elm-stuff/*" --ignore ".tmp/*" --ignore "_build/*" --ignore="dist/*" --ignore="vendor/*" --ignore="log/*"'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -U --hidden -g "" --ignore "*.pyc" --ignore ".git" --ignore ".ropeproject" --ignore ".virtualenv" --ignore "__pycache__" --ignore "coverage/*"  --ignore "*.gif" --ignore "*.png"  --ignore "*.jpg" --ignore "node_modules/*" --ignore "elm-stuff/*" --ignore ".tmp/*" --ignore "_build/*" --ignore="dist/*" --ignore="vendor/*" --ignore="log/*" --ignore="target/*"'
     let g:ctrlp_use_caching = 0
 endif
 
@@ -105,7 +105,7 @@ Plugin 'tpope/vim-surround'
 " NOTE: run following after install
 "
 "   cd ~/.vim/bundle/YouCompleteMe
-"   ./install.py --js-completer
+"   ./install.py --js-completer --rust-completer
 "
 
 Plugin 'Valloric/YouCompleteMe'
@@ -199,6 +199,17 @@ endfunction
 Plugin 'ElmCast/elm-vim'
 
 let g:elm_syntastic_show_warnings = 1
+
+"}}}
+
+" }}}
+" Language: Rust {{{
+
+" Plugin: Rust-Vim {{{
+
+Plugin 'rust-lang/rust.vim'
+
+let g:rustfmt_autosave = 1
 
 "}}}
 
