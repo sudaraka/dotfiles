@@ -480,6 +480,9 @@ set t_Co=256
 if has('gui_running')
     set background=dark
 
+    " abcdefghijklmnopqrstuvwxyz
+    " ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    " 1234567890
     set guifont=Monaco\ for\ Powerline\ 12
 
     set guioptions-=m
