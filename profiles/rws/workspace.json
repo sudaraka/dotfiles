@@ -69,8 +69,7 @@
             "percent": 1,
             "swallows": [
                {
-                  "class": "^Nightly$",
-                  "instance": "^Navigator$"
+                  "class": "^Nightly$"
                }
             ],
             "type": "con"
