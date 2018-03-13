@@ -396,6 +396,9 @@ noremap N Nzz
 noremap } }zz
 noremap { {zz
 
+autocmd FileType rust noremap <silent> <F9> :!cargo run<CR>
+autocmd FileType rust noremap <silent> <S-F9> :!cargo build<CR>
+
 " }}}
 " File types {{{
 
