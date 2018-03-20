@@ -1,0 +1,17 @@
+# screenrc: GNU Screen profile for business referral system work
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: https://github.com/sudaraka/dotfiles/blob/master/profiles/bizref/screenrc
+# License: CC-BY
+#
+
+source $HOME/.screenrc
+
+chdir $PROJECTSDIR/bizref
+
+screen -t 'Elm Reactor' bash --rcfile $HOME/.profiles/bizref/reactorrc
+screen -t DB bash --rcfile $HOME/.profiles/bizref/dbrc
+screen -t CGI bash --rcfile $HOME/.profiles/bizref/cgirc
+screen -t 'CGI Proxy' bash --rcfile $HOME/.profiles/bizref/cgiproxyrc
+screen -t 'Web Server' bash --rcfile $HOME/.profiles/bizref/httprc
+
+screen -t Command bash --rcfile $HOME/.profiles/bizref/commandrc

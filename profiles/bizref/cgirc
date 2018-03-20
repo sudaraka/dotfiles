@@ -1,0 +1,12 @@
+# cgirc: Initialize cgi server window
+# Author: Sudaraka Wijesinghe <sudaraka.org/contact>
+# Source: cgis://github.com/sudaraka/dotfiles/blob/master/profiles/bizref/cgirc
+# License: CC-BY
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+. ~/.bashrc
+
+make run-cgi
