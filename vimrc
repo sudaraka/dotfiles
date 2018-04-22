@@ -40,6 +40,8 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
+Plugin 'jasoncodes/ctrlp-modified.vim'
+
 
 " }}}
 " Plugin: Nerdcommenter {{{
@@ -398,6 +400,9 @@ noremap { {zz
 
 autocmd FileType rust noremap <silent> <F9> :!cargo run<CR>
 autocmd FileType rust noremap <silent> <S-F9> :!cargo build<CR>
+
+" CtrlP-modified short cuts
+nnoremap <silent> <C-o> :CtrlPModified<CR>
 
 " }}}
 " File types {{{
